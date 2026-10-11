@@ -6,7 +6,7 @@ D = os.path.dirname(os.path.abspath(__file__))
 S = os.path.join(D, 'src')
 r = lambda f: open(os.path.join(S, f), encoding='utf-8').read()
 
-JS = ['words.js', 'content.js', 'core.js', 'app.js']
+JS = ['words.js', 'words2.js', 'content.js', 'texts.js', 'core.js', 'app.js']
 
 def bundle(pwa):
     html = r('index.html')
@@ -34,7 +34,7 @@ manifest = {
     'name': 'Ukraiński dla Polaka', 'short_name': 'Ukraiński', 'lang': 'pl',
     'description': 'Nauka języka ukraińskiego dla osób polskojęzycznych.',
     'start_url': './', 'scope': './', 'display': 'standalone', 'orientation': 'portrait',
-    'background_color': '#f6f3ec', 'theme_color': '#1f4fa3',
+    'background_color': '#0b0a12', 'theme_color': '#0b0a12',
     'icons': [
         {'src': 'icon-192.png', 'sizes': '192x192', 'type': 'image/png'},
         {'src': 'icon-512.png', 'sizes': '512x512', 'type': 'image/png'},

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ukraiński dla Polaka</title>
 <meta name="description" content="Nauka języka ukraińskiego dla osób polskojęzycznych: alfabet, słownictwo z akcentem i powtórkami, fałszywi przyjaciele, wymowa, dialogi, gramatyka kontrastowa.">
-<meta name="theme-color" content="#1f4fa3">
+<meta name="theme-color" content="#0b0a12">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -22,32 +22,31 @@
    Paleta: kobalt i pszeniczne złoto, akcent czerwieni haftu (вишива́нка).
    Czcionki: Nunito (interfejs) + Lora (ukraińskie słowa) – obie z cyrylicą.
    ============================================================ */
-:root {
-  --bg: #f6f3ec; --bg2: #ece6d8; --surface: #fffefa; --surface2: #f8f4ea; --ink: #1c2333; --muted: #5d6578; --line: #e3ddcf; --line2: #d2c9b5;
-  --primary: #1f4fa3; --primary-d: #163a7a; --primary-soft: #e3ebf8;
-  --gold: #8a6400; --gold-l: #f2b705; --gold-soft: #fdf1c9;
-  --red: #b8322a; --red-soft: #f8e0dd;
-  --ok: #2e7d4f; --ok-soft: #e0f0e5; --bad: #c0392b; --bad-soft: #f9e1de; --mid: #9a6a00; --mid-soft: #fbefd0;
-  --st: #b8322a;
+/* Motyw czarno-fioletowy (domyślny) – tokeny w stylu shadcn: tła zinc/violet, akcent fioletowy, kontrast tekstu ≥ 4.5:1 */
+:root, :root[data-theme="dark"] {
+  --bg: #0b0a12; --bg2: #16122a; --surface: #15121f; --surface2: #1d1930; --ink: #ede9fe; --muted: #a8a1c7; --line: #2a2442; --line2: #3b3363;
+  --primary: #a78bfa; --primary-d: #c4b5fd; --primary-soft: #2a1f4d; --on-primary: #120b24; --fill: #7c3aed;
+  --gold: #f0abfc; --gold-l: #e879f9; --gold-soft: #3b1640;
+  --red: #f472b6; --red-soft: #3d1430;
+  --ok: #4ade80; --ok-soft: #10291c; --bad: #fb7185; --bad-soft: #3a1420; --mid: #fbbf24; --mid-soft: #3a2c0d;
+  --st: #f0abfc;
+  --glow: radial-gradient(1200px 600px at 85% -10%, rgba(124, 58, 237, .22), transparent 60%), radial-gradient(900px 500px at -10% 110%, rgba(217, 70, 239, .12), transparent 60%);
   --sans: 'Nunito', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
   --serif: 'Lora', Georgia, 'Times New Roman', serif;
-  --clay: 0 3px 0 var(--line2), 0 10px 22px -16px rgba(40, 30, 10, .35);
+  --clay: 0 2px 0 #05040a, 0 14px 30px -18px rgba(124, 58, 237, .55);
   --r: 16px;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f6f4fb; --bg2: #ebe7f6; --surface: #ffffff; --surface2: #f8f6fd; --ink: #1c1530; --muted: #5f5878; --line: #e4dff2; --line2: #d3cbe9;
+  --primary: #6d28d9; --primary-d: #5b21b6; --primary-soft: #ede9fe; --on-primary: #ffffff; --fill: #6d28d9;
+  --gold: #a21caf; --gold-l: #d946ef; --gold-soft: #fae8ff;
+  --red: #be185d; --red-soft: #fce7f3;
+  --ok: #15803d; --ok-soft: #dcfce7; --bad: #be123c; --bad-soft: #ffe4e6; --mid: #a16207; --mid-soft: #fef3c7;
+  --st: #a21caf;
+  --glow: radial-gradient(1200px 600px at 85% -10%, rgba(124, 58, 237, .10), transparent 60%);
+  --clay: 0 2px 0 var(--line2), 0 12px 26px -18px rgba(76, 29, 149, .35);
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #11151e; --bg2: #171d2a; --surface: #1a2130; --surface2: #202839; --ink: #e8ebf2; --muted: #9ba4b7; --line: #2a3346; --line2: #0b0e14;
-    --primary: #84a9f0; --primary-d: #a9c3f6; --primary-soft: #1d2a45; --gold: #f2c94c; --gold-soft: #3a3016; --red: #ec7a70; --red-soft: #3c1f1d;
-    --ok: #6cc28f; --ok-soft: #173123; --bad: #f08a7e; --bad-soft: #3b1d1a; --mid: #f2c94c; --mid-soft: #3a3016; --st: #ff8f84;
-    --clay: 0 3px 0 #07090d, 0 10px 22px -14px rgba(0, 0, 0, .7); color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #11151e; --bg2: #171d2a; --surface: #1a2130; --surface2: #202839; --ink: #e8ebf2; --muted: #9ba4b7; --line: #2a3346; --line2: #0b0e14;
-  --primary: #84a9f0; --primary-d: #a9c3f6; --primary-soft: #1d2a45; --gold: #f2c94c; --gold-soft: #3a3016; --red: #ec7a70; --red-soft: #3c1f1d;
-  --ok: #6cc28f; --ok-soft: #173123; --bad: #f08a7e; --bad-soft: #3b1d1a; --mid: #f2c94c; --mid-soft: #3a3016; --st: #ff8f84;
-  --clay: 0 3px 0 #07090d, 0 10px 22px -14px rgba(0, 0, 0, .7); color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -360,7 +359,97 @@ kbd { font: 600 .7rem var(--sans); border: 1px solid var(--line2); border-radius
 :focus-visible { outline: 3px solid var(--gold-l); outline-offset: 2px; }
 
 /* pas haftu (вишивка) */
-:root { --emb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M14 1l6 6-6 6-6-6z' fill='%23b8322a'/%3E%3Cpath d='M14 5l2 2-2 2-2-2z' fill='%23f6f3ec'/%3E%3Cpath d='M0 7l3-3 3 3-3 3zM22 7l3-3 3 3-3 3z' fill='%231c2333'/%3E%3C/svg%3E"); }
+:root { --emb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M14 1l6 6-6 6-6-6z' fill='%238b5cf6'/%3E%3Cpath d='M14 5l2 2-2 2-2-2z' fill='%230b0a12'/%3E%3Cpath d='M0 7l3-3 3 3-3 3zM22 7l3-3 3 3-3 3z' fill='%23e879f9'/%3E%3C/svg%3E"); }
+
+/* ============================================================
+   Czarno-fioletowy: nadpisania i nowe elementy (ścieżka, trening, słuchanie)
+   ============================================================ */
+body { background: var(--glow), var(--bg); background-attachment: fixed; }
+.side, .bottomnav { background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(10px); }
+.brand .ini { background: linear-gradient(135deg, #7c3aed, #c026d3); box-shadow: 0 6px 18px -8px #7c3aed; color: #fff; }
+.btn.primary, :root[data-theme="dark"] .btn.primary { background: linear-gradient(135deg, var(--fill), #a21caf); border-color: transparent; color: #fff; box-shadow: 0 3px 0 #3b0764, 0 10px 24px -12px #7c3aed; }
+:root[data-theme="light"] .btn.primary { box-shadow: 0 3px 0 #4c1d95; }
+.chip.on { background: var(--fill); color: #fff; border-color: var(--fill); }
+.key.ent { background: var(--fill); color: #fff; border-color: var(--fill); }
+.bar i { background: linear-gradient(90deg, #7c3aed, #d946ef); }
+.hero { background: linear-gradient(135deg, rgba(124, 58, 237, .28), rgba(192, 38, 211, .12)), var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; box-shadow: var(--clay); }
+.hero .kicker { color: var(--gold); }
+.hero h1 { color: var(--ink); }
+.nav a.on, .bottomnav a.on { background: var(--primary-soft); color: var(--primary-d); }
+.card, .tile, .lvcard, .wrow, .tw, .bub, .lt-tile { border-color: var(--line); }
+.tile:hover, .unode:hover:not(.lock) { box-shadow: 0 0 0 1px var(--primary), var(--clay); }
+.say { background: var(--primary-soft); color: var(--primary-d); border-color: var(--line2); }
+a { color: var(--primary-d); }
+.st { color: var(--st); }
+
+/* ścieżka */
+.lvl { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 16px; margin-bottom: 16px; box-shadow: var(--clay); }
+.lvl.locked { opacity: .72; }
+.lvlh { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+.lvlh b { display: block; font-size: 1.05rem; }
+.lvlh small { color: var(--muted); }
+.lvtag { display: inline-grid; place-items: center; min-width: 46px; height: 32px; padding: 0 8px; border-radius: 10px; font: 800 .95rem var(--sans); color: #fff; vertical-align: middle; }
+.lv-A1 { background: #4c1d95; } .lv-A2 { background: #5b21b6; } .lv-B1 { background: #6d28d9; } .lv-B2 { background: #7c3aed; } .lv-C1 { background: #9333ea; } .lv-C2 { background: linear-gradient(135deg, #a21caf, #db2777); }
+.units { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 12px; }
+.unode { display: grid; justify-items: center; text-align: center; gap: 4px; padding: 14px 8px; border-radius: 16px; background: var(--surface2); border: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: transform .15s; }
+.unode:hover:not(.lock) { transform: translateY(-2px); }
+.unode .uname { font-weight: 800; line-height: 1.2; font-size: .95rem; }
+.unode small { color: var(--muted); font-size: .78rem; }
+.unode.lock { opacity: .55; }
+.unode.cur { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(167, 139, 250, .35), 0 0 24px -6px #7c3aed; }
+.unode.done .rfg { stroke: var(--ok); }
+.unode.text { border-style: dashed; }
+.ring { position: relative; width: 58px; height: 58px; display: grid; place-items: center; flex: none; }
+.ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring .rbg { fill: none; stroke: var(--line2); stroke-width: 5; }
+.ring .rfg { fill: none; stroke: url(#none); stroke: var(--gold-l); stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset .6s; }
+.ring b { position: relative; font-size: .78rem; font-weight: 800; }
+.ring.lockic { border-radius: 50%; background: var(--surface); border: 1px solid var(--line2); color: var(--muted); }
+.ring.lockic .ic { width: 24px; height: 24px; }
+.nextunit { display: flex; gap: 14px; align-items: center; text-decoration: none; color: var(--ink); }
+.nextunit > div { flex: 1; } .nextunit b { display: block; font-size: 1.15rem; } .nextunit small { color: var(--muted); }
+.nextunit .kicker { color: var(--gold); margin: 0; }
+.unithead { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.unithead .row { margin: 0; flex: 1; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 8px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; text-align: center; box-shadow: var(--clay); }
+.kpi b { display: block; font-size: 1.6rem; line-height: 1.1; background: linear-gradient(135deg, var(--primary-d), var(--gold-l)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kpi small { color: var(--muted); font-size: .8rem; }
+@media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+
+/* trening i pytania */
+.qtitle { font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; margin-bottom: 8px; }
+.opt { justify-content: flex-start; text-align: left; min-height: 54px; gap: 12px; }
+.opt kbd { margin: 0; }
+.opt .ua { font-size: 1.2rem; }
+.opt.right { background: var(--ok-soft); border-color: var(--ok); color: var(--ink); opacity: 1; }
+.opt.wrong { background: var(--bad-soft); border-color: var(--bad); color: var(--ink); opacity: 1; animation: shake .35s; }
+.opt.pop { animation: pop .35s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes pop { 40% { transform: scale(1.03); } }
+@keyframes shake { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+.cloze { font-size: 1.35rem; line-height: 1.5; margin: 8px 0; }
+.cloze .gap { display: inline-block; min-width: 4em; border-bottom: 3px solid var(--gold-l); color: var(--gold); text-align: center; margin: 0 .15em; }
+.listenbox { display: flex; gap: 12px; justify-content: center; align-items: center; margin: 10px 0; }
+.bigplay { width: 92px; height: 92px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center; color: #fff; background: radial-gradient(circle at 30% 30%, #a78bfa, #7c3aed 55%, #6b21a8); box-shadow: 0 0 0 8px rgba(124, 58, 237, .18), 0 14px 30px -10px #7c3aed; transition: transform .1s; }
+.bigplay:active { transform: scale(.96); }
+.bigplay .ic { width: 40px; height: 40px; }
+.bigplay.speaking { animation: pulse 1s infinite; }
+.trq { font-size: 1.15rem; font-weight: 700; margin-top: 10px; }
+.reveal { margin-top: 10px; padding: 14px; border-radius: 14px; background: var(--surface2); border: 1px solid var(--line); display: grid; gap: 6px; justify-items: center; text-align: center; }
+.reveal .pl { font-weight: 800; font-size: 1.1rem; }
+.big.sm { font-size: 1.7rem; }
+.introcard .bigpl { font-size: 1.4rem; font-weight: 800; margin: 6px 0; }
+.introcard { border: 1px solid var(--primary); box-shadow: 0 0 0 1px rgba(167, 139, 250, .25), 0 0 40px -12px #7c3aed; }
+.verdict { display: block; text-align: center; font-size: 1.05rem; }
+.verdict.bad { background: var(--bad-soft); } .verdict.ok { background: var(--ok-soft); }
+.sessbar .combo { display: inline-flex; gap: 4px; align-items: center; color: #fb923c; font-weight: 800; animation: pulse 1s infinite; }
+.xpfloat { position: fixed; z-index: 120; font-weight: 800; color: var(--gold); pointer-events: none; transform: translate(-50%, 0); animation: floatup 1.1s ease-out forwards; }
+@keyframes floatup { to { transform: translate(-50%, -60px); opacity: 0; } }
+.readtext { font-size: 1.2rem; line-height: 1.7; }
+.qz .opt { min-height: 48px; }
+@media (prefers-reduced-motion: reduce) { .bigplay, .sessbar .combo { animation: none; } }
+.ring.lockic svg.ic { position: static; transform: none; width: 24px; height: 24px; inset: auto; }
+@media (max-width: 520px) { .units { grid-template-columns: repeat(2, minmax(0, 1fr)); } .unode { padding: 12px 6px; } }
 
 </style>
 </head>
@@ -393,7 +482,7 @@ UA.TOPICS = [];
 UA.WORDS = [];
 (function () {
   var cur;
-  function T(id, name) { cur = id; UA.TOPICS.push({ id: id, name: name }); }
+  function T(id, name) { cur = id; UA.TOPICS.push({ id: id, name: name, level: 'A1' }); }
   function W(ua, pos, pl, forms, sim, ex, exPl) {
     UA.WORDS.push({ ua: ua, pos: pos, pl: pl, forms: forms || '', sim: sim, ex: ex || '', exPl: exPl || '', topic: cur });
   }
@@ -431,7 +520,7 @@ UA.WORDS = [];
   W('чолові́к', 'ч', 'mężczyzna; mąż', 'D. чолові́ка · lm. чоловіки́', 'f', 'Мій чолові́к працю́є в шко́лі.', 'Mój mąż pracuje w szkole.');
   W('жі́нка', 'ж', 'kobieta; żona', 'D. жі́нки · lm. жі́нки', 'p', 'Ця жі́нка – на́ша сусі́дка.', 'Ta kobieta to nasza sąsiadka.');
   W('дружи́на', 'ж', 'żona', 'D. дружи́ни · lm. дружи́ни', 'f', 'Це моя́ дружи́на Іри́на.', 'To moja żona Iryna.');
-  W('дити́на', 'ж', 'dziecko', 'D. дити́ни · lm. ді́ти', 'p', 'У них дво́є діте́й.', 'Mają dwoje dzieci.');
+  W('дити́на', 'ж', 'dziecko', 'D. дити́ни · lm. ді́ти', 'p', 'У них дво́є {діте́й}.', 'Mają dwoje dzieci.');
   W('ма́ма', 'ж', 'mama', 'W. ма́мо', 't');
   W('ба́тько', 'ч', 'ojciec', 'D. ба́тька · W. ба́тьку', 'o', 'Мій ба́тько – лі́кар.', 'Mój ojciec jest lekarzem.');
   W('та́то', 'ч', 'tata', 'W. та́ту', 't');
@@ -444,8 +533,8 @@ UA.WORDS = [];
   W('друг', 'ч', 'przyjaciel', 'D. дру́га · lm. дру́зі · W. дру́же', 'p', 'Це мій найкра́щий друг.', 'To mój najlepszy przyjaciel.');
   W('подру́га', 'ж', 'przyjaciółka', 'D. подру́ги', 'p');
   W('сусі́д', 'ч', 'sąsiad', 'D. сусі́да · lm. сусі́ди', 'p');
-  W('учи́тель', 'ч', 'nauczyciel', 'też вчи́тель · D. учи́теля · lm. учителі́', 'p', 'Я вчи́тель істо́рії.', 'Jestem nauczycielem historii.');
-  W('у́чень', 'ч', 'uczeń', 'D. у́чня · lm. у́чні', 'p', 'У кла́сі два́дцять у́чнів.', 'W klasie jest dwudziestu uczniów.');
+  W('учи́тель', 'ч', 'nauczyciel', 'też вчи́тель · D. учи́теля · lm. учителі́', 'p', 'Я {вчи́тель} істо́рії.', 'Jestem nauczycielem historii.');
+  W('у́чень', 'ч', 'uczeń', 'D. у́чня · lm. у́чні', 'p', 'У кла́сі два́дцять {у́чнів}.', 'W klasie jest dwudziestu uczniów.');
   W('студе́нт', 'ч', 'student', 'D. студе́нта', 't');
   W('лі́кар', 'ч', 'lekarz', 'D. лі́каря · lm. лікарі́ · W. лі́карю', 'p');
   W('ім’я́', 'с', 'imię', 'D. і́мені · lm. імена́', 'p', 'Яке́ твоє́ ім’я́?', 'Jak masz na imię?');
@@ -460,7 +549,7 @@ UA.WORDS = [];
   W('голова́', 'ж', 'głowa', 'D. голови́ · lm. го́лови', 'p', 'У ме́не боли́ть голова́.', 'Boli mnie głowa.');
   W('рука́', 'ж', 'ręka', 'D. руки́ · lm. ру́ки', 'p', 'Мий ру́ки пе́ред ї́жею.', 'Myj ręce przed jedzeniem.');
   W('нога́', 'ж', 'noga', 'D. ноги́ · lm. но́ги', 't');
-  W('о́ко', 'с', 'oko', 'D. о́ка · lm. о́чі', 't', 'У не́ї зеле́ні о́чі.', 'Ona ma zielone oczy.');
+  W('о́ко', 'с', 'oko', 'D. о́ка · lm. о́чі', 't', 'У не́ї зеле́ні {о́чі}.', 'Ona ma zielone oczy.');
   W('ву́хо', 'с', 'ucho', 'D. ву́ха · lm. ву́ха', 'p');
   W('ніс', 'ч', 'nos', 'D. но́са · lm. носи́', 'p');
   W('рот', 'ч', 'usta', 'D. ро́та', 'o');
@@ -472,14 +561,14 @@ UA.WORDS = [];
   W('го́рло', 'с', 'gardło', 'D. го́рла', 'p');
   W('хво́рий', 'п', 'chory', 'хво́ра, хво́ре', 'p', 'Сього́дні він хво́рий і не прийде́.', 'Dziś jest chory i nie przyjdzie.');
   W('здоро́вий', 'п', 'zdrowy', 'здоро́ва, здоро́ве', 'p');
-  W('боли́ть', 'д', 'boli', 'у ме́не боли́ть…; lm. боля́ть', 'p', 'У ме́не боля́ть зу́би.', 'Bolą mnie zęby.');
+  W('боли́ть', 'д', 'boli', 'у ме́не боли́ть…; lm. боля́ть', 'p', 'У ме́не {боля́ть} зу́би.', 'Bolą mnie zęby.');
   W('лі́ки', 'мн', 'lekarstwo, leki', 'D. лі́ків', 'p', 'Прийма́йте ці лі́ки три́чі на день.', 'Proszę brać te leki trzy razy dziennie.');
   W('температу́ра', 'ж', 'gorączka; temperatura', 'D. температу́ри', 'p');
   W('ка́шель', 'ч', 'kaszel', 'D. ка́шлю', 'p');
   W('реце́пт', 'ч', 'recepta; przepis (kulinarny)', 'D. реце́пта (recepta) / реце́пту (przepis)', 'p');
   W('ліка́рня', 'ж', 'szpital', 'D. ліка́рні', 'o', 'Його́ забра́ли до ліка́рні.', 'Zabrano go do szpitala.');
   W('апте́ка', 'ж', 'apteka', 'D. апте́ки', 't');
-  W('шви́дка допомо́га', 'ф', 'karetka, pogotowie', '', 'o', 'Ви́кличте шви́дку допомо́гу!', 'Proszę wezwać karetkę!');
+  W('шви́дка допомо́га', 'ф', 'karetka, pogotowie', '', 'o', 'Ви́кличте {шви́дку допомо́гу}!', 'Proszę wezwać karetkę!');
 
   T('dom', 'Dom');
   W('дім', 'ч', 'dom', 'D. до́му · lm. доми́ · вдо́ма – w domu', 'p', 'Я вже вдо́ма.', 'Jestem już w domu.');
@@ -531,7 +620,7 @@ UA.WORDS = [];
   W('смачни́й', 'п', 'smaczny', 'смачна́, смачне́', 'p', 'Суп ду́же смачни́й!', 'Zupa jest bardzo smaczna!');
 
   T('miasto', 'Miasto i transport');
-  W('мі́сто', 'с', 'miasto', 'D. мі́ста · lm. міста́', 'p', 'Львів – ду́же гарне мі́сто.', 'Lwów to bardzo ładne miasto.');
+  W('мі́сто', 'с', 'miasto', 'D. мі́ста · lm. міста́', 'p', 'Львів – ду́же га́рне мі́сто.', 'Lwów to bardzo ładne miasto.');
   W('ву́лиця', 'ж', 'ulica', 'D. ву́лиці', 'p');
   W('магази́н', 'ч', 'sklep', 'D. магази́ну', 'f', 'Магази́н працю́є до дев’я́тої.', 'Sklep jest czynny do dziewiątej.');
   W('крамни́ця', 'ж', 'sklep, sklepik', 'D. крамни́ці', 'o');
@@ -559,7 +648,7 @@ UA.WORDS = [];
   W('ве́чір', 'ч', 'wieczór', 'D. ве́чора · lm. вечори́ · вве́чері – wieczorem', 'p');
   W('ти́ждень', 'ч', 'tydzień', 'D. ти́жня', 'p');
   W('мі́сяць', 'ч', 'miesiąc; księżyc', 'D. мі́сяця', 'p');
-  W('рік', 'ч', 'rok', 'D. ро́ку · lm. ро́ки', 'p', 'Мені́ со́рок ро́ків.', 'Mam czterdzieści lat.');
+  W('рік', 'ч', 'rok', 'D. ро́ку · lm. ро́ки', 'p', 'Мені́ со́рок {ро́ків}.', 'Mam czterdzieści lat.');
   W('годи́на', 'ж', 'godzina', 'D. годи́ни', 't', 'Котра́ годи́на?', 'Która godzina?');
   W('хвили́на', 'ж', 'minuta', 'D. хвили́ни', 'o', 'Зачека́й хвили́нку!', 'Poczekaj chwilkę!');
   W('сього́дні', 'пр', 'dzisiaj', '', 'p');
@@ -640,32 +729,32 @@ UA.WORDS = [];
   W('молоди́й', 'п', 'młody', 'молода́, молоде́', 'p');
 
   T('czasowniki', 'Czasowniki podstawowe');
-  W('бу́ти', 'д', 'być', 'teraźn. zwykle pomijane · бу́ду, бу́деш (przysz.)', 't', 'За́втра я бу́ду вдо́ма.', 'Jutro będę w domu.');
-  W('ма́ти', 'д', 'mieć', 'ма́ю, ма́єш', 'p', 'Ма́ю пита́ння.', 'Mam pytanie.');
+  W('бу́ти', 'д', 'być', 'teraźn. zwykle pomijane · бу́ду, бу́деш (przysz.)', 't', 'За́втра я {бу́ду} вдо́ма.', 'Jutro będę w domu.');
+  W('ма́ти', 'д', 'mieć', 'ма́ю, ма́єш', 'p', '{Ма́ю} пита́ння.', 'Mam pytanie.');
   W('роби́ти / зроби́ти', 'д', 'robić / zrobić', 'роблю́, ро́биш', 't', 'Що ти ро́биш?', 'Co robisz?');
   W('чита́ти / прочита́ти', 'д', 'czytać / przeczytać', 'чита́ю, чита́єш', 'p', 'Я вже прочита́в цю кни́жку.', 'Już przeczytałem tę książkę.');
-  W('писа́ти / написа́ти', 'д', 'pisać / napisać', 'пишу́, пи́шеш', 't', 'Напиши́ мені́ за́втра.', 'Napisz do mnie jutro.');
-  W('каза́ти / сказа́ти', 'д', 'mówić / powiedzieć', 'кажу́, ка́жеш', 'p', 'Скажі́ть, будь ла́ска, котра́ годи́на?', 'Proszę powiedzieć, która godzina?');
+  W('писа́ти / написа́ти', 'д', 'pisać / napisać', 'пишу́, пи́шеш', 't', '{Напиши́} мені́ за́втра.', 'Napisz do mnie jutro.');
+  W('каза́ти / сказа́ти', 'д', 'mówić / powiedzieć', 'кажу́, ка́жеш', 'p', '{Скажі́ть}, будь ла́ска, котра́ годи́на?', 'Proszę powiedzieć, która godzina?');
   W('говори́ти', 'д', 'mówić', 'говорю́, гово́риш', 'p', 'Ви говори́те по-по́льськи?', 'Czy mówi pan po polsku?');
   W('розмовля́ти', 'д', 'rozmawiać; mówić (językiem)', 'розмовля́ю, розмовля́єш', 'p', 'Я розмовля́ю украї́нською.', 'Mówię po ukraińsku.');
   W('зна́ти', 'д', 'wiedzieć; znać', 'зна́ю, зна́єш', 'p');
   W('розумі́ти / зрозумі́ти', 'д', 'rozumieć / zrozumieć', 'розумі́ю, розумі́єш', 't');
   W('ба́чити / поба́чити', 'д', 'widzieć / zobaczyć', 'ба́чу, ба́чиш', 'p', 'Ра́дий тебе́ ба́чити!', 'Miło cię widzieć!');
-  W('чу́ти / почу́ти', 'д', 'słyszeć / usłyszeć', 'чу́ю, чу́єш', 'f', 'Ти мене́ чу́єш?', 'Słyszysz mnie?');
+  W('чу́ти / почу́ти', 'д', 'słyszeć / usłyszeć', 'чу́ю, чу́єш', 'f', 'Ти мене́ {чу́єш}?', 'Słyszysz mnie?');
   W('слу́хати / послу́хати', 'д', 'słuchać / posłuchać', 'слу́хаю, слу́хаєш', 't');
-  W('диви́тися / подиви́тися', 'д', 'patrzeć, oglądać / popatrzeć, obejrzeć', 'дивлю́ся, ди́вишся', 'f', 'Уве́чері ми ди́вимося фільм.', 'Wieczorem oglądamy film.');
-  W('іти́ / піти́', 'д', 'iść / pójść', 'іду́, іде́ш · też йти', 'p', 'Я йду додо́му.', 'Idę do domu.');
-  W('ї́хати / пої́хати', 'д', 'jechać / pojechać', 'ї́ду, ї́деш', 'p', 'Ми ї́демо до Льво́ва по́тягом.', 'Jedziemy do Lwowa pociągiem.');
+  W('диви́тися / подиви́тися', 'д', 'patrzeć, oglądać / popatrzeć, obejrzeć', 'дивлю́ся, ди́вишся', 'f', 'Уве́чері ми {ди́вимося} фільм.', 'Wieczorem oglądamy film.');
+  W('іти́ / піти́', 'д', 'iść / pójść', 'іду́, іде́ш · też йти', 'p', 'Я {йду} додо́му.', 'Idę do domu.');
+  W('ї́хати / пої́хати', 'д', 'jechać / pojechać', 'ї́ду, ї́деш', 'p', 'Ми {ї́демо} до Льво́ва по́тягом.', 'Jedziemy do Lwowa pociągiem.');
   W('ї́сти / з’ї́сти', 'д', 'jeść / zjeść', 'їм, їси́, їсть', 'p');
   W('пи́ти / ви́пити', 'д', 'pić / wypić', 'п’ю, п’єш', 't');
   W('спа́ти', 'д', 'spać', 'сплю, спиш', 't');
-  W('жи́ти', 'д', 'żyć; mieszkać', 'живу́, живе́ш', 'p', 'Я живу́ у Варша́ві.', 'Mieszkam w Warszawie.');
-  W('працюва́ти', 'д', 'pracować', 'працю́ю, працю́єш', 'p', 'Де ви працю́єте?', 'Gdzie pan pracuje?');
-  W('вчи́тися / навчи́тися', 'д', 'uczyć się / nauczyć się', 'вчу́ся, вчи́шся', 'p', 'Я вчу́ся украї́нської мо́ви.', 'Uczę się języka ukraińskiego.');
+  W('жи́ти', 'д', 'żyć; mieszkać', 'живу́, живе́ш', 'p', 'Я {живу́} у Варша́ві.', 'Mieszkam w Warszawie.');
+  W('працюва́ти', 'д', 'pracować', 'працю́ю, працю́єш', 'p', 'Де ви {працю́єте}?', 'Gdzie pan pracuje?');
+  W('вчи́тися / навчи́тися', 'д', 'uczyć się / nauczyć się', 'вчу́ся, вчи́шся', 'p', 'Я {вчу́ся} украї́нської мо́ви.', 'Uczę się języka ukraińskiego.');
   W('вчи́ти / ви́вчити', 'д', 'uczyć (się czegoś) / nauczyć się, wyuczyć', 'вчу, вчиш', 'p', 'Я ви́вчив усі́ слова́.', 'Nauczyłem się wszystkich słów.');
-  W('люби́ти / полюби́ти', 'д', 'kochać, lubić / pokochać', 'люблю́, лю́биш', 'p', 'Я люблю́ ка́ву.', 'Lubię kawę.');
-  W('хоті́ти / захоті́ти', 'д', 'chcieć / zechcieć', 'хо́чу, хо́чеш', 'p', 'Що ти хо́чеш?', 'Czego chcesz?');
-  W('могти́ / змогти́', 'д', 'móc / zdołać', 'мо́жу, мо́жеш', 'p', 'Мо́жу допомогти́?', 'Mogę pomóc?');
+  W('люби́ти / полюби́ти', 'д', 'kochać, lubić / pokochać', 'люблю́, лю́биш', 'p', 'Я {люблю́} ка́ву.', 'Lubię kawę.');
+  W('хоті́ти / захоті́ти', 'д', 'chcieć / zechcieć', 'хо́чу, хо́чеш', 'p', 'Що ти {хо́чеш}?', 'Czego chcesz?');
+  W('могти́ / змогти́', 'д', 'móc / zdołać', 'мо́жу, мо́жеш', 'p', '{Мо́жу} допомогти́?', 'Mogę pomóc?');
   W('купува́ти / купи́ти', 'д', 'kupować / kupić', 'купу́ю, купу́єш', 'p');
   W('плати́ти / заплати́ти', 'д', 'płacić / zapłacić', 'плачу́, пла́тиш', 'p');
   W('чека́ти / почека́ти', 'д', 'czekać / poczekać', 'чека́ю, чека́єш', 't', 'Я чека́ю на тебе́.', 'Czekam na ciebie.');
@@ -784,6 +873,489 @@ UA.WORDS = [];
   W('пе́ред', 'з', 'przed', '+ N.: пе́ред шко́лою', 'p');
   W('бі́ля', 'з', 'obok, przy', '+ D.: бі́ля до́му', 'o');
   W('че́рез', 'з', 'przez; za (o czasie)', 'че́рез ти́ждень – za tydzień', 'p');
+})();
+
+</script>
+<script>
+/* ============================================================
+   ŚCIEŻKA A2–C2 – lekcje ułożone progresywnie
+   L(poziom, id, nazwa) – nowa lekcja; W(...) jak w words.js.
+   W przykładzie słowo docelowe ujęte w {…} – służy do ćwiczeń z luką.
+   ============================================================ */
+var UA = window.UA || (window.UA = {});
+(function () {
+  var cur;
+  function L(level, id, name) { cur = id; UA.TOPICS.push({ id: id, name: name, level: level }); }
+  function W(ua, pos, pl, forms, sim, ex, exPl) {
+    UA.WORDS.push({ ua: ua, pos: pos, pl: pl, forms: forms || '', sim: sim, ex: ex || '', exPl: exPl || '', topic: cur });
+  }
+
+  /* ===================== A2 ===================== */
+  L('A2', 'a2_podroze', 'Podróże');
+  W('по́дорож', 'ж', 'podróż', 'D. по́дорожі', 'p', 'Ми плану́ємо {по́дорож} до Карпа́т.', 'Planujemy podróż w Karpaty.');
+  W('літа́к', 'ч', 'samolot', 'D. літака́ · lm. літаки́', 'o', '{Літа́к} прилеті́в вча́сно.', 'Samolot przyleciał punktualnie.');
+  W('аеропо́рт', 'ч', 'lotnisko', 'D. аеропо́рту', 'p', 'Як дої́хати до {аеропо́рту}?', 'Jak dojechać na lotnisko?');
+  W('валі́за', 'ж', 'walizka', 'D. валі́зи', 'p', 'Моя́ {валі́за} ду́же важка́.', 'Moja walizka jest bardzo ciężka.');
+  W('па́спорт', 'ч', 'paszport', 'D. па́спорта', 't', 'Покажі́ть, будь ла́ска, ваш {па́спорт}.', 'Proszę pokazać paszport.');
+  W('кордо́н', 'ч', 'granica (państwa)', 'D. кордо́ну', 'f', 'Ми перети́нали {кордо́н} уно́чі.', 'Przekraczaliśmy granicę w nocy.');
+  W('готе́ль', 'ч', 'hotel', 'D. готе́лю', 'p', '{Готе́ль} знахо́диться в це́нтрі мі́ста.', 'Hotel znajduje się w centrum miasta.');
+  W('но́мер', 'ч', 'pokój hotelowy; numer', 'D. но́мера', 'p', 'Я забронюва́в {но́мер} на дві но́чі.', 'Zarezerwowałem pokój na dwie noce.');
+  W('бронюва́ти / забронюва́ти', 'д', 'rezerwować / zarezerwować', 'броню́ю, броню́єш', 'o', 'Тре́ба {забронюва́ти} квитки́ зазда́легідь.', 'Trzeba zarezerwować bilety z wyprzedzeniem.');
+  W('екску́рсія', 'ж', 'wycieczka z przewodnikiem', 'D. екску́рсії', 'p', 'За́втра в нас {екску́рсія} мі́стом.', 'Jutro mamy wycieczkę po mieście.');
+  W('ві́дпустка', 'ж', 'urlop', 'D. ві́дпустки', 'f', 'Улі́тку в ме́не {ві́дпустка}.', 'Latem mam urlop.');
+  W('па́м’ятка', 'ж', 'zabytek', 'D. па́м’ятки', 'f', 'Софі́йський собо́р – найвідо́міша {па́м’ятка} Ки́єва.', 'Sobór Mądrości Bożej to najsłynniejszy zabytek Kijowa.');
+
+  L('A2', 'a2_ubrania', 'Ubrania i zakupy');
+  W('о́дяг', 'ч', 'ubranie, odzież', 'D. о́дягу', 'p', 'Де мо́жна купи́ти деше́вий {о́дяг}?', 'Gdzie można kupić tanie ubrania?');
+  W('соро́чка', 'ж', 'koszula', 'D. соро́чки', 'o', 'Ця {соро́чка} тобі́ пасу́є.', 'Ta koszula do ciebie pasuje.');
+  W('штани́', 'мн', 'spodnie', 'D. штані́в', 'o', 'Ці {штани́} задо́вгі.', 'Te spodnie są za długie.');
+  W('су́кня', 'ж', 'sukienka', 'D. су́кні', 'p', 'Яка́ га́рна {су́кня}!', 'Jaka piękna sukienka!');
+  W('спідни́ця', 'ж', 'spódnica', 'D. спідни́ці', 'p', 'Вона́ но́сить до́вгу {спідни́цю}.', 'Ona nosi długą spódnicę.');
+  W('ку́ртка', 'ж', 'kurtka', 'D. ку́ртки', 't', 'Візьми́ {ку́ртку}, на ву́лиці хо́лодно.', 'Weź kurtkę, na dworze jest zimno.');
+  W('пальто́', 'с', 'płaszcz', 'nieodmienne', 'p', 'Зимо́ве {пальто́} ви́сить у ша́фі.', 'Zimowy płaszcz wisi w szafie.');
+  W('взуття́', 'с', 'obuwie', 'D. взуття́', 'p', 'Я купи́в нове́ {взуття́}.', 'Kupiłem nowe obuwie.');
+  W('череви́ки', 'мн', 'buty (półbuty, trzewiki)', 'D. череви́ків', 'p', 'Мої́ {череви́ки} промо́кли.', 'Moje buty przemokły.');
+  W('ша́пка', 'ж', 'czapka', 'D. ша́пки', 'p', 'Не забу́дь {ша́пку}!', 'Nie zapomnij czapki!');
+  W('ро́змір', 'ч', 'rozmiar', 'D. ро́зміру', 'p', 'Яки́й у вас {ро́змір}?', 'Jaki ma pan rozmiar?');
+  W('приміря́ти / примі́ряти', 'д', 'przymierzać / przymierzyć', 'приміря́ю, приміря́єш', 'p', 'Мо́жна {примі́ряти} цю ку́ртку?', 'Czy mogę przymierzyć tę kurtkę?');
+
+  L('A2', 'a2_sport', 'Sport i czas wolny');
+  W('спорт', 'ч', 'sport', 'D. спо́рту', 't', 'Я займа́юся {спо́ртом} щодня́.', 'Uprawiam sport codziennie.');
+  W('футбо́л', 'ч', 'piłka nożna', 'D. футбо́лу', 'p', 'Ми гра́ємо у {футбо́л} у субо́ту.', 'Gramy w piłkę w sobotę.');
+  W('тренува́ння', 'с', 'trening', 'D. тренува́ння', 'p', '{Тренува́ння} почина́ється о шо́стій.', 'Trening zaczyna się o szóstej.');
+  W('м’яч', 'ч', 'piłka', 'D. м’яча́', 'o', 'Ки́нь мені́ {м’яч}!', 'Rzuć mi piłkę!');
+  W('бі́гати', 'д', 'biegać', 'бі́гаю, бі́гаєш', 'p', 'Я {бі́гаю} в па́рку вра́нці.', 'Biegam rano w parku.');
+  W('пла́вати', 'д', 'pływać', 'пла́ваю, пла́ваєш', 't', 'Ти вмі́єш {пла́вати}?', 'Umiesz pływać?');
+  W('змага́ння', 'с', 'zawody', 'D. змага́нь', 'f', 'Він перемі́г у {змага́ннях}.', 'Wygrał zawody.');
+  W('перемо́га', 'ж', 'zwycięstwo', 'D. перемо́ги', 'p', 'Це була́ важли́ва {перемо́га}.', 'To było ważne zwycięstwo.');
+  W('гра́вець', 'ч', 'zawodnik, gracz', 'D. гравця́', 'p', 'Він найкра́щий {гра́вець} у кома́нді.', 'Jest najlepszym zawodnikiem w drużynie.');
+  W('хо́бі', 'с', 'hobby', 'nieodmienne', 't', 'Яке́ в тебе́ {хо́бі}?', 'Jakie masz hobby?');
+  W('вболіва́льник', 'ч', 'kibic', 'D. вболіва́льника', 'o', '{Вболіва́льники} співа́ли гімн.', 'Kibice śpiewali hymn.');
+  W('відпочи́нок', 'ч', 'odpoczynek', 'D. відпочи́нку', 'p', 'Мені́ потрі́бен {відпочи́нок}.', 'Potrzebuję odpoczynku.');
+
+  L('A2', 'a2_praca', 'Praca');
+  W('профе́сія', 'ж', 'zawód', 'D. профе́сії', 'p', 'Яка́ у вас {профе́сія}?', 'Jaki ma pan zawód?');
+  W('зарпла́та', 'ж', 'pensja', 'D. зарпла́ти', 'p', '{Зарпла́та} надхо́дить деся́того числа́.', 'Pensja wpływa dziesiątego.');
+  W('нача́льник', 'ч', 'szef, kierownik', 'D. нача́льника', 'p', 'Мій {нача́льник} ду́же вимогли́вий.', 'Mój szef jest bardzo wymagający.');
+  W('коле́га', 'ч', 'kolega (z pracy)', 'D. коле́ги', 't', 'Це мій {коле́га} з робо́ти.', 'To mój kolega z pracy.');
+  W('о́фіс', 'ч', 'biuro', 'D. о́фісу', 'p', 'Я працю́ю в {о́фісі}.', 'Pracuję w biurze.');
+  W('співбе́сіда', 'ж', 'rozmowa kwalifikacyjna', 'D. співбе́сіди', 'o', 'За́втра в ме́не {співбе́сіда}.', 'Jutro mam rozmowę kwalifikacyjną.');
+  W('резюме́', 'с', 'CV, życiorys', 'nieodmienne', 'p', 'Надішлі́ть, будь ла́ска, своє́ {резюме́}.', 'Proszę przesłać swoje CV.');
+  W('підприє́мство', 'с', 'przedsiębiorstwo', 'D. підприє́мства', 'p', 'Він працю́є на вели́кому {підприє́мстві}.', 'Pracuje w dużym przedsiębiorstwie.');
+  W('найма́ти / найня́ти', 'д', 'zatrudniać, wynajmować / zatrudnić', 'найма́ю, найма́єш', 'p', 'Фі́рма {найма́є} нови́х працівникі́в.', 'Firma zatrudnia nowych pracowników.');
+  W('звільня́ти / звільни́ти', 'д', 'zwalniać / zwolnić (z pracy)', 'звільня́ю, звільня́єш', 'p', 'Його́ {звільни́ли} мину́лого ти́жня.', 'Zwolniono go w zeszłym tygodniu.');
+  W('до́свід', 'ч', 'doświadczenie', 'D. до́свіду', 'p', 'У ме́не нема́є {до́свіду}.', 'Nie mam doświadczenia.');
+  W('гра́фік', 'ч', 'grafik, harmonogram', 'D. гра́фіка', 'p', 'У ме́не гнучки́й {гра́фік}.', 'Mam elastyczny grafik.');
+
+  L('A2', 'a2_emocje', 'Emocje i charakter');
+  W('ра́дість', 'ж', 'radość', 'D. ра́дості', 'p', 'Яка́ {ра́дість} тебе́ ба́чити!', 'Jaka radość cię widzieć!');
+  W('страх', 'ч', 'strach, lęk', 'D. стра́ху', 't', 'У не́ї {страх} висоти́.', 'Ona ma lęk wysokości.');
+  W('сум', 'ч', 'smutek', 'D. су́му', 'o', 'Його́ охопи́в {сум}.', 'Ogarnął go smutek.');
+  W('злий', 'п', 'zły, rozgniewany', 'зла, зле', 't', 'Сусі́д сього́дні {злий}.', 'Sąsiad jest dziś zły.');
+  W('весе́лий', 'п', 'wesoły', 'весе́ла, весе́ле', 'p', 'Він за́вжди {весе́лий}.', 'On jest zawsze wesoły.');
+  W('спокі́йний', 'п', 'spokojny', 'спокі́йна, спокі́йне', 'p', 'Будь {спокі́йний}, усе́ бу́де до́бре.', 'Bądź spokojny, wszystko będzie dobrze.');
+  W('серди́тися', 'д', 'gniewać się, złościć się', 'серджу́ся, се́рдишся', 'p', 'Не {серди́ся} на ме́не.', 'Nie gniewaj się na mnie.');
+  W('хвилюва́тися', 'д', 'denerwować się, martwić się', 'хвилю́юся, хвилю́єшся', 'o', 'Не {хвилю́йся}, я встигну́.', 'Nie martw się, zdążę.');
+  W('боя́тися', 'д', 'bać się', 'бою́ся, бої́шся', 'p', 'Я {бою́ся} соба́к.', 'Boję się psów.');
+  W('смія́тися', 'д', 'śmiać się', 'смію́ся, смі́єшся', 'p', 'Чому́ ти {смі́єшся}?', 'Dlaczego się śmiejesz?');
+  W('пла́кати', 'д', 'płakać', 'пла́чу, пла́чеш', 'p', 'Дити́на {пла́че}.', 'Dziecko płacze.');
+  W('хара́ктер', 'ч', 'charakter', 'D. хара́ктеру', 't', 'У не́ї си́льний {хара́ктер}.', 'Ona ma silny charakter.');
+
+  L('A2', 'a2_dom', 'Obowiązki domowe');
+  W('прибира́ти / прибра́ти', 'д', 'sprzątać / posprzątać', 'прибира́ю, прибира́єш', 'p', 'У субо́ту ми {прибира́ємо} кварти́ру.', 'W sobotę sprzątamy mieszkanie.');
+  W('пра́ти / ви́прати', 'д', 'prać / wyprać', 'перу́, пере́ш', 't', 'Тре́ба {ви́прати} ці ре́чі.', 'Trzeba wyprać te rzeczy.');
+  W('ми́ти / поми́ти', 'д', 'myć / umyć', 'ми́ю, ми́єш', 't', '{Поми́й} по́суд, будь ла́ска.', 'Umyj naczynia, proszę.');
+  W('по́суд', 'ч', 'naczynia', 'D. по́суду', 'o', 'Брудни́й {по́суд} стої́ть у ра́ковині.', 'Brudne naczynia stoją w zlewie.');
+  W('пилосо́с', 'ч', 'odkurzacz', 'D. пилосо́са', 'o', 'Де стої́ть {пилосо́с}?', 'Gdzie stoi odkurzacz?');
+  W('смі́ття', 'с', 'śmieci', 'D. смі́ття', 'p', 'Ви́неси {смі́ття}!', 'Wynieś śmieci!');
+  W('пра́ска', 'ж', 'żelazko', 'D. пра́ски', 'o', '{Пра́ска} ду́же гаря́ча.', 'Żelazko jest bardzo gorące.');
+  W('холоди́льник', 'ч', 'lodówka', 'D. холоди́льника', 'o', 'Молоко́ в {холоди́льнику}.', 'Mleko jest w lodówce.');
+  W('пра́льна маши́на', 'ф', 'pralka', '', 'p', '{Пра́льна маши́на} злама́лася.', 'Pralka się zepsuła.');
+  W('поли́ця', 'ж', 'półka', 'D. поли́ці', 'p', 'Кни́жки стоя́ть на {поли́ці}.', 'Książki stoją na półce.');
+  W('ремо́нт', 'ч', 'remont; naprawa', 'D. ремо́нту', 't', 'У нас {ремо́нт} на ку́хні.', 'Mamy remont w kuchni.');
+  W('сві́тло', 'с', 'światło', 'D. сві́тла', 'p', 'Ви́мкни {сві́тло}.', 'Wyłącz światło.');
+
+  L('A2', 'a2_restauracja', 'W restauracji');
+  W('рестора́н', 'ч', 'restauracja', 'D. рестора́ну', 'p', 'Ході́мо до {рестора́ну}!', 'Chodźmy do restauracji!');
+  W('меню́', 'с', 'menu, karta', 'nieodmienne', 't', 'Мо́жна {меню́}, будь ла́ска?', 'Mogę prosić o kartę?');
+  W('стра́ва', 'ж', 'danie, potrawa', 'D. стра́ви', 'p', 'Яка́ ва́ша фірмо́ва {стра́ва}?', 'Jakie jest wasze danie firmowe?');
+  W('офіціа́нт', 'ч', 'kelner', 'D. офіціа́нта', 'p', '{Офіціа́нт} прині́с меню́.', 'Kelner przyniósł kartę.');
+  W('раху́нок', 'ч', 'rachunek; konto', 'D. раху́нку', 'p', 'Принесі́ть, будь ла́ска, {раху́нок}.', 'Proszę przynieść rachunek.');
+  W('замовля́ти / замо́вити', 'д', 'zamawiać / zamówić', 'замовля́ю, замовля́єш', 'p', 'Я хо́чу {замо́вити} борщ.', 'Chcę zamówić barszcz.');
+  W('гостри́й', 'п', 'ostry', 'гостра́, гостре́', 'p', 'Цей со́ус ду́же {гостри́й}.', 'Ten sos jest bardzo ostry.');
+  W('соло́дкий', 'п', 'słodki', 'соло́дка, соло́дке', 'p', 'Я не їм {соло́дкого}.', 'Nie jem słodyczy.');
+  W('гірки́й', 'п', 'gorzki', 'гірка́, гірке́', 'p', 'Ка́ва без цу́кру {гірка́}.', 'Kawa bez cukru jest gorzka.');
+  W('ки́слий', 'п', 'kwaśny', 'ки́сла, ки́сле', 'p', 'Цей лимо́н ду́же {ки́слий}.', 'Ta cytryna jest bardzo kwaśna.');
+  W('сма́жити / посма́жити', 'д', 'smażyć / usmażyć', 'сма́жу, сма́жиш', 'p', 'Ма́ма {сма́жить} млинці́.', 'Mama smaży naleśniki.');
+  W('вари́ти / звари́ти', 'д', 'gotować (w wodzie) / ugotować', 'варю́, ва́риш', 'p', 'Я {варю́} суп.', 'Gotuję zupę.');
+
+  L('A2', 'a2_tech', 'Telefon i internet');
+  W('телефо́н', 'ч', 'telefon', 'D. телефо́ну', 't', 'Мій {телефо́н} розряди́вся.', 'Rozładował mi się telefon.');
+  W('повідо́млення', 'с', 'wiadomość', 'D. повідо́млення', 'p', 'Я надісла́в тобі́ {повідо́млення}.', 'Wysłałem ci wiadomość.');
+  W('комп’ю́тер', 'ч', 'komputer', 'D. комп’ю́тера', 't', 'Мій {комп’ю́тер} зави́с.', 'Mój komputer się zawiesił.');
+  W('інтерне́т', 'ч', 'internet', 'D. інтерне́ту', 't', 'Тут нема́є {інтерне́ту}.', 'Tu nie ma internetu.');
+  W('паро́ль', 'ч', 'hasło', 'D. паро́ля', 'p', 'Я забу́в {паро́ль}.', 'Zapomniałem hasła.');
+  W('заванта́жувати / заванта́жити', 'д', 'pobierać / pobrać (plik)', 'заванта́жую, заванта́жуєш', 'o', '{Заванта́ж} цей до́даток.', 'Pobierz tę aplikację.');
+  W('надсила́ти / надісла́ти', 'д', 'wysyłać / wysłać', 'надсила́ю, надсила́єш', 'p', '{Надішли́} мені́ фо́то.', 'Wyślij mi zdjęcie.');
+  W('дзвіно́к', 'ч', 'połączenie telefoniczne; dzwonek', 'D. дзвінка́', 'p', 'Я чека́ю на важли́вий {дзвіно́к}.', 'Czekam na ważny telefon.');
+  W('сторі́нка', 'ж', 'strona', 'D. сторі́нки', 'p', 'Відкри́йте {сторі́нку} два́дцять.', 'Otwórzcie stronę dwadzieścia.');
+  W('екра́н', 'ч', 'ekran', 'D. екра́на', 't', '{Екра́н} телефо́на розби́вся.', 'Ekran telefonu się rozbił.');
+  W('мере́жа', 'ж', 'sieć', 'D. мере́жі', 'o', 'Соціа́льні {мере́жі} забира́ють бага́то ча́су.', 'Media społecznościowe zabierają dużo czasu.');
+  W('до́даток', 'ч', 'aplikacja; dodatek', 'D. до́датка', 'f', 'Цей {до́даток} допомага́є вчи́ти мо́ви.', 'Ta aplikacja pomaga uczyć się języków.');
+
+  /* ===================== B1 ===================== */
+  L('B1', 'b1_media', 'Media i informacja');
+  W('нови́ни', 'мн', 'wiadomości (dziennik)', 'D. нови́н', 'p', 'Я диви́вся {нови́ни} вве́чері.', 'Oglądałem wieczorem wiadomości.');
+  W('газе́та', 'ж', 'gazeta', 'D. газе́ти', 't', 'Ба́тько чита́є {газе́ту}.', 'Ojciec czyta gazetę.');
+  W('журна́л', 'ч', 'czasopismo', 'D. журна́лу', 'f', 'Я передплачу́ю цей {журна́л}.', 'Prenumeruję to czasopismo.');
+  W('стаття́', 'ж', 'artykuł', 'D. статті́', 'o', 'Ціка́ва {стаття́} про істо́рію.', 'Ciekawy artykuł o historii.');
+  W('журналі́ст', 'ч', 'dziennikarz', 'D. журналі́ста', 'p', '{Журналі́ст} поста́вив складне́ пита́ння.', 'Dziennikarz zadał trudne pytanie.');
+  W('телеба́чення', 'с', 'telewizja', 'D. телеба́чення', 'o', 'Що сього́дні на {телеба́ченні}?', 'Co dziś jest w telewizji?');
+  W('переда́ча', 'ж', 'program (TV, radiowy)', 'D. переда́чі', 'p', 'Ця {переда́ча} вихо́дить щоп’я́тниці.', 'Ten program jest nadawany w każdy piątek.');
+  W('рекла́ма', 'ж', 'reklama', 'D. рекла́ми', 't', 'Забага́то {рекла́ми}!', 'Za dużo reklam!');
+  W('джерело́', 'с', 'źródło', 'D. джерела́ · lm. джере́ла', 'o', 'Переві́р {джерело́} інформа́ції.', 'Sprawdź źródło informacji.');
+  W('повідомля́ти / повідо́мити', 'д', 'informować / poinformować', 'повідомля́ю, повідомля́єш', 'p', 'ЗМІ {повідомля́ють} про пове́нь.', 'Media informują o powodzi.');
+  W('поді́я', 'ж', 'wydarzenie', 'D. поді́ї', 'o', 'Це важли́ва {поді́я} для мі́ста.', 'To ważne wydarzenie dla miasta.');
+  W('чита́ч', 'ч', 'czytelnik', 'D. читача́ · lm. читачі́', 'p', 'Газе́та ма́є бага́то {читачі́в}.', 'Gazeta ma wielu czytelników.');
+
+  L('B1', 'b1_spol', 'Społeczeństwo i państwo');
+  W('суспі́льство', 'с', 'społeczeństwo', 'D. суспі́льства', 'o', 'Суча́сне {суспі́льство} ду́же різномані́тне.', 'Współczesne społeczeństwo jest bardzo zróżnicowane.');
+  W('громадя́нин', 'ч', 'obywatel', 'lm. громадя́ни', 'p', 'Ко́жен {громадя́нин} ма́є пра́во голосува́ти.', 'Każdy obywatel ma prawo głosować.');
+  W('ви́бори', 'мн', 'wybory', 'D. ви́борів', 'p', '{Ви́бори} відбу́дуться у жо́втні.', 'Wybory odbędą się w październiku.');
+  W('уря́д', 'ч', 'rząd', 'D. уря́ду', 'p', '{Уря́д} ухвали́в нову́ програ́му.', 'Rząd przyjął nowy program.');
+  W('зако́н', 'ч', 'ustawa, prawo', 'D. зако́ну', 'f', 'Парла́мент прийня́в нови́й {зако́н}.', 'Parlament przyjął nową ustawę.');
+  W('пра́во', 'с', 'prawo (uprawnienie)', 'D. пра́ва', 't', 'Ко́жен ма́є {пра́во} на осві́ту.', 'Każdy ma prawo do nauki.');
+  W('вла́да', 'ж', 'władza', 'D. вла́ди', 'p', '{Вла́да} му́сить слу́хати люде́й.', 'Władza musi słuchać ludzi.');
+  W('держа́ва', 'ж', 'państwo', 'D. держа́ви', 'f', 'Украї́на – незале́жна {держа́ва}.', 'Ukraina jest niepodległym państwem.');
+  W('депута́т', 'ч', 'deputowany, poseł', 'D. депута́та', 'p', '{Депута́т} ви́ступив з промо́вою.', 'Deputowany wygłosił przemówienie.');
+  W('голосува́ти / проголосува́ти', 'д', 'głosować / zagłosować', 'голосу́ю, голосу́єш', 'p', 'Ти вже {проголосува́в}?', 'Już zagłosowałeś?');
+  W('грома́да', 'ж', 'wspólnota; gmina (hromada)', 'D. грома́ди', 'p', 'Се́льська {грома́да} збудува́ла шко́лу.', 'Wiejska wspólnota zbudowała szkołę.');
+  W('рі́шення', 'с', 'decyzja; rozwiązanie', 'D. рі́шення', 'o', 'Це складне́ {рі́шення}.', 'To trudna decyzja.');
+
+  L('B1', 'b1_srod', 'Środowisko');
+  W('довкі́лля', 'с', 'środowisko (naturalne)', 'D. довкі́лля', 'o', 'Ми му́симо берегти́ {довкі́лля}.', 'Musimy chronić środowisko.');
+  W('забру́днення', 'с', 'zanieczyszczenie', 'D. забру́днення', 'p', '{Забру́днення} пові́тря – вели́ка пробле́ма.', 'Zanieczyszczenie powietrza to duży problem.');
+  W('клі́мат', 'ч', 'klimat', 'D. клі́мату', 't', '{Клі́мат} шви́дко змі́нюється.', 'Klimat szybko się zmienia.');
+  W('ві́дходи', 'мн', 'odpady', 'D. ві́дходів', 'p', 'Сортува́ння {ві́дходів} обов’язко́ве.', 'Segregacja odpadów jest obowiązkowa.');
+  W('переро́бка', 'ж', 'recykling, przetwarzanie', 'D. переро́бки', 'o', 'Пля́шки збира́ють на {переро́бку}.', 'Butelki zbiera się do recyklingu.');
+  W('ене́ргія', 'ж', 'energia', 'D. ене́ргії', 't', 'Со́нячна {ене́ргія} стає́ деше́вшою.', 'Energia słoneczna staje się tańsza.');
+  W('ресу́рс', 'ч', 'zasób', 'D. ресу́рсу', 'p', 'Вода́ – цінни́й {ресу́рс}.', 'Woda to cenny zasób.');
+  W('захища́ти / захисти́ти', 'д', 'chronić / ochronić', 'захища́ю, захища́єш', 'o', 'Тре́ба {захища́ти} ліси́.', 'Trzeba chronić lasy.');
+  W('зберіга́ти / зберегти́', 'д', 'przechowywać, zachowywać / zachować', 'зберіга́ю, зберіга́єш', 'o', '{Зберіга́йте} лі́ки в холоди́льнику.', 'Przechowujcie leki w lodówce.');
+  W('посу́ха', 'ж', 'susza', 'D. посу́хи', 'p', 'Че́рез {посу́ху} загину́в урожа́й.', 'Z powodu suszy przepadły plony.');
+  W('по́вінь', 'ж', 'powódź', 'D. по́вені', 'p', '{По́вінь} зруйнува́ла мости́.', 'Powódź zniszczyła mosty.');
+  W('еколо́гія', 'ж', 'ekologia', 'D. еколо́гії', 't', 'Він ціка́виться {еколо́гією}.', 'Interesuje się ekologią.');
+
+  L('B1', 'b1_edu', 'Studia i nauka');
+  W('університе́т', 'ч', 'uniwersytet', 'D. університе́ту', 't', 'Вона́ навча́ється в {університе́ті}.', 'Ona studiuje na uniwersytecie.');
+  W('факульте́т', 'ч', 'wydział', 'D. факульте́ту', 'p', 'Я навча́юся на істори́чному {факульте́ті}.', 'Studiuję na wydziale historycznym.');
+  W('ле́кція', 'ж', 'wykład', 'D. ле́кції', 'f', '{Ле́кція} трива́є дві годи́ни.', 'Wykład trwa dwie godziny.');
+  W('виклада́ч', 'ч', 'wykładowca', 'D. викладача́', 'p', 'Наш {виклада́ч} ду́же суво́рий.', 'Nasz wykładowca jest bardzo surowy.');
+  W('семе́стр', 'ч', 'semestr', 'D. семе́стру', 't', 'Нови́й {семе́стр} почина́ється у ве́ресні.', 'Nowy semestr zaczyna się we wrześniu.');
+  W('стипе́ндія', 'ж', 'stypendium', 'D. стипе́ндії', 'p', 'Він отри́мує {стипе́ндію}.', 'On otrzymuje stypendium.');
+  W('дипло́м', 'ч', 'dyplom; praca dyplomowa', 'D. дипло́ма', 't', 'Я захисти́в {дипло́м} у че́рвні.', 'Obroniłem dyplom w czerwcu.');
+  W('навча́ння', 'с', 'nauka, kształcenie', 'D. навча́ння', 'p', '{Навча́ння} за кордо́ном ко́штує до́рого.', 'Nauka za granicą dużo kosztuje.');
+  W('знання́', 'с', 'wiedza', 'D. знань (lm.)', 'p', 'Йому́ браку́є {знань}.', 'Brakuje mu wiedzy.');
+  W('вступа́ти / вступи́ти', 'д', 'wstępować; dostać się (na studia)', 'вступа́ю, вступа́єш', 'p', 'Вона́ {вступи́ла} до університе́ту.', 'Dostała się na uniwersytet.');
+  W('склада́ти / скла́сти (і́спит)', 'д', 'zdawać / zdać (egzamin)', 'склада́ю, склада́єш', 'f', 'Я {склав} і́спит на відмі́нно.', 'Zdałem egzamin na piątkę.');
+  W('оці́нювати / оціни́ти', 'д', 'oceniać / ocenić', 'оці́нюю, оці́нюєш', 'p', 'Учи́тель {оці́нює} робо́ти.', 'Nauczyciel ocenia prace.');
+
+  L('B1', 'b1_rel', 'Relacje');
+  W('стосу́нки', 'мн', 'relacje, stosunki', 'D. стосу́нків', 'p', 'У нас до́брі {стосу́нки}.', 'Mamy dobre relacje.');
+  W('коха́ння', 'с', 'miłość (romantyczna)', 'D. коха́ння', 'o', 'Це {коха́ння} з пе́ршого по́гляду.', 'To miłość od pierwszego wejrzenia.');
+  W('дру́жба', 'ж', 'przyjaźń', 'D. дру́жби', 'f', 'На́ша {дру́жба} трива́є ро́ками.', 'Nasza przyjaźń trwa od lat.');
+  W('дові́ра', 'ж', 'zaufanie', 'D. дові́ри', 'o', 'Без {дові́ри} нема́є дру́жби.', 'Bez zaufania nie ma przyjaźni.');
+  W('сва́рка', 'ж', 'kłótnia', 'D. сва́рки', 'p', 'Пі́сля {сва́рки} вони́ не розмовля́ли.', 'Po kłótni nie rozmawiali.');
+  W('підтри́мка', 'ж', 'wsparcie', 'D. підтри́мки', 'o', 'Дя́кую за {підтри́мку}!', 'Dziękuję za wsparcie!');
+  W('розлу́чення', 'с', 'rozwód', 'D. розлу́чення', 'p', 'Пі́сля {розлу́чення} ді́ти живу́ть з ма́мою.', 'Po rozwodzie dzieci mieszkają z mamą.');
+  W('весі́лля', 'с', 'wesele, ślub', 'D. весі́лля', 'p', 'Нас запроси́ли на {весі́лля}.', 'Zaproszono nas na wesele.');
+  W('зако́хуватися / закоха́тися', 'д', 'zakochiwać się / zakochać się', 'зако́хуюся, зако́хуєшся', 'p', 'Він {закоха́вся} в сусі́дку.', 'Zakochał się w sąsiadce.');
+  W('свари́тися / посвари́тися', 'д', 'kłócić się / pokłócić się', 'сварю́ся, сва́ришся', 'p', 'Не {сварі́ться}, ді́ти!', 'Nie kłóćcie się, dzieci!');
+  W('мири́тися / помири́тися', 'д', 'godzić się / pogodzić się', 'мирю́ся, ми́ришся', 'p', 'Вони́ вже {помири́лися}.', 'Już się pogodzili.');
+  W('поро́зуміння', 'с', 'porozumienie, zrozumienie', 'D. поро́зуміння', 'p', 'Між на́ми по́вне {поро́зуміння}.', 'Między nami panuje pełne porozumienie.');
+
+  L('B1', 'b1_zdrowie', 'U lekarza – poziom średni');
+  W('симпто́м', 'ч', 'objaw', 'D. симпто́му', 'p', 'Які́ у вас {симпто́ми}?', 'Jakie ma pan objawy?');
+  W('хворо́ба', 'ж', 'choroba', 'D. хворо́би', 'p', 'Це небезпе́чна {хворо́ба}.', 'To niebezpieczna choroba.');
+  W('лікува́ння', 'с', 'leczenie', 'D. лікува́ння', 'p', '{Лікува́ння} трива́тиме мі́сяць.', 'Leczenie potrwa miesiąc.');
+  W('опера́ція', 'ж', 'operacja', 'D. опера́ції', 't', '{Опера́ція} пройшла́ успі́шно.', 'Operacja przebiegła pomyślnie.');
+  W('ана́ліз', 'ч', 'badanie (laboratoryjne); analiza', 'D. ана́лізу', 'p', 'Тре́ба зда́ти {ана́ліз} кро́ві.', 'Trzeba zrobić badanie krwi.');
+  W('тиск', 'ч', 'ciśnienie', 'D. ти́ску', 'p', 'У бабу́сі висо́кий {тиск}.', 'Babcia ma wysokie ciśnienie.');
+  W('алергі́я', 'ж', 'alergia', 'D. алергі́ї', 't', 'У ме́не {алергі́я} на пил.', 'Mam alergię na kurz.');
+  W('оду́жувати / оду́жати', 'д', 'zdrowieć / wyzdrowieć', 'оду́жую, оду́жуєш', 'o', '{Оду́жуй} шви́дше!', 'Zdrowiej szybko!');
+  W('засту́да', 'ж', 'przeziębienie', 'D. засту́ди', 'p', 'У ме́не си́льна {засту́да}.', 'Mam silne przeziębienie.');
+  W('біль', 'ч', 'ból', 'D. бо́лю', 'p', 'Ма́ю си́льний {біль} у спи́ні.', 'Mam silny ból pleców.');
+  W('медсестра́', 'ж', 'pielęgniarka', 'D. медсестри́', 'o', '{Медсестра́} зміря́ла температу́ру.', 'Pielęgniarka zmierzyła temperaturę.');
+  W('ще́плення', 'с', 'szczepienie', 'D. ще́плення', 'p', '{Ще́плення} захища́є від хворо́б.', 'Szczepienie chroni przed chorobami.');
+
+  L('B1', 'b1_verbs', 'Myśleć i dyskutować');
+  W('виріша́ти / ви́рішити', 'д', 'decydować; rozwiązywać / zdecydować', 'виріша́ю, виріша́єш', 'o', 'Ти вже {ви́рішив}, куди́ пої́деш?', 'Już zdecydowałeś, dokąd pojedziesz?');
+  W('пропонува́ти / запропонува́ти', 'д', 'proponować / zaproponować', 'пропону́ю, пропону́єш', 'p', 'Я {пропону́ю} піти́ в кіно́.', 'Proponuję pójść do kina.');
+  W('пого́джуватися / пого́дитися', 'д', 'zgadzać się / zgodzić się', 'пого́джуюся, пого́джуєшся', 'p', 'Я з тобо́ю {пого́джуюся}.', 'Zgadzam się z tobą.');
+  W('порі́внювати / порівня́ти', 'д', 'porównywać / porównać', 'порі́внюю, порі́внюєш', 'p', 'Не {порі́внюй} себе́ з і́ншими.', 'Nie porównuj się z innymi.');
+  W('поя́снювати / поясни́ти', 'д', 'wyjaśniać / wyjaśnić', 'поя́снюю, поя́снюєш', 'p', '{Поясні́ть}, будь ла́ска, ще раз.', 'Proszę wyjaśnić jeszcze raz.');
+  W('обгово́рювати / обговори́ти', 'д', 'omawiać / omówić', 'обгово́рюю, обгово́рюєш', 'o', 'Ми {обговори́ли} план по́дорожі.', 'Omówiliśmy plan podróży.');
+  W('вважа́ти', 'д', 'uważać (sądzić)', 'вважа́ю, вважа́єш', 'p', 'Я {вважа́ю}, що ти ма́єш ра́цію.', 'Uważam, że masz rację.');
+  W('здава́тися', 'д', 'wydawać się', 'зда́ється (3 os.)', 't', 'Мені́ {зда́ється}, що бу́де дощ.', 'Wydaje mi się, że będzie padać.');
+  W('сумніва́тися', 'д', 'wątpić', 'сумніва́юся, сумніва́єшся', 'o', 'Я {сумніва́юся}, що він прийде́.', 'Wątpię, że przyjdzie.');
+  W('переко́нувати / переко́нати', 'д', 'przekonywać / przekonać', 'переко́ную, переко́нуєш', 'p', 'Мені́ вдало́ся його́ {переко́нати}.', 'Udało mi się go przekonać.');
+  W('вплива́ти / вплину́ти', 'д', 'wpływać / wpłynąć', 'вплива́ю, вплива́єш', 'p', 'Пого́да {вплива́є} на на́стрій.', 'Pogoda wpływa na nastrój.');
+  W('зале́жати', 'д', 'zależeć', 'зале́жу, зале́жиш', 'p', 'Усе́ {зале́жить} від тебе́.', 'Wszystko zależy od ciebie.');
+
+  L('B1', 'b1_adj', 'Opisywanie i ocenianie');
+  W('важли́вий', 'п', 'ważny', 'важли́ва, важли́ве', 'p', 'Це {важли́ве} пита́ння.', 'To ważne pytanie.');
+  W('можли́вий', 'п', 'możliwy', 'можли́ва, можли́ве', 'p', 'Це єди́ний {можли́вий} варіа́нт.', 'To jedyna możliwa opcja.');
+  W('необхі́дний', 'п', 'niezbędny', 'необхі́дна, необхі́дне', 'o', 'Для по́дорожі {необхі́дний} па́спорт.', 'Do podróży niezbędny jest paszport.');
+  W('кори́сний', 'п', 'pożyteczny, zdrowy', 'кори́сна, кори́сне', 'p', 'Спорт ду́же {кори́сний}.', 'Sport jest bardzo zdrowy.');
+  W('шкідли́вий', 'п', 'szkodliwy', 'шкідли́ва, шкідли́ве', 'p', 'Ку́ріння {шкідли́ве} для здоро́в’я.', 'Palenie szkodzi zdrowiu.');
+  W('складни́й', 'п', 'trudny, złożony', 'складна́, складне́', 'p', 'Це {складне́} завда́ння.', 'To trudne zadanie.');
+  W('прости́й', 'п', 'prosty', 'проста́, просте́', 'p', 'Ві́дповідь ду́же {проста́}.', 'Odpowiedź jest bardzo prosta.');
+  W('суча́сний', 'п', 'współczesny, nowoczesny', 'суча́сна, суча́сне', 'o', 'Ки́їв – {суча́сне} мі́сто.', 'Kijów to nowoczesne miasto.');
+  W('да́вній', 'п', 'dawny', 'да́вня, да́внє', 'p', 'Це {да́вня} тради́ція.', 'To dawna tradycja.');
+  W('звича́йний', 'п', 'zwyczajny', 'звича́йна, звича́йне', 'p', 'Це був {звича́йний} день.', 'To był zwyczajny dzień.');
+  W('надзвича́йний', 'п', 'nadzwyczajny', 'надзвича́йна, надзвича́йне', 'p', 'Вона́ {надзвича́йна} люди́на.', 'Ona jest niezwykłym człowiekiem.');
+  W('вла́сний', 'п', 'własny', 'вла́сна, вла́сне', 'p', 'У ме́не {вла́сна} кімна́та.', 'Mam własny pokój.');
+
+  /* ===================== B2 ===================== */
+  L('B2', 'b2_ekon', 'Gospodarka');
+  W('пода́ток', 'ч', 'podatek', 'D. пода́тку', 'p', 'Ко́жен пла́тить {пода́ток} на дохо́ди.', 'Każdy płaci podatek dochodowy.');
+  W('прибу́ток', 'ч', 'zysk', 'D. прибу́тку', 'o', 'Фі́рма отри́мала вели́кий {прибу́ток}.', 'Firma osiągnęła duży zysk.');
+  W('ви́трати', 'мн', 'wydatki, koszty', 'D. ви́трат', 'p', 'Тре́ба скороти́ти {ви́трати}.', 'Trzeba ograniczyć wydatki.');
+  W('бюдже́т', 'ч', 'budżet', 'D. бюдже́ту', 't', 'Держа́вний {бюдже́т} ма́є дефіци́т.', 'Budżet państwa ma deficyt.');
+  W('інфля́ція', 'ж', 'inflacja', 'D. інфля́ції', 't', '{Інфля́ція} зроста́є.', 'Inflacja rośnie.');
+  W('зроста́ння', 'с', 'wzrost', 'D. зроста́ння', 'p', '{Зроста́ння} еконо́міки сповільни́лося.', 'Wzrost gospodarczy zwolnił.');
+  W('безробі́ття', 'с', 'bezrobocie', 'D. безробі́ття', 'p', 'Рі́вень {безробі́ття} впав.', 'Stopa bezrobocia spadła.');
+  W('інвести́ція', 'ж', 'inwestycja', 'D. інвести́ції', 't', 'Це ви́гідна {інвести́ція}.', 'To opłacalna inwestycja.');
+  W('креди́т', 'ч', 'kredyt', 'D. креди́ту', 't', 'Вони́ взя́ли {креди́т} на кварти́ру.', 'Wzięli kredyt na mieszkanie.');
+  W('борг', 'ч', 'dług', 'D. бо́ргу', 'o', 'Я пове́рну {борг} за ти́ждень.', 'Oddam dług za tydzień.');
+  W('конкуре́нція', 'ж', 'konkurencja', 'D. конкуре́нції', 't', 'На ри́нку вели́ка {конкуре́нція}.', 'Na rynku jest duża konkurencja.');
+  W('підприє́мець', 'ч', 'przedsiębiorca', 'D. підприє́мця', 'p', 'Мій брат – {підприє́мець}.', 'Mój brat jest przedsiębiorcą.');
+
+  L('B2', 'b2_pol', 'Polityka');
+  W('опози́ція', 'ж', 'opozycja', 'D. опози́ції', 't', '{Опози́ція} крити́кує уря́д.', 'Opozycja krytykuje rząd.');
+  W('коалі́ція', 'ж', 'koalicja', 'D. коалі́ції', 't', 'Парті́ї утвори́ли {коалі́цію}.', 'Partie utworzyły koalicję.');
+  W('Верхо́вна Ра́да', 'ф', 'Rada Najwyższa (parlament Ukrainy)', '', 'o', '{Верхо́вна Ра́да} ухвали́ла зако́н.', 'Rada Najwyższa uchwaliła ustawę.');
+  W('міні́стр', 'ч', 'minister', 'D. міні́стра', 't', '{Міні́стр} пода́в у відста́вку.', 'Minister podał się do dymisji.');
+  W('рефо́рма', 'ж', 'reforma', 'D. рефо́рми', 't', '{Рефо́рма} осві́ти трива́є.', 'Reforma edukacji trwa.');
+  W('кору́пція', 'ж', 'korupcja', 'D. кору́пції', 't', 'Боротьба́ з {кору́пцією} – пріорите́т.', 'Walka z korupcją to priorytet.');
+  W('са́нкції', 'мн', 'sankcje', 'D. са́нкцій', 't', 'ЄС запрова́див нові́ {са́нкції}.', 'UE wprowadziła nowe sankcje.');
+  W('перегово́ри', 'мн', 'negocjacje, rozmowy', 'D. перегово́рів', 'p', '{Перегово́ри} трива́ли всю ніч.', 'Negocjacje trwały całą noc.');
+  W('уго́да', 'ж', 'umowa, porozumienie', 'D. уго́ди', 'p', 'Сто́рони підписа́ли {уго́ду}.', 'Strony podpisały porozumienie.');
+  W('суверені́тет', 'ч', 'suwerenność', 'D. суверені́тету', 'p', 'Кра́їна захища́є свій {суверені́тет}.', 'Kraj broni swojej suwerenności.');
+  W('незале́жність', 'ж', 'niepodległość', 'D. незале́жності', 'p', 'День {незале́жності} святку́ють 24 се́рпня.', 'Dzień Niepodległości obchodzi się 24 sierpnia.');
+  W('Конститу́ція', 'ж', 'konstytucja', 'D. Конститу́ції', 't', '{Конститу́цію} Украї́ни ухвали́ли 1996 ро́ку.', 'Konstytucję Ukrainy uchwalono w 1996 roku.');
+
+  L('B2', 'b2_nauka', 'Nauka i technologie');
+  W('дослі́дження', 'с', 'badanie (naukowe)', 'D. дослі́дження', 'o', 'Це нове́ {дослі́дження} про клі́мат.', 'To nowe badanie o klimacie.');
+  W('відкриття́', 'с', 'odkrycie; otwarcie', 'D. відкриття́', 'p', 'Це було́ важли́ве {відкриття́}.', 'To było ważne odkrycie.');
+  W('вина́хід', 'ч', 'wynalazek', 'D. вина́ходу', 'p', 'Інтерне́т – вели́кий {вина́хід}.', 'Internet to wielki wynalazek.');
+  W('науко́вець', 'ч', 'naukowiec', 'D. науко́вця', 'p', '{Науко́вці} ви́вчають ві́руси.', 'Naukowcy badają wirusy.');
+  W('шту́чний інте́лект', 'ф', 'sztuczna inteligencja', '', 'o', '{Шту́чний інте́лект} змі́нює світ.', 'Sztuczna inteligencja zmienia świat.');
+  W('техноло́гія', 'ж', 'technologia', 'D. техноло́гії', 't', 'Нові́ {техноло́гії} розвива́ються шви́дко.', 'Nowe technologie rozwijają się szybko.');
+  W('ро́звиток', 'ч', 'rozwój', 'D. ро́звитку', 'p', '{Ро́звиток} нау́ки не зупиня́ється.', 'Rozwój nauki się nie zatrzymuje.');
+  W('експериме́нт', 'ч', 'eksperyment', 'D. експериме́нту', 't', '{Експериме́нт} пройшо́в успі́шно.', 'Eksperyment się powiódł.');
+  W('до́каз', 'ч', 'dowód', 'D. до́казу', 'o', 'У нас нема́є {до́казів}.', 'Nie mamy dowodów.');
+  W('тео́рія', 'ж', 'teoria', 'D. тео́рії', 't', 'Це лише́ {тео́рія}.', 'To tylko teoria.');
+  W('гіпо́теза', 'ж', 'hipoteza', 'D. гіпо́тези', 't', 'Науко́вці переві́рили {гіпо́тезу}.', 'Naukowcy sprawdzili hipotezę.');
+  W('досягне́ння', 'с', 'osiągnięcie', 'D. досягне́ння', 'p', 'Це вели́ке {досягне́ння}.', 'To wielkie osiągnięcie.');
+
+  L('B2', 'b2_kult', 'Kultura i tradycje');
+  W('мисте́цтво', 'с', 'sztuka', 'D. мисте́цтва', 'o', 'Вона́ ціка́виться суча́сним {мисте́цтвом}.', 'Interesuje się sztuką współczesną.');
+  W('виста́ва', 'ж', 'przedstawienie, spektakl', 'D. виста́ви', 'f', '{Виста́ва} почина́ється о сьо́мій.', 'Spektakl zaczyna się o siódmej.');
+  W('худо́жник', 'ч', 'malarz, artysta plastyk', 'D. худо́жника', 'o', 'Шевче́нко був не лише́ пое́том, а й {худо́жником}.', 'Szewczenko był nie tylko poetą, ale i malarzem.');
+  W('письме́нник', 'ч', 'pisarz', 'D. письме́нника', 'p', 'Мій улю́блений {письме́нник} – Франко́.', 'Mój ulubiony pisarz to Franko.');
+  W('твір', 'ч', 'dzieło; wypracowanie', 'D. тво́ру', 'p', 'Це найвідо́міший {твір} Шевче́нка.', 'To najsłynniejsze dzieło Szewczenki.');
+  W('ви́ставка', 'ж', 'wystawa', 'D. ви́ставки', 'p', '{Ви́ставка} працю́є до неді́лі.', 'Wystawa jest czynna do niedzieli.');
+  W('тради́ція', 'ж', 'tradycja', 'D. тради́ції', 't', 'Це сіме́йна {тради́ція}.', 'To rodzinna tradycja.');
+  W('спа́дщина', 'ж', 'dziedzictwo, spuścizna', 'D. спа́дщини', 'o', 'Це культу́рна {спа́дщина} наро́ду.', 'To dziedzictwo kulturowe narodu.');
+  W('зви́чай', 'ч', 'zwyczaj', 'D. зви́чаю', 'p', 'Це да́вній украї́нський {зви́чай}.', 'To dawny ukraiński zwyczaj.');
+  W('свя́то', 'с', 'święto', 'D. свя́та', 'p', 'Різдво́ – улю́блене {свя́то} ді́тей.', 'Boże Narodzenie to ulubione święto dzieci.');
+  W('обря́д', 'ч', 'obrzęd', 'D. обря́ду', 'p', 'Це старови́нний весі́льний {обря́д}.', 'To dawny obrzęd weselny.');
+  W('культу́ра', 'ж', 'kultura', 'D. культу́ри', 't', 'Я ціка́влюся украї́нською {культу́рою}.', 'Interesuję się kulturą ukraińską.');
+
+  L('B2', 'b2_conn', 'Łączenie myśli');
+  W('одна́к', 'з', 'jednak', '', 'p', 'Я хоті́в прийти́, {одна́к} не встиг.', 'Chciałem przyjść, jednak nie zdążyłem.');
+  W('проте́', 'з', 'jednak, ale', '', 'o', 'Пого́да пога́на, {проте́} ми пішли́ гуля́ти.', 'Pogoda jest zła, ale poszliśmy na spacer.');
+  W('о́тже', 'з', 'zatem, więc', '', 'o', 'Він хво́рий, {о́тже}, не прийде́.', 'On jest chory, zatem nie przyjdzie.');
+  W('крім то́го', 'ф', 'poza tym', '', 'p', '{Крім то́го}, це до́рого.', 'Poza tym to drogie.');
+  W('незважа́ючи на', 'ф', 'pomimo, mimo', '', 'o', '{Незважа́ючи на} дощ, ми пішли́.', 'Mimo deszczu poszliśmy.');
+  W('завдяки́', 'з', 'dzięki', '', 'p', '{Завдяки́} тобі́ я встиг.', 'Dzięki tobie zdążyłem.');
+  W('вна́слідок', 'з', 'wskutek', '', 'p', '{Вна́слідок} ава́рії загину́ли дві люди́ни.', 'Wskutek wypadku zginęły dwie osoby.');
+  W('нато́мість', 'з', 'natomiast; zamiast tego', '', 't', 'Він не прийшо́в, {нато́мість} подзвони́в.', 'Nie przyszedł, zamiast tego zadzwonił.');
+  W('водно́час', 'пр', 'zarazem, jednocześnie', '', 'o', 'Це про́сто і {водно́час} ефекти́вно.', 'To proste, a zarazem skuteczne.');
+  W('зокре́ма', 'пр', 'w szczególności, między innymi', '', 'o', 'Ми обговори́ли бага́то тем, {зокре́ма} еконо́міку.', 'Omówiliśmy wiele tematów, w tym gospodarkę.');
+  W('вла́сне', 'пр', 'właśnie, właściwie', '', 'p', '{Вла́сне}, я це й ма́в на ува́зі.', 'Właśnie to miałem na myśli.');
+  W('хоча́', 'з', 'chociaż', '', 'p', '{Хоча́} було́ пі́зно, ми ще говори́ли.', 'Chociaż było późno, jeszcze rozmawialiśmy.');
+
+  L('B2', 'b2_prawo', 'Prawo i sąd');
+  W('суд', 'ч', 'sąd', 'D. су́ду', 'p', 'Спра́ву розгля́не {суд}.', 'Sprawę rozpatrzy sąd.');
+  W('су́ддя', 'ч', 'sędzia', 'D. су́дді', 'p', '{Су́ддя} оголоси́в ви́рок.', 'Sędzia ogłosił wyrok.');
+  W('адвока́т', 'ч', 'adwokat', 'D. адвока́та', 't', 'Мені́ потрі́бен {адвока́т}.', 'Potrzebuję adwokata.');
+  W('зло́чин', 'ч', 'przestępstwo, zbrodnia', 'D. зло́чину', 'p', 'Він ско́їв тяжки́й {зло́чин}.', 'Popełnił ciężkie przestępstwo.');
+  W('пока́рання', 'с', 'kara', 'D. пока́рання', 'o', '{Пока́рання} було́ суво́рим.', 'Kara była surowa.');
+  W('сві́док', 'ч', 'świadek', 'D. сві́дка', 'p', '{Сві́док} дав сві́дчення.', 'Świadek złożył zeznania.');
+  W('по́зов', 'ч', 'pozew', 'D. по́зову', 'p', 'Вона́ подала́ {по́зов} до су́ду.', 'Złożyła pozew do sądu.');
+  W('ви́рок', 'ч', 'wyrok', 'D. ви́року', 'p', '{Ви́рок} оголо́сять за́втра.', 'Wyrok zostanie ogłoszony jutro.');
+  W('пору́шення', 'с', 'naruszenie, wykroczenie', 'D. пору́шення', 'p', 'Це {пору́шення} пра́вил.', 'To naruszenie zasad.');
+  W('відповіда́льність', 'ж', 'odpowiedzialność', 'D. відповіда́льності', 'p', 'Ко́жен несе́ {відповіда́льність} за свої́ вчи́нки.', 'Każdy ponosi odpowiedzialność za swoje czyny.');
+  W('звинува́чувати / звинува́тити', 'д', 'oskarżać / oskarżyć', 'звинува́чую, звинува́чуєш', 'o', 'Його́ {звинува́тили} в краді́жці.', 'Oskarżono go o kradzież.');
+  W('спра́ва', 'ж', 'sprawa (sądowa); sprawa', 'D. спра́ви', 't', '{Спра́ву} закри́ли.', 'Sprawę umorzono.');
+
+  L('B2', 'b2_abs', 'Pojęcia abstrakcyjne');
+  W('ви́клик', 'ч', 'wyzwanie', 'D. ви́клику', 'o', 'Це спра́вжній {ви́клик}.', 'To prawdziwe wyzwanie.');
+  W('можли́вість', 'ж', 'możliwość, okazja', 'D. можли́вості', 'p', 'Це чудо́ва {можли́вість}.', 'To wspaniała okazja.');
+  W('загро́за', 'ж', 'zagrożenie', 'D. загро́зи', 'p', '{Загро́за} війни́ зроста́є.', 'Zagrożenie wojną rośnie.');
+  W('перева́га', 'ж', 'przewaga; zaleta', 'D. перева́ги', 'p', 'У цьо́го пла́ну є одна́ {перева́га}.', 'Ten plan ma jedną zaletę.');
+  W('недо́лік', 'ч', 'wada, mankament', 'D. недо́ліку', 'o', 'Головни́й {недо́лік} – ціна́.', 'Główną wadą jest cena.');
+  W('на́слідок', 'ч', 'skutek, następstwo', 'D. на́слідку', 'p', 'Це {на́слідок} твого́ рі́шення.', 'To skutek twojej decyzji.');
+  W('причи́на', 'ж', 'przyczyna', 'D. причи́ни', 'p', 'Яка́ {причи́на} запі́знення?', 'Jaka jest przyczyna spóźnienia?');
+  W('мета́', 'ж', 'cel', 'D. мети́', 'f', 'Яка́ твоя́ {мета́}?', 'Jaki jest twój cel?');
+  W('вплив', 'ч', 'wpływ', 'D. впли́ву', 'p', 'Соціа́льні мере́жі ма́ють вели́кий {вплив}.', 'Media społecznościowe mają duży wpływ.');
+  W('тенде́нція', 'ж', 'tendencja', 'D. тенде́нції', 't', 'Це нова́ {тенде́нція} на ри́нку.', 'To nowa tendencja na rynku.');
+  W('рі́вень', 'ч', 'poziom', 'D. рі́вня', 'o', 'Яки́й у тебе́ {рі́вень} украї́нської?', 'Jaki masz poziom ukraińskiego?');
+  W('по́гляд', 'ч', 'pogląd; spojrzenie', 'D. по́гляду', 'p', 'У нас рі́зні {по́гляди}.', 'Mamy różne poglądy.');
+
+  /* ===================== C1 ===================== */
+  L('C1', 'c1_idiom', 'Frazeologia I');
+  W('ма́ти ра́цію', 'ф', 'mieć rację', '', 't', 'Ти {ма́єш ра́цію}.', 'Masz rację.');
+  W('пекти́ ра́ків', 'ф', 'czerwienić się (ze wstydu)', '', 'o', 'Він почина́є {пекти́ ра́ків}, коли́ його́ хва́лять.', 'Czerwieni się, gdy go chwalą.');
+  W('води́ти за ніс', 'ф', 'wodzić za nos', '', 't', 'Не дава́й себе́ {води́ти за ніс}.', 'Nie daj się wodzić za nos.');
+  W('лови́ти ґав', 'ф', 'gapić się, być nieuważnym', '', 'o', 'Не {лови́ ґав} на уро́ці!', 'Nie gap się na lekcji!');
+  W('як дві кра́плі води́', 'ф', 'jak dwie krople wody', '', 't', 'Близнюки́ схо́жі, {як дві кра́плі води́}.', 'Bliźnięta są podobne jak dwie krople wody.');
+  W('на сьо́мому не́бі', 'ф', 'w siódmym niebie', '', 't', 'Пі́сля і́спиту вона́ була́ {на сьо́мому не́бі}.', 'Po egzaminie była w siódmym niebie.');
+  W('ні ри́ба ні м’я́со', 'ф', 'ni pies, ni wydra; ani to, ani to', '', 'o', 'Цей фільм – {ні ри́ба ні м’я́со}.', 'Ten film to ni pies, ni wydra.');
+  W('з’ї́сти соба́ку', 'ф', 'zjeść na czymś zęby (znać się)', '', 'o', 'Він на цьо́му {з’їв соба́ку}.', 'Zjadł na tym zęby.');
+  W('мота́ти на вус', 'ф', 'brać sobie do serca, zapamiętywać', '', 'o', '{Мота́й на вус}, що я тобі́ ка́жу.', 'Zapamiętaj sobie, co ci mówię.');
+  W('як кіт напла́кав', 'ф', 'tyle co kot napłakał (bardzo mało)', '', 't', 'Гроше́й у ме́не – {як кіт напла́кав}.', 'Pieniędzy mam tyle co kot napłakał.');
+  W('тягну́ти кота́ за хвіст', 'ф', 'zwlekać, ociągać się', '', 'o', 'Не {тягни́ кота́ за хвіст}, кажи́ шви́дше!', 'Nie przeciągaj, mów szybciej!');
+  W('бра́ти у́часть', 'ф', 'brać udział', '', 'p', 'Я {беру́ у́часть} у конку́рсі.', 'Biorę udział w konkursie.');
+
+  L('C1', 'c1_form', 'Język urzędowy');
+  W('відпові́дно до', 'ф', 'zgodnie z, stosownie do', '', 'o', '{Відпові́дно до} пра́вил, вхід лише́ за квитка́ми.', 'Zgodnie z regulaminem wstęp tylko z biletami.');
+  W('з о́гляду на', 'ф', 'z uwagi na', '', 'p', '{З о́гляду на} пого́ду, зу́стріч перене́сено.', 'Z uwagi na pogodę spotkanie przełożono.');
+  W('у зв’язку́ з', 'ф', 'w związku z', '', 't', '{У зв’язку́ з} ремо́нтом шко́ла закри́та.', 'W związku z remontem szkoła jest zamknięta.');
+  W('стосо́вно', 'з', 'odnośnie do', '', 'p', '{Стосо́вно} ва́шого листа́ повідомля́ємо…', 'Odnośnie do Pańskiego listu informujemy…');
+  W('згі́дно з', 'ф', 'zgodnie z', '', 'o', '{Згі́дно з} нака́зом, о́фіс зачи́нено.', 'Zgodnie z zarządzeniem biuro jest zamknięte.');
+  W('на підста́ві', 'ф', 'na podstawie', '', 't', '{На підста́ві} дани́х ми зроби́ли ви́сновок.', 'Na podstawie danych wyciągnęliśmy wniosek.');
+  W('з мето́ю', 'ф', 'w celu', '', 'p', 'Ми зустрі́лися {з мето́ю} обговори́ти план.', 'Spotkaliśmy się w celu omówienia planu.');
+  W('що́до', 'з', 'co do, w sprawie', '', 'o', '{Що́до} ціни́ ми ще домо́вимося.', 'Co do ceny jeszcze się dogadamy.');
+  W('у ра́зі', 'ф', 'w razie, w przypadku', '', 't', '{У ра́зі} поже́жі телефону́йте 101.', 'W razie pożaru dzwońcie pod 101.');
+  W('за умо́ви', 'ф', 'pod warunkiem', '', 'p', 'Я пого́джуюся {за умо́ви}, що ти допомо́жеш.', 'Zgadzam się pod warunkiem, że pomożesz.');
+  W('шля́хом', 'з', 'w drodze, poprzez', '', 'p', 'Пробле́му розв’яза́ли {шля́хом} перегово́рів.', 'Problem rozwiązano w drodze negocjacji.');
+  W('зва́жаючи на', 'ф', 'zważywszy na, biorąc pod uwagę', '', 'p', '{Зва́жаючи на} ситуа́цію, ми зали́шимося вдо́ма.', 'Zważywszy na sytuację, zostaniemy w domu.');
+
+  L('C1', 'c1_verb', 'Czasowniki zaawansowane');
+  W('зумо́влювати / зумо́вити', 'д', 'powodować, warunkować', 'зумо́влюю, зумо́влюєш', 'o', 'Що {зумо́вило} кри́зу?', 'Co spowodowało kryzys?');
+  W('передбача́ти / передба́чити', 'д', 'przewidywać / przewidzieć', 'передбача́ю, передбача́єш', 'p', 'Ніхто́ не міг {передба́чити} тако́го результа́ту.', 'Nikt nie mógł przewidzieć takiego wyniku.');
+  W('запрова́джувати / запрова́дити', 'д', 'wprowadzać / wprowadzić', 'запрова́джую, запрова́джуєш', 'o', 'Уря́д {запрова́див} нові́ пра́вила.', 'Rząd wprowadził nowe zasady.');
+  W('поси́лювати / поси́лити', 'д', 'wzmacniać, nasilać / wzmocnić', 'поси́люю, поси́люєш', 'p', 'Кри́за {поси́лила} напру́гу.', 'Kryzys nasilił napięcie.');
+  W('посла́блювати / посла́бити', 'д', 'osłabiać / osłabić', 'посла́блюю, посла́блюєш', 'p', 'Са́нкції {посла́блюють} еконо́міку.', 'Sankcje osłabiają gospodarkę.');
+  W('дола́ти / подола́ти', 'д', 'pokonywać, przezwyciężać / pokonać', 'дола́ю, дола́єш', 'o', 'Ми {подола́ємо} всі тру́днощі.', 'Pokonamy wszystkie trudności.');
+  W('сприя́ти', 'д', 'sprzyjać, wspierać', 'сприя́ю, сприя́єш', 'p', 'Пого́да {сприя́ла} врожа́ю.', 'Pogoda sprzyjała zbiorom.');
+  W('перешкоджа́ти', 'д', 'przeszkadzać, utrudniać', 'перешкоджа́ю, перешкоджа́єш', 'p', 'Шум {перешкоджа́є} працюва́ти.', 'Hałas przeszkadza w pracy.');
+  W('усвідо́млювати / усвідо́мити', 'д', 'uświadamiać sobie / uświadomić sobie', 'усвідо́млюю, усвідо́млюєш', 'p', 'Я не одра́зу {усвідо́мив} пробле́му.', 'Nie od razu uświadomiłem sobie problem.');
+  W('обґрунто́вувати / обґрунтува́ти', 'д', 'uzasadniać / uzasadnić', 'обґрунто́вую, обґрунто́вуєш', 'o', '{Обґрунту́йте} свою́ ду́мку.', 'Uzasadnijcie swoje zdanie.');
+  W('ухва́лювати / ухвали́ти', 'д', 'uchwalać / uchwalić', 'ухва́люю, ухва́люєш', 'p', 'Парла́мент {ухвали́в} бюдже́т.', 'Parlament uchwalił budżet.');
+  W('спросто́вувати / спростува́ти', 'д', 'dementować, obalać / zdementować', 'спросто́вую, спросто́вуєш', 'o', 'Міністе́рство {спростува́ло} цю інформа́цію.', 'Ministerstwo zdementowało tę informację.');
+
+  L('C1', 'c1_adj', 'Precyzyjne przymiotniki');
+  W('неупере́джений', 'п', 'bezstronny', 'неупере́джена, неупере́джене', 'o', 'Су́ддя му́сить бу́ти {неупере́дженим}.', 'Sędzia musi być bezstronny.');
+  W('супере́чливий', 'п', 'kontrowersyjny, sprzeczny', 'супере́члива, супере́чливе', 'o', 'Це {супере́члива} по́стать.', 'To kontrowersyjna postać.');
+  W('переко́нливий', 'п', 'przekonujący', 'переко́нлива, переко́нливе', 'p', 'Його́ аргуме́нти {переко́нливі}.', 'Jego argumenty są przekonujące.');
+  W('очеви́дний', 'п', 'oczywisty', 'очеви́дна, очеви́дне', 'p', 'Ві́дповідь {очеви́дна}.', 'Odpowiedź jest oczywista.');
+  W('сумні́вний', 'п', 'wątpliwy', 'сумні́вна, сумні́вне', 'o', 'Це {сумні́вне} рі́шення.', 'To wątpliwa decyzja.');
+  W('впливо́вий', 'п', 'wpływowy', 'впливо́ва, впливо́ве', 'p', 'Він ду́же {впливо́вий} полі́тик.', 'To bardzo wpływowy polityk.');
+  W('ви́нятковий', 'п', 'wyjątkowy', 'ви́няткова, ви́няткове', 'p', 'Це {ви́нятковий} ви́падок.', 'To wyjątkowy przypadek.');
+  W('поши́рений', 'п', 'rozpowszechniony, częsty', 'поши́рена, поши́рене', 'f', 'Це {поши́рена} по́милка.', 'To częsty błąd.');
+  W('трива́лий', 'п', 'długotrwały', 'трива́ла, трива́ле', 'o', 'Це був {трива́лий} проце́с.', 'To był długotrwały proces.');
+  W('нага́льний', 'п', 'pilny, naglący', 'нага́льна, нага́льне', 'f', 'Це {нага́льна} пробле́ма.', 'To pilny problem.');
+  W('доці́льний', 'п', 'celowy, zasadny', 'доці́льна, доці́льне', 'o', 'Це {доці́льне} рі́шення.', 'To zasadna decyzja.');
+  W('відчу́тний', 'п', 'odczuwalny, znaczny', 'відчу́тна, відчу́тне', 'p', 'Ми ба́чимо {відчу́тні} змі́ни.', 'Widzimy odczuwalne zmiany.');
+
+  L('C1', 'c1_noun', 'Rzeczowniki abstrakcyjne');
+  W('здо́буток', 'ч', 'osiągnięcie, dorobek', 'D. здо́бутку', 'o', 'Це найбі́льший {здо́буток} на́шої кома́нди.', 'To największe osiągnięcie naszej drużyny.');
+  W('зане́пад', 'ч', 'upadek, schyłek', 'D. зане́паду', 'p', 'Імпе́рія перебува́ла в {зане́паді}.', 'Imperium chyliło się ku upadkowi.');
+  W('підне́сення', 'с', 'rozkwit; uniesienie', 'D. підне́сення', 'p', 'Це був час культу́рного {підне́сення}.', 'To był czas rozkwitu kultury.');
+  W('стано́вище', 'с', 'sytuacja, położenie', 'D. стано́вища', 'f', 'Економі́чне {стано́вище} пога́не.', 'Sytuacja gospodarcza jest zła.');
+  W('світо́гляд', 'ч', 'światopogląd', 'D. світо́гляду', 'p', 'У них рі́зний {світо́гляд}.', 'Mają różne światopoglądy.');
+  W('переко́нання', 'с', 'przekonanie', 'D. переко́нання', 'p', 'Це моє́ глибо́ке {переко́нання}.', 'To moje głębokie przekonanie.');
+  W('упере́дження', 'с', 'uprzedzenie', 'D. упере́дження', 'p', 'Тре́ба позбу́тися {упере́джень}.', 'Trzeba pozbyć się uprzedzeń.');
+  W('супере́чка', 'ж', 'spór, sprzeczka', 'D. супере́чки', 'o', 'Між ни́ми ви́никла {супере́чка}.', 'Doszło między nimi do sporu.');
+  W('домо́вленість', 'ж', 'ustalenie, porozumienie', 'D. домо́вленості', 'p', 'Ми дотри́муємося {домо́вленості}.', 'Trzymamy się ustaleń.');
+  W('зволіка́ння', 'с', 'zwłoka', 'D. зволіка́ння', 'p', 'Будь-яке́ {зволіка́ння} небезпе́чне.', 'Każda zwłoka jest niebezpieczna.');
+  W('пози́ція', 'ж', 'stanowisko, pozycja', 'D. пози́ції', 'p', 'Яка́ ва́ша {пози́ція} в цьо́му пита́нні?', 'Jakie jest pana stanowisko w tej sprawie?');
+  W('заса́да', 'ж', 'zasada, podstawa', 'D. заса́ди', 't', 'Це ба́зові {заса́ди} демокра́тії.', 'To podstawowe zasady demokracji.');
+
+  L('C1', 'c1_hist', 'Historia Ukrainy');
+  W('коза́цтво', 'с', 'kozaczyzna', 'D. коза́цтва', 'p', '{Коза́цтво} відігра́ло важли́ву роль в істо́рії.', 'Kozaczyzna odegrała ważną rolę w historii.');
+  W('Гетьма́нщина', 'ж', 'Hetmanat', 'D. Гетьма́нщини', 'p', '{Гетьма́нщина} існува́ла у XVII–XVIII столі́ттях.', 'Hetmanat istniał w XVII–XVIII wieku.');
+  W('Запорі́зька Січ', 'ф', 'Sicz Zaporoska', '', 'p', '{Запорі́зька Січ} була́ це́нтром коза́цтва.', 'Sicz Zaporoska była centrum kozaczyzny.');
+  W('кріпа́цтво', 'с', 'pańszczyzna, poddaństwo', 'D. кріпа́цтва', 'o', '{Кріпа́цтво} скасува́ли 1861 ро́ку.', 'Pańszczyznę zniesiono w 1861 roku.');
+  W('повста́ння', 'с', 'powstanie', 'D. повста́ння', 'p', 'Це було́ вели́ке {повста́ння} Хмельни́цького.', 'To było wielkie powstanie Chmielnickiego.');
+  W('Голодомо́р', 'ч', 'Hołodomor (Wielki Głód 1932–1933)', 'D. Голодомо́ру', 't', '{Голодомо́р} – геноци́д украї́нського наро́ду.', 'Hołodomor to ludobójstwo narodu ukraińskiego.');
+  W('держа́вність', 'ж', 'państwowość', 'D. держа́вності', 'o', 'Це відро́дження украї́нської {держа́вності}.', 'To odrodzenie ukraińskiej państwowości.');
+  W('літо́пис', 'ч', 'latopis, kronika', 'D. літо́пису', 'p', '«По́вість мину́лих літ» – найвідо́міший {літо́пис}.', '„Powieść minionych lat” to najsłynniejszy latopis.');
+  W('кня́жа доба́', 'ф', 'okres książęcy (Ruś Kijowska)', '', 'p', '{Кня́жа доба́} – це час Ки́ївської Ру́сі.', 'Okres książęcy to czasy Rusi Kijowskiej.');
+  W('уні́я', 'ж', 'unia', 'D. уні́ї', 't', 'Бере́стейська {уні́я} була́ укла́дена 1596 ро́ку.', 'Unię brzeską zawarto w 1596 roku.');
+  W('депорта́ція', 'ж', 'deportacja', 'D. депорта́ції', 't', '{Депорта́ція} кри́мських тата́р відбула́ся 1944 ро́ку.', 'Deportacja Tatarów krymskich miała miejsce w 1944 roku.');
+  W('відро́дження', 'с', 'odrodzenie', 'D. відро́дження', 'p', 'Це була́ доба́ націона́льного {відро́дження}.', 'To była epoka odrodzenia narodowego.');
+
+  /* ===================== C2 ===================== */
+  L('C2', 'c2_lit', 'Literatura i styl');
+  W('мета́фора', 'ж', 'metafora', 'D. мета́фори', 't', 'Пое́т вжива́є сміли́ві {мета́фори}.', 'Poeta używa śmiałych metafor.');
+  W('алю́зія', 'ж', 'aluzja', 'D. алю́зії', 't', 'У ві́рші є {алю́зія} на Бі́блію.', 'W wierszu jest aluzja do Biblii.');
+  W('іро́нія', 'ж', 'ironia', 'D. іро́нії', 't', 'У його́ слова́х відчува́лася {іро́нія}.', 'W jego słowach wyczuwało się ironię.');
+  W('опові́дач', 'ч', 'narrator', 'D. опові́дача', 'o', '{Опові́дач} не ка́же всіє́ї пра́вди.', 'Narrator nie mówi całej prawdy.');
+  W('сюже́т', 'ч', 'fabuła', 'D. сюже́ту', 'p', '{Сюже́т} рома́ну ду́же заплу́таний.', 'Fabuła powieści jest bardzo zawiła.');
+  W('персона́ж', 'ч', 'postać (literacka)', 'D. персона́жа', 'p', 'Головни́й {персона́ж} – молоди́й учи́тель.', 'Główną postacią jest młody nauczyciel.');
+  W('строфа́', 'ж', 'strofa, zwrotka', 'D. строфи́', 't', 'Вірш ма́є три {строфи́}.', 'Wiersz ma trzy strofy.');
+  W('ри́ма', 'ж', 'rym', 'D. ри́ми', 'p', 'Тут ду́же ціка́ва {ри́ма}.', 'Tu jest bardzo ciekawy rym.');
+  W('жанр', 'ч', 'gatunek (literacki)', 'D. жа́нру', 'o', 'Це мій улю́блений {жанр}.', 'To mój ulubiony gatunek.');
+  W('пі́дтекст', 'ч', 'podtekst', 'D. пі́дтексту', 'p', 'У цьо́му ві́рші глибо́кий {пі́дтекст}.', 'Ten wiersz ma głęboki podtekst.');
+  W('стилі́стика', 'ж', 'stylistyka', 'D. стилі́стики', 't', '{Стилі́стика} те́ксту ду́же ви́тончена.', 'Stylistyka tekstu jest bardzo wyrafinowana.');
+  W('обра́зність', 'ж', 'obrazowość', 'D. обра́зності', 'p', '{Обра́зність} мо́ви Шевче́нка вража́є.', 'Obrazowość języka Szewczenki robi wrażenie.');
+
+  L('C2', 'c2_book', 'Słowa książkowe');
+  W('зла́года', 'ж', 'zgoda, harmonia', 'D. зла́годи', 'o', 'Живі́ть у ми́рі та {зла́годі}.', 'Żyjcie w pokoju i zgodzie.');
+  W('достеме́нно', 'пр', 'dokładnie, na pewno', '', 'o', 'Я не зна́ю {достеме́нно}, коли́ він приї́де.', 'Nie wiem dokładnie, kiedy przyjedzie.');
+  W('неаби́який', 'п', 'niebyle jaki, wyjątkowy', 'неаби́яка, неаби́яке', 'o', 'Це вимага́є {неаби́якої} му́жності.', 'To wymaga niezwykłej odwagi.');
+  W('чима́ло', 'пр', 'sporo, niemało', '', 'o', 'Він {чима́ло} подорожува́в.', 'Sporo podróżował.');
+  W('повсякча́с', 'пр', 'stale, nieustannie', '', 'o', 'Вона́ {повсякча́с} ду́має про ді́тей.', 'Nieustannie myśli o dzieciach.');
+  W('здебі́льшого', 'пр', 'przeważnie', '', 'o', '{Здебі́льшого} я працю́ю вдо́ма.', 'Przeważnie pracuję w domu.');
+  W('навза́єм', 'пр', 'wzajemnie, nawzajem', '', 'p', '– Щасли́вого Різдва́! – {Навза́єм}!', '– Wesołych Świąt! – Nawzajem!');
+  W('зале́две', 'пр', 'ledwie, z trudem', '', 'f', 'Я {зале́две} встиг на по́тяг.', 'Ledwie zdążyłem na pociąg.');
+  W('відта́к', 'з', 'zatem, więc', '', 'o', '{Відта́к} ми му́симо ді́яти.', 'Zatem musimy działać.');
+  W('щонайме́нше', 'пр', 'co najmniej', '', 'p', 'Це ко́штуватиме {щонайме́нше} ти́сячу гри́вень.', 'To będzie kosztować co najmniej tysiąc hrywien.');
+  W('при́наймні', 'пр', 'przynajmniej', '', 'o', 'Подзвони́ {при́наймні} раз на ти́ждень.', 'Zadzwoń przynajmniej raz w tygodniu.');
+  W('ба на́віть', 'з', 'a nawet', '', 'o', 'Він зна́є англі́йську, німе́цьку, {ба на́віть} япо́нську.', 'Zna angielski, niemiecki, a nawet japoński.');
+
+  L('C2', 'c2_idiom', 'Frazeologia II');
+  W('накива́ти п’я́тами', 'ф', 'dać nogę, uciec', '', 'o', 'Зло́дій {накива́в п’я́тами}.', 'Złodziej dał nogę.');
+  W('да́ти гарбуза́', 'ф', 'dać kosza (odrzucić oświadczyny)', '', 'f', 'Окса́на {дала́ гарбуза́} Петро́ві.', 'Oksana dała kosza Piotrowi.');
+  W('пуска́ти бі́сики', 'ф', 'puszczać oczko, flirtować', '', 'o', 'Вона́ {пуска́ла бі́сики} ново́му сусі́дові.', 'Puszczała oczko nowemu sąsiadowi.');
+  W('уско́чити в хале́пу', 'ф', 'wpaść w tarapaty', '', 'o', 'Че́рез свою́ ціка́вість він {уско́чив у хале́пу}.', 'Przez swoją ciekawość wpadł w tarapaty.');
+  W('трима́ти язи́к за зуба́ми', 'ф', 'trzymać język za zębami', '', 't', 'Умі́й {трима́ти язи́к за зуба́ми}.', 'Umiej trzymać język za zębami.');
+  W('бра́ти себе́ в ру́ки', 'ф', 'brać się w garść', '', 'p', 'Тре́ба {бра́ти себе́ в ру́ки}.', 'Trzeba wziąć się w garść.');
+  W('ли́ти во́ду', 'ф', 'lać wodę', '', 't', 'Не {лий во́ду}, говори́ по су́ті.', 'Nie lej wody, mów do rzeczy.');
+  W('як сніг на го́лову', 'ф', 'jak grom z jasnego nieba', '', 'o', 'Нови́на впа́ла {як сніг на го́лову}.', 'Wiadomość spadła jak grom z jasnego nieba.');
+  W('показа́ти, де ра́ки зиму́ють', 'ф', 'pokazać, gdzie raki zimują', '', 't', 'Я тобі́ {покажу́, де ра́ки зиму́ють}!', 'Pokażę ci, gdzie raki zimują!');
+  W('ки́дати слова́ на ві́тер', 'ф', 'rzucać słowa na wiatr', '', 't', 'Він не {ки́дає слів на ві́тер}.', 'On nie rzuca słów na wiatr.');
+  W('кров з но́са', 'ф', 'choćby nie wiem co, za wszelką cenę', '', 'o', 'Звіт тре́ба зда́ти за́втра, {кров з но́са}.', 'Raport trzeba oddać jutro, choćby nie wiem co.');
+  W('ведмі́дь на ву́хо наступи́в', 'ф', 'słoń nadepnął na ucho', '', 'p', 'Не співа́й – тобі́ {ведмі́дь на ву́хо наступи́в}.', 'Nie śpiewaj – słoń ci nadepnął na ucho.');
+
+  L('C2', 'c2_norma', 'Norma zamiast rusycyzmów');
+  W('у́часть', 'ж', 'udział (бра́ти у́часть – nie: „приймати участь”)', 'D. у́часті', 'p', 'Дя́кую за ва́шу {у́часть} у прое́кті.', 'Dziękuję za pański udział w projekcie.');
+  W('про́тягом', 'з', 'w ciągu (nie: „на протязі”)', '', 'o', '{Про́тягом} ти́жня я працюва́в без ви́хідних.', 'Przez tydzień pracowałem bez dni wolnych.');
+  W('насту́пний', 'п', 'następny (nie: „слідуючий”)', 'насту́пна, насту́пне', 'p', '{Насту́пна} зупи́нка – вокза́л.', 'Następny przystanek: dworzec.');
+  W('збіга́тися', 'д', 'pokrywać się, być zgodnym (nie: „співпадати”)', 'збіга́ється (3 os.)', 'o', 'На́ші ду́мки {збіга́ються}.', 'Nasze zdania się pokrywają.');
+  W('будь-яки́й', 'з', 'jakikolwiek, dowolny (nie: „любий”)', 'будь-яка́, будь-яке́', 'p', 'Візьми́ {будь-яку́} кни́жку.', 'Weź dowolną książkę.');
+  W('за́хід', 'ч', 'wydarzenie, przedsięwzięcie (nie: „міроприємство”)', 'D. за́ходу', 'f', 'Шко́ла організу́є {за́хід} до Дня незале́жності.', 'Szkoła organizuje wydarzenie z okazji Dnia Niepodległości.');
+  W('вжива́ти захо́дів', 'ф', 'podejmować kroki, działania (nie: „приймати міри”)', '', 'o', 'Уря́д {вжива́є захо́дів} про́ти інфля́ції.', 'Rząd podejmuje działania przeciw inflacji.');
+  W('ді́йти ви́сновку', 'ф', 'dojść do wniosku (nie: „прийти до висновку”)', '', 'p', 'Ми {дійшли́ ви́сновку}, що план добри́й.', 'Doszliśmy do wniosku, że plan jest dobry.');
+  W('оскі́льки', 'з', 'ponieważ, skoro („так як” jako spójnik to rusycyzm)', '', 'o', '{Оскі́льки} вже пі́зно, я йду додо́му.', 'Ponieważ jest już późno, idę do domu.');
+  W('керівни́к', 'ч', 'kierownik, szef (nie: „руководитель”)', 'D. керівника́', 'o', '{Керівни́к} відді́лу у ві́дпустці.', 'Kierownik działu jest na urlopie.');
+  W('посі́сти пе́рше мі́сце', 'ф', 'zająć pierwsze miejsce (nie: „заняти перше місце”)', '', 'p', 'На́ша кома́нда {посі́ла пе́рше мі́сце}.', 'Nasza drużyna zajęła pierwsze miejsce.');
+  W('ви́падок', 'ч', 'przypadek, wypadek (nie: „случай”)', 'D. ви́падку', 'p', 'Це був рі́дкісний {ви́падок}.', 'To był rzadki przypadek.');
 })();
 
 </script>
@@ -1050,6 +1622,34 @@ UA.DIALOGS = [
     [0, 'Ду́же дя́кую!', 'Bardzo dziękuję!'],
     [1, 'Нема́ за що.', 'Nie ma za co.']
   ]}
+];
+
+</script>
+<script>
+/* ---------- Czytanki do słuchania (A2–C2) ----------
+   tekst czytany przez syntezę mowy + pytania o zrozumienie */
+var UA = window.UA || (window.UA = {});
+UA.TEXTS = [
+  { id: 't_a2', level: 'A2', t: 'Mój dzień', ua: 'Мій день',
+    text: 'Мене́ зва́ти Окса́на. Я живу́ у Льво́ві і працю́ю в о́фісі. Щодня́ я встаю́ о сьо́мій годи́ні. Пі́сля сніда́нку я ї́ду на робо́ту трамва́єм. Уве́чері я гуля́ю з соба́кою в па́рку, а по́тім чита́ю кни́жку. У ви́хідні я відві́дую батькі́в у селі́.',
+    pl: 'Mam na imię Oksana. Mieszkam we Lwowie i pracuję w biurze. Codziennie wstaję o siódmej. Po śniadaniu jadę do pracy tramwajem. Wieczorem spaceruję z psem w parku, a potem czytam książkę. W weekendy odwiedzam rodziców na wsi.',
+    qs: [['Gdzie mieszka Oksana?', ['we Lwowie', 'w Kijowie', 'w Odessie', 'w Charkowie'], 0], ['Czym jedzie do pracy?', ['autobusem', 'tramwajem', 'metrem', 'rowerem'], 1], ['Co robi w weekendy?', ['pracuje w biurze', 'odwiedza rodziców na wsi', 'chodzi do kina', 'uprawia sport'], 1]] },
+  { id: 't_b1', level: 'B1', t: 'Wyprawa w Karpaty', ua: 'По́дорож Карпа́тами',
+    text: 'Мину́лого лі́та ми з дру́зями ви́рушили в Карпа́ти. Ми жили́ в невели́кому готе́лі бі́ля Гове́рли – найви́щої верши́ни Украї́ни. Щодня́ ми ходи́ли в похо́ди й фотографува́ли краєви́ди. Одного́ дня почала́ся си́льна гроза́, і нам довело́ся схова́тися в коли́бі пастухі́в. По́при все, це була́ найкра́ща по́дорож у моє́му житті́.',
+    pl: 'Zeszłego lata wyruszyliśmy z przyjaciółmi w Karpaty. Mieszkaliśmy w małym hotelu niedaleko Howerli – najwyższego szczytu Ukrainy. Codziennie chodziliśmy na wędrówki i fotografowaliśmy krajobrazy. Pewnego dnia rozpoczęła się silna burza i musieliśmy schronić się w kolibie pasterzy. Mimo wszystko była to najlepsza podróż w moim życiu.',
+    qs: [['Gdzie mieszkali turyści?', ['w namiocie nad rzeką', 'w małym hotelu blisko Howerli', 'u rodziny we Lwowie', 'w schronisku na Czarnohorze'], 1], ['Co wydarzyło się pewnego dnia?', ['ktoś zabłądził', 'zaczęła się silna burza', 'spadł śnieg', 'zepsuł się samochód'], 1], ['Gdzie się schronili?', ['w kolibie pasterzy', 'w cerkwi', 'w jaskini', 'w hotelu'], 0]] },
+  { id: 't_b2', level: 'B2', t: 'Państwo w smartfonie', ua: 'Держа́ва у смартфо́ні',
+    text: 'Украї́на ста́ла одніє́ю з пе́рших краї́н, де громадя́ни мо́жуть отри́мувати держа́вні по́слуги че́рез смартфо́н. Застосу́нок «Ді́я» дозволя́є зберіга́ти цифрові́ докуме́нти, зареєструва́ти бізне́с чи пода́ти зая́ву без черг. Прихи́льники наголо́шують, що цифровіза́ція зме́ншує кору́пцію, оскі́льки обме́жує безпосере́дній конта́кт із чино́вниками. Нато́мість кри́тики застеріга́ють, що не всі громадя́ни, зокре́ма лю́ди похи́лого ві́ку, ма́ють доста́тні цифрові́ на́вички.',
+    pl: 'Ukraina stała się jednym z pierwszych krajów, w których obywatele mogą korzystać z usług państwowych przez smartfon. Aplikacja „Dija” pozwala przechowywać cyfrowe dokumenty, zarejestrować firmę czy złożyć wniosek bez kolejek. Zwolennicy podkreślają, że cyfryzacja zmniejsza korupcję, ponieważ ogranicza bezpośredni kontakt z urzędnikami. Krytycy natomiast ostrzegają, że nie wszyscy obywatele, zwłaszcza osoby starsze, mają wystarczające umiejętności cyfrowe.',
+    qs: [['Do czego służy aplikacja „Dija”?', ['do zamawiania jedzenia', 'do usług państwowych i cyfrowych dokumentów', 'do nauki języków', 'do płatności w sklepach'], 1], ['Jaki argument podają zwolennicy cyfryzacji?', ['jest tańsza dla państwa', 'zmniejsza korupcję', 'tworzy miejsca pracy', 'przyspiesza wybory'], 1], ['Czego obawiają się krytycy?', ['wycieku danych', 'braku umiejętności cyfrowych u części obywateli, np. starszych', 'zbyt wysokich kosztów', 'braku internetu na wsi'], 1]] },
+  { id: 't_c1', level: 'C1', t: 'Język i tożsamość', ua: 'Мо́ва і тото́жність',
+    text: 'Пі́сля 2022 ро́ку бага́то украї́нців, які́ рані́ше розмовля́ли перева́жно росі́йською, свідо́мо перейшли́ на украї́нську. Для одни́х це був акт громадя́нської соліда́рності, для і́нших – спо́сіб відмежува́тися від мо́ви агре́сора. Соціолінгві́сти зазнача́ють, що тако́го масшта́бного мо́вного зсу́ву не спостеріга́ли від 1990-х ро́ків. Водно́час вони́ застеріга́ють від приму́су: мо́вна полі́тика ма́є заохо́чувати, а не кара́ти.',
+    pl: 'Po 2022 roku wielu Ukraińców, którzy wcześniej mówili głównie po rosyjsku, świadomie przeszło na ukraiński. Dla jednych był to akt obywatelskiej solidarności, dla innych – sposób, by odciąć się od języka agresora. Socjolingwiści zauważają, że tak dużej zmiany językowej nie obserwowano od lat 90. Jednocześnie przestrzegają przed przymusem: polityka językowa powinna zachęcać, a nie karać.',
+    qs: [['Co zrobiło wielu Ukraińców po 2022 r.?', ['wyemigrowało do Polski', 'świadomie przeszło na język ukraiński', 'zaczęło uczyć się angielskiego', 'zrezygnowało z mediów'], 1], ['Jak interpretowano tę zmianę?', ['jako modę wśród młodzieży', 'jako solidarność obywatelską lub odcięcie się od języka agresora', 'jako wymóg prawny', 'jako skutek reformy szkolnej'], 1], ['Przed czym ostrzegają socjolingwiści?', ['przed przymusem językowym', 'przed zapożyczeniami z angielskiego', 'przed zanikiem dialektów', 'przed emigracją'], 0]] },
+  { id: 't_c2', level: 'C2', t: 'Paradoks Szewczenki', ua: 'Пара́докс Шевче́нка',
+    text: 'Шевче́нко лиши́вся в націона́льній па́м’яті переду́сім як пое́т, хоча́ його́ маля́рський доро́бок не менш ва́ртий ува́ги. Його́ пое́зія, наскрі́зь прони́зана біблі́йними алю́зіями, водно́час є го́строю соціа́льною сати́рою. Не випадко́во ца́рська вла́да заборони́ла йому́ писа́ти й малюва́ти. Пара́докс поляга́є в тому́, що саме́ заборо́на перетвори́ла засла́нця на си́мвол неско́реності, а його́ сло́во – на нарі́жний ка́мінь моде́рної украї́нської іденти́чності.',
+    pl: 'Szewczenko pozostał w pamięci narodowej przede wszystkim jako poeta, choć jego dorobek malarski nie jest mniej wart uwagi. Jego poezja, na wskroś przesycona aluzjami biblijnymi, jest zarazem ostrą satyrą społeczną. Nieprzypadkowo władze carskie zabroniły mu pisać i malować. Paradoks polega na tym, że właśnie zakaz uczynił z zesłańca symbol niezłomności, a jego słowo – kamień węgielny nowoczesnej tożsamości ukraińskiej.',
+    qs: [['Jako kto zapisał się Szewczenko w pamięci narodowej?', ['głównie jako malarz', 'przede wszystkim jako poeta', 'jako polityk', 'jako historyk'], 1], ['Czego zakazała mu władza carska?', ['podróżowania', 'pisania i malowania', 'nauczania', 'wydawania gazety'], 1], ['Na czym polega paradoks?', ['zakaz uczynił go symbolem niezłomności', 'car był jego mecenasem', 'pisał tylko po rosyjsku', 'nie znał Biblii'], 0]] }
 ];
 
 </script>
@@ -1359,6 +1959,35 @@ var UA = window.UA || (window.UA = {});
   UA.KB = keyboard;
 })();
 
+/* ---------- Przygotowanie przykładów do ćwiczeń z luką ----------
+   W words2.js słowo w przykładzie jest ujęte w {…}; dla słów A1 szukamy go automatycznie. */
+(function () {
+  var ACC = '\u0301';
+  function low(s) { return s.split(ACC).join('').toLowerCase().replace(/[’ʼ']/g, "'"); }
+  function stripMap(s) { var out = '', map = []; for (var i = 0; i < s.length; i++) { if (s[i] === ACC) continue; map.push(i); out += s[i]; } return { s: low(out), map: map }; }
+  function cut(w, a, b) { w._cz = { pre: w.ex.slice(0, a), t: w.ex.slice(a, b), post: w.ex.slice(b) }; }
+  UA.WORDS.forEach(function (w) {
+    if (!w.ex) return;
+    var m = w.ex.match(/\{([^}]+)\}/);
+    if (m) { var i = w.ex.indexOf(m[0]); w.ex = w.ex.replace(/[{}]/g, ''); cut(w, i, i + m[1].length); return; }
+    var sm = stripMap(w.ex), heads = w.ua.split('/').map(function (x) { return low(x).replace(/[?…!.]/g, '').trim(); });
+    for (var h = 0; h < heads.length; h++) {
+      var hd = heads[h];
+      if (hd.indexOf(' ') > 0) {
+        var at = sm.s.indexOf(hd);
+        if (at >= 0) { var a = sm.map[at], b = sm.map[at + hd.length - 1] + 1; if (w.ex[b] === ACC) b++; return cut(w, a, b); }
+        continue;
+      }
+      var re = /[^\s,.!?;:«»"–—()]+/g, t;
+      var stem = hd.length <= 3 ? null : hd.slice(0, Math.max(3, Math.ceil(hd.length * 0.6)));
+      while ((t = re.exec(w.ex))) {
+        var lt = low(t[0]);
+        if (lt === hd || (stem && lt.indexOf(stem) === 0)) return cut(w, t.index, t.index + t[0].length);
+      }
+    }
+  });
+})();
+
 </script>
 <script>
 /* ============================================================
@@ -1367,7 +1996,7 @@ var UA = window.UA || (window.UA = {});
 (function () {
   'use strict';
   var U = UA.U, G = UA.G, S = G.S, SRS = UA.SRS, SP = UA.SP;
-  var esc = U.esc, st = U.st, strip = U.strip, norm = U.norm;
+  var esc = U.esc, st = U.st, strip = U.strip, norm = U.norm, shuffle = U.shuffle;
   var main = document.getElementById('main');
   function $(s, r) { return (r || main).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || main).querySelectorAll(s)); }
@@ -1402,7 +2031,10 @@ var UA = window.UA || (window.UA = {});
     kb: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/>',
     target: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
     list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
-    user: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>'
+    user: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',
+    route: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>',
+    headphones: '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',
+    lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'
   };
   function ic(n, c) { return '<svg class="ic ' + (c || '') + '" viewBox="0 0 24 24" aria-hidden="true">' + (IC[n] || '') + '</svg>'; }
   UA.ic = ic;
@@ -1421,8 +2053,8 @@ var UA = window.UA || (window.UA = {});
 
   /* ---------- Nawigacja ---------- */
   var NAV = [
-    ['start', 'Start', 'home', 1], ['slowka', 'Słówka', 'cards', 1], ['wymowa', 'Wymowa', 'ear', 1], ['dialogi', 'Dialogi', 'chat', 1],
-    ['alfabet', 'Alfabet', 'abc'], ['przyjaciele', 'Fałszywi przyjaciele', 'alert'], ['gramatyka', 'Gramatyka', 'book'],
+    ['start', 'Start', 'home', 1], ['sciezka', 'Ścieżka', 'route', 1], ['sluchanie', 'Słuchanie', 'headphones', 1], ['wymowa', 'Wymowa', 'ear', 1],
+    ['dialogi', 'Dialogi', 'chat'], ['alfabet', 'Alfabet', 'abc'], ['przyjaciele', 'Fałszywi przyjaciele', 'alert'], ['gramatyka', 'Gramatyka', 'book'],
     ['dyktando', 'Dyktando', 'pen'], ['slownik', 'Słownik', 'search'], ['ustawienia', 'Ustawienia', 'gear']
   ];
   function renderNav(cur) {
@@ -1452,13 +2084,14 @@ var UA = window.UA || (window.UA = {});
   /* ---------- Router ---------- */
   var V = {};
   var cleanup = null;
+  var NAVMAP = { nauka: 'sciezka', trening: 'sciezka', etap: 'sciezka', test: 'sciezka', slowka: 'sciezka', dialog: 'dialogi', lekcja: 'gramatyka', czytanka: 'sluchanie' };
   function route() {
     if (cleanup) { try { cleanup(); } catch (e) { } cleanup = null; }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     var h = (location.hash || '#/start').slice(2).split('/');
     var name = h[0] || 'start';
     if (!V[name]) name = 'start';
-    renderNav(name === 'nauka' || name === 'test' ? 'slowka' : name === 'dialog' ? 'dialogi' : name === 'lekcja' ? 'gramatyka' : name);
+    renderNav(NAVMAP[name] || name);
     renderStatus();
     main.innerHTML = '';
     V[name].apply(null, h.slice(1));
@@ -1467,179 +2100,419 @@ var UA = window.UA || (window.UA = {});
   window.addEventListener('hashchange', route);
 
   /* ============================================================
+     POZIOMY I ŚCIEŻKA A1 → C2
+     ============================================================ */
+  var LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  var LEVEL_NAME = { A1: 'początkujący', A2: 'podstawowy', B1: 'średni', B2: 'średnio zaawansowany', C1: 'zaawansowany', C2: 'biegły' };
+  S.unlocked = S.unlocked || {};
+  S.stats.listen = S.stats.listen || 0;
+  S.stats.texts = S.stats.texts || {};
+  function unitWords(id) { return UA.WORDS.filter(function (w) { return w.topic === id; }); }
+  function seen(w) { var c = SRS.card(w, 'r'); return !!(c && c.n >= 1); }
+  function unitProg(u) { var ws = unitWords(u.id); return ws.length ? ws.filter(seen).length / ws.length : 0; }
+  function unitById(id) { return UA.TOPICS.filter(function (t) { return t.id === id; })[0]; }
+  function unlocked(u) {
+    var i = UA.TOPICS.indexOf(u);
+    if (i <= 0 || S.unlocked[u.id]) return true;
+    var prev = UA.TOPICS[i - 1];
+    return unlocked(prev) && unitProg(prev) >= 0.7;
+  }
+  function currentUnit() {
+    for (var i = 0; i < UA.TOPICS.length; i++) { var u = UA.TOPICS[i]; if (unlocked(u) && unitProg(u) < 1) return u; }
+    return UA.TOPICS[UA.TOPICS.length - 1];
+  }
+  function levelUnlocked(lv) { return UA.TOPICS.some(function (t) { return t.level === lv && unlocked(t); }); }
+  function levelWords(lv) { return UA.WORDS.filter(function (w) { var t = unitById(w.topic); return t && t.level === lv; }); }
+  function ring(p, label) {
+    var r = 21, c = 2 * Math.PI * r;
+    return '<span class="ring"><svg viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="' + r + '" class="rbg"/><circle cx="25" cy="25" r="' + r + '" class="rfg" stroke-dasharray="' + c + '" stroke-dashoffset="' + (c * (1 - p)) + '"/></svg><b>' + label + '</b></span>';
+  }
+  G.BADGES.push(['ucho', 'Слуха́ч', '30 trafnych odpowiedzi w ćwiczeniach ze słuchu', function () { return S.stats.listen >= 30; }]);
+  G.BADGES.push(['lvB1', 'Рі́вень B1', 'Odblokowany poziom B1', function () { return levelUnlocked('B1'); }]);
+  G.BADGES.push(['lvC1', 'Рі́вень C1', 'Odblokowany poziom C1', function () { return levelUnlocked('C1'); }]);
+
+  /* ============================================================
      START
      ============================================================ */
   V.start = function () {
     var hr = new Date().getHours(), hello = hr < 11 ? 'До́брого ра́нку!' : hr < 18 ? 'До́брий день!' : 'До́брий ве́чір!';
-    var L = G.level(), vs = SP.voiceStatus();
+    var L = G.level(), vs = SP.voiceStatus(), cu = currentUnit(), q = buildQueue('all');
+    var dueN = q.filter(function (e) { return !e.isNew; }).length, newN = q.length - dueN;
     var r = SRS.mastery('r'), p = SRS.mastery('p');
-    var dr = SRS.due('r').length, dp = SRS.due('p').length, nr = Math.min(SRS.newLeft('r'), SRS.fresh('r').length), np = Math.min(SRS.newLeft('p'), SRS.fresh('p').length);
-    var h = '<section class="hero"><div><p class="kicker">Ukraiński dla Polaka</p><h1 lang="uk">' + st(hello) + '</h1><p class="lead">' +
-      (dr + dp ? 'Na dziś: <b>' + (dr + dp) + '</b> powtórek i <b>' + (nr + np) + '</b> nowych kart.' : nr ? 'Brak zaległych powtórek – możesz poznać <b>' + nr + '</b> nowych słów.' : 'Wszystko powtórzone. Чудо́во!') + '</p></div>' +
+    var h = '<section class="hero"><div><p class="kicker">Ukraiński dla Polaka · poziom ' + cu.level + '</p><h1 lang="uk">' + st(hello) + '</h1><p class="lead">' +
+      (q.length ? 'Na dziś: <b>' + dueN + '</b> powtórek i <b>' + newN + '</b> nowych słów. Aplikacja sama sprawdzi, co już umiesz.' : 'Wszystko na dziś zrobione. Чудо́во! Posłuchaj czytanki albo przećwicz dialog.') + '</p>' +
+      '<div class="row"><a class="btn primary" href="#/trening/all">' + ic('play') + (q.length ? 'Ucz się (' + q.length + ')' : 'Trening') + '</a><a class="btn" href="#/sluchanie">' + ic('headphones') + 'Słuchanie</a></div></div>' +
       '<div class="lvcard"><span class="lvbadge">' + ic('star') + '</span><div><b lang="uk">' + st(L.name) + '</b><small>' + esc(L.pl) + ' · ' + S.xp + ' XP</small>' + bar(S.xp - L.from, L.to - L.from) + '<small>' + (L.next ? 'do awansu: ' + (L.to - S.xp) + ' XP' : 'najwyższy stopień') + '</small></div></div></section>';
     if (!vs.ok) h += voiceHelp(vs);
-    if (!S.seenIntro) h += '<section class="card intro"><h2>Jak działa ta aplikacja</h2><p>Polak rozumie po ukraińsku „z grubsza” bardzo szybko – i równie szybko utrwala błędy. Dlatego mniej czasu idzie tu na słowa przezroczyste, a więcej na to, co się różni: <b>akcent</b> (zaznaczony w każdym słowie), <b>fałszywych przyjaciół</b>, dźwięki <b>и/і</b> i <b>г/ґ</b> oraz gramatykę inną niż polska.</p><p><b>Rozpoznawanie</b> (UA→PL) i <b>produkcja</b> (PL→UA) liczą się osobno – rozpoznawanie jest dla Polaka dużo łatwiejsze i wspólny wynik zawyżałby postęp.</p><div class="row"><a class="btn primary" href="#/test">Test wejściowy: zalicz słowa, które już rozumiesz</a><a class="btn" href="#/alfabet">Zacznij od alfabetu</a><button class="btn ghost" id="hideIntro">Rozumiem, ukryj</button></div></section>';
-    h += '<section class="duo">' + dirCard('r', 'Rozpoznawanie', 'UA → PL', dr, nr, r) + dirCard('p', 'Produkcja', 'PL → UA', dp, np, p) + '</section>';
+    if (!S.seenIntro2) h += '<section class="card intro"><h2>Co nowego</h2><p><b>Ścieżka A1 → C2</b>: ' + UA.TOPICS.length + ' lekcji, ' + UA.WORDS.length + ' słów. Kolejna lekcja otwiera się, gdy poznasz 70% słów poprzedniej – albo od razu, jeśli zdasz jej test.</p><p><b>Trening bez samooceny</b>: najpierw poznajesz słowo, potem aplikacja sama sprawdza, czy je znasz – tłumaczenie ABCD w obie strony, zdanie z luką, rozpoznawanie ze słuchu, wpisywanie. Wynik sam ustawia kolejną powtórkę.</p><p><b>Słuchanie</b>: słowa i zdania czytane na głos, pisownia ze słuchu, „prawda czy fałsz”, czytanki od A2 do C2.</p><div class="row"><a class="btn primary" href="#/sciezka">Zobacz ścieżkę</a><button class="btn ghost" id="hideIntro">Rozumiem</button></div></section>';
+    h += '<a class="card nextunit" href="#/etap/' + cu.id + '">' + ring(unitProg(cu), Math.round(unitProg(cu) * 100) + '%') + '<div><p class="kicker">Twoja lekcja · ' + cu.level + '</p><b>' + esc(cu.name) + '</b><small>' + unitWords(cu.id).filter(seen).length + ' z ' + unitWords(cu.id).length + ' słów poznanych</small></div>' + ic('next') + '</a>';
+    h += '<section class="kpis"><div class="kpi"><b>' + r.learning + '</b><small>słów rozpoznajesz</small></div><div class="kpi"><b>' + p.learning + '</b><small>słów potrafisz napisać</small></div><div class="kpi"><b>' + r.known + '</b><small>opanowane na stałe</small></div><div class="kpi"><b>' + S.stats.listen + '</b><small>trafień ze słuchu</small></div></section>';
     h += '<h2 class="sec">Ćwiczenia</h2><section class="tiles">' + [
-      ['alfabet', 'abc', 'Alfabet', 'litery i dźwięki'], ['przyjaciele', 'alert', 'Fałszywi przyjaciele', S.stats.ff + ' trafień'],
+      ['sciezka', 'route', 'Ścieżka A1–C2', UA.TOPICS.length + ' lekcji'], ['sluchanie', 'headphones', 'Słuchanie', 'słowa, zdania, czytanki'],
       ['wymowa', 'ear', 'Wymowa', 'и/і, г/ґ, akcent'], ['dialogi', 'chat', 'Dialogi', Object.keys(S.dialogs).length + '/' + UA.DIALOGS.length + ' przećwiczone'],
-      ['gramatyka', 'book', 'Gramatyka', 'tylko to, co inne'], ['dyktando', 'pen', 'Dyktando', 'słuchaj i pisz']
+      ['przyjaciele', 'alert', 'Fałszywi przyjaciele', S.stats.ff + ' trafień'], ['gramatyka', 'book', 'Gramatyka', 'tylko to, co inne'],
+      ['alfabet', 'abc', 'Alfabet', 'litery i dźwięki'], ['dyktando', 'pen', 'Dyktando', 'słuchaj i pisz']
     ].map(function (t) { return '<a class="tile" href="#/' + t[0] + '">' + ic(t[1]) + '<b>' + t[2] + '</b><small>' + t[3] + '</small></a>'; }).join('') + '</section>';
     h += '<h2 class="sec">Odznaki</h2><section class="badges">' + G.BADGES.map(function (b) {
       return '<div class="bdg ' + (S.badges[b[0]] ? 'got' : '') + '" title="' + esc(b[2]) + '">' + ic('trophy') + '<b lang="uk">' + st(b[1]) + '</b><small>' + esc(b[2]) + '</small></div>';
     }).join('') + '</section>';
     main.innerHTML = h;
-    var hi = $('#hideIntro'); if (hi) hi.onclick = function () { S.seenIntro = true; G.save(); route(); };
+    var hi = $('#hideIntro'); if (hi) hi.onclick = function () { S.seenIntro = true; S.seenIntro2 = true; G.save(); route(); };
   };
-  function dirCard(dir, name, arrow, due, nw, m) {
-    return '<div class="card dir"><div class="dirh"><h2>' + name + '</h2><span class="arrow">' + arrow + '</span></div>' +
-      '<div class="nums"><div><b>' + due + '</b><small>do powtórki</small></div><div><b>' + nw + '</b><small>nowe dziś</small></div><div><b>' + m.known + '</b><small>opanowane</small></div></div>' +
-      bar(m.learning, m.total) + '<small class="muted">' + m.learning + ' z ' + m.total + ' słów w nauce' + (dir === 'p' && !m.learning ? ' · produkcja odblokowuje się po rozpoznawaniu' : '') + '</small>' +
-      '<a class="btn primary block" href="#/nauka/' + dir + '">' + (due + nw ? 'Ucz się (' + (due + nw) + ')' : 'Przeglądaj dalej') + '</a></div>';
-  }
   function voiceHelp(vs) {
-    return '<section class="card warn"><h2>' + ic('vol') + ' Głos ukraiński</h2><p>' + esc(vs.msg) + ' Bez niego aplikacja działa, ale nie usłyszysz wymowy.</p><ul>' +
+    return '<section class="card warn"><h2>' + ic('vol') + ' Głos ukraiński</h2><p>' + esc(vs.msg) + ' Bez niego aplikacja działa, ale nie usłyszysz wymowy (ćwiczenia ze słuchu będą niedostępne).</p><ul>' +
       '<li><b>Android:</b> Ustawienia → Zarządzanie ogólne / System → Zamiana tekstu na mowę → Usługi Google → Zainstaluj dane głosowe → <i>українська</i>.</li>' +
       '<li><b>iPhone:</b> Ustawienia → Dostępność → Treść mówiona → Głosy → Ukraiński.</li>' +
       '<li><b>Windows:</b> najprościej otworzyć aplikację w przeglądarce <b>Edge</b> (ma głosy uk-UA). W Chrome: Ustawienia Windows → Czas i język → Mowa → Dodaj głosy → Українська.</li></ul>' +
-      '<p class="muted small">Uwaga z analizy: synteza mowy potrafi źle postawić akcent. Ufaj zaznaczonemu akcentowi w tekście bardziej niż głosowi.</p></section>';
+      '<p class="muted small">Synteza mowy potrafi źle postawić akcent. Ufaj zaznaczonemu akcentowi w tekście bardziej niż głosowi.</p></section>';
   }
 
   /* ============================================================
-     SŁÓWKA – menu
+     ŚCIEŻKA
      ============================================================ */
-  V.slowka = function () {
-    var dr = SRS.due('r').length, dp = SRS.due('p').length;
-    var h = head('Słówka', 'Słownictwo A1 z akcentem, formami i parami aspektowymi. Powtórki rozłożone w czasie (SM-2), osobno w obu kierunkach.');
-    h += '<section class="duo">' + dirCard('r', 'Rozpoznawanie', 'UA → PL', dr, Math.min(SRS.newLeft('r'), SRS.fresh('r').length), SRS.mastery('r')) +
-      dirCard('p', 'Produkcja', 'PL → UA', dp, Math.min(SRS.newLeft('p'), SRS.fresh('p').length), SRS.mastery('p')) + '</section>';
-    h += '<section class="row"><a class="btn" href="#/test">' + ic('check') + ' Test wejściowy</a><a class="btn" href="#/slownik">' + ic('search') + ' Słownik</a><a class="btn" href="#/przyjaciele">' + ic('alert') + ' Fałszywi przyjaciele</a></section>';
-    h += '<h2 class="sec">Tematy</h2><section class="topics">' + UA.TOPICS.map(function (t) {
-      var ws = UA.WORDS.filter(function (w) { return w.topic === t.id; });
-      var r = ws.filter(function (w) { var c = SRS.card(w, 'r'); return c && c.n >= 1; }).length, p = ws.filter(function (w) { var c = SRS.card(w, 'p'); return c && c.n >= 1; }).length;
-      return '<a class="card topic" href="#/slownik/' + t.id + '"><b>' + esc(t.name) + '</b><small>' + ws.length + ' słów</small>' +
-        '<div class="tb"><span>rozp.</span>' + bar(r, ws.length) + '</div><div class="tb"><span>prod.</span>' + bar(p, ws.length, 'gold') + '</div></a>';
-    }).join('') + '</section>';
-    h += '<p class="muted small">Nowe słowa wchodzą w kolejności tematów. Limit nowych kart na dzień zmienisz w Ustawieniach (teraz: ' + S.settings.newPerDay + ').</p>';
+  V.slowka = function () { location.replace('#/sciezka'); };
+  V.nauka = function () { location.replace('#/trening/all'); };
+  V.sciezka = function () {
+    var cu = currentUnit();
+    var h = head('Ścieżka A1 → C2', 'Lekcje otwierają się po kolei: następna – gdy poznasz 70% słów poprzedniej. Możesz też przeskoczyć dalej, zdając test lekcji.');
+    h += '<div class="row"><a class="btn primary" href="#/trening/all">' + ic('play') + 'Codzienny trening</a><a class="btn" href="#/test">' + ic('check') + 'Test wejściowy (słowa przezroczyste)</a></div>';
+    LEVELS.forEach(function (lv) {
+      var units = UA.TOPICS.filter(function (t) { return t.level === lv; }), ws = levelWords(lv), kn = ws.filter(seen).length, text = (UA.TEXTS || []).filter(function (t) { return t.level === lv; })[0];
+      h += '<section class="lvl ' + (levelUnlocked(lv) ? '' : 'locked') + '"><div class="lvlh"><span class="lvtag lv-' + lv + '">' + lv + '</span><div><b>Poziom ' + lv + ' – ' + LEVEL_NAME[lv] + '</b><small>' + kn + ' / ' + ws.length + ' słów · ' + units.length + ' lekcji</small></div></div>' + bar(kn, ws.length) +
+        '<div class="units">' + units.map(function (u) {
+          var ok = unlocked(u), p = unitProg(u);
+          return '<a class="unode ' + (ok ? '' : 'lock') + (u === cu ? ' cur' : '') + (p >= 1 ? ' done' : '') + '" href="#/etap/' + u.id + '">' + (ok ? ring(p, p >= 1 ? '✓' : Math.round(p * 100) + '%') : '<span class="ring lockic">' + ic('lock') + '</span>') + '<span class="uname">' + esc(u.name) + '</span><small>' + unitWords(u.id).length + ' słów</small></a>';
+        }).join('') + (text ? '<a class="unode text ' + (levelUnlocked(lv) ? '' : 'lock') + '" href="#/czytanka/' + text.id + '"><span class="ring lockic">' + ic('headphones') + '</span><span class="uname">Czytanka: ' + esc(text.t) + '</span><small>słuchanie + pytania</small></a>' : '') + '</div></section>';
+    });
     main.innerHTML = h;
+    var c = $('.unode.cur'); if (c && c.scrollIntoView && location.hash === '#/sciezka') setTimeout(function () { c.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 60);
+  };
+  V.etap = function (id) {
+    var u = unitById(id); if (!u) return location.replace('#/sciezka');
+    var ws = unitWords(id), ok = unlocked(u), p = unitProg(u), idx = UA.TOPICS.indexOf(u), nxt = UA.TOPICS[idx + 1];
+    var fresh = ws.filter(function (w) { return !SRS.card(w, 'r'); }).length, due = ws.filter(function (w) { return ['r', 'p'].some(function (d) { var c = SRS.card(w, d); return c && c.d <= U.today(); }); }).length;
+    var h = head('<span class="lvtag lv-' + u.level + '">' + u.level + '</span> ' + esc(u.name), ws.length + ' słów · poznane: ' + Math.round(p * 100) + '%', '#/sciezka');
+    if (!ok) h += '<section class="card warn"><h2>' + ic('lock') + ' Lekcja zablokowana</h2><p>Otworzy się, gdy poznasz 70% słów poprzedniej lekcji. Jeśli znasz już ten materiał – zdaj test lekcji (min. 80%), a odblokujesz ją od razu.</p></section>';
+    h += '<section class="card unithead">' + ring(p, Math.round(p * 100) + '%') + '<div class="row">' +
+      (ok ? '<a class="btn primary" href="#/trening/' + id + '">' + ic('play') + (fresh ? 'Ucz się (' + fresh + ' nowych)' : 'Trening lekcji') + '</a>' : '') +
+      '<button class="btn" id="utest">' + ic('target') + 'Test lekcji (10 pytań)</button>' + (due ? '<span class="muted small">' + due + ' słów czeka na powtórkę</span>' : '') + '</div></section>';
+    h += '<section class="wlist">' + ws.map(function (w) {
+      var r = SRS.card(w, 'r'), pc = SRS.card(w, 'p');
+      return '<div class="wrow">' + say(w.ua) + '<div class="wmain"><div>' + uaw(w.ua) + '</div><div class="pl">' + esc(w.pl) + '</div>' + (w.ex ? '<div class="forms" lang="uk">' + st(w.ex) + '</div>' : '') + '</div><div class="wside"><span class="tag ' + SIM[w.sim][1] + '">' + SIM[w.sim][0] + '</span><span class="dots" title="rozpoznawanie / produkcja"><i class="' + (r && r.n ? (r.i >= 21 ? 'k' : 'l') : '') + '"></i><i class="' + (pc && pc.n ? (pc.i >= 21 ? 'k' : 'l') : '') + '"></i></span></div></div>';
+    }).join('') + '</section>';
+    main.innerHTML = h;
+    $('#utest').onclick = function () {
+      var items = shuffle(ws).slice(0, 10).map(function (w, i) { return [exUa2pl, exPl2ua, exCloze, exListen][i % 4](w) || exPl2ua(w); });
+      runMC({ title: 'Test lekcji: ' + u.name, back: '#/etap/' + id, items: items, onEnd: function (good, n) {
+        if (good / n >= 0.8) {
+          var t = U.today();
+          ws.forEach(function (w) { var k = SRS.wid(w) + ':r'; if (!S.srs[k] || !S.srs[k].n) S.srs[k] = { e: 2.5, i: 7, n: 2, d: t + 7, l: 0 }; });
+          S.unlocked[id] = true; if (nxt) S.unlocked[nxt.id] = true; G.save(); G.confetti(); G.checkBadges();
+          return '<div class="fb ok"><b>Lekcja zaliczona!</b><p>Słowa trafiły do powtórek' + (nxt ? ', a lekcja „' + esc(nxt.name) + '” jest odblokowana.' : '.') + '</p></div>';
+        }
+        return '<div class="fb bad"><b>Zabrakło do 80%.</b><p>Przećwicz słowa w treningu lekcji i spróbuj ponownie.</p></div>';
+      } });
+    };
   };
 
   /* ============================================================
-     SESJA NAUKI
+     GENERATORY ĆWICZEŃ (aplikacja sama sprawdza znajomość słowa)
      ============================================================ */
-  V.nauka = function (dir) {
-    dir = dir === 'p' ? 'p' : 'r';
-    var t = U.today();
-    var dueW = SRS.due(dir).sort(function (a, b) { return SRS.card(a, dir).d - SRS.card(b, dir).d; }).slice(0, 60);
-    var newW = SRS.fresh(dir).slice(0, SRS.newLeft(dir));
-    var queue = [];
-    // przeplatanie: co trzecia karta nowa
-    var i = 0, j = 0; while (i < dueW.length || j < newW.length) { if (i < dueW.length) queue.push(dueW[i++]); if (i < dueW.length) queue.push(dueW[i++]); if (j < newW.length) queue.push(newW[j++]); }
-    var pos = 0, done = 0, ok = 0, retries = {};
-    var title = dir === 'r' ? 'Rozpoznawanie <span class="arrow">UA → PL</span>' : 'Produkcja <span class="arrow">PL → UA</span>';
+  function lvOf(w) { var t = unitById(w.topic); return t ? t.level : 'A1'; }
+  function pickOthers(w, keyFn, n, filter) {
+    var own = keyFn(w), lv = lvOf(w), seenKeys = {}; seenKeys[own] = 1;
+    var cand = shuffle(UA.WORDS.filter(function (x) { return x !== w && (!filter || filter(x)); }));
+    cand.sort(function (a, b) { return score(b) - score(a); });
+    function score(x) { return (x.pos === w.pos ? 2 : 0) + (lvOf(x) === lv ? 1 : 0) + (x.topic === w.topic ? 0.5 : 0); }
+    var out = [];
+    for (var i = 0; i < cand.length && out.length < n; i++) { var k = keyFn(cand[i]); if (!seenKeys[k] && k) { seenKeys[k] = 1; out.push(cand[i]); } }
+    return out;
+  }
+  function mc(correct, others, keyFn) { var all = shuffle([correct].concat(others)); return { opts: all.map(keyFn), a: all.indexOf(correct) }; }
+  function wordReveal(w) {
+    return '<div class="reveal"><div class="big sm">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div><div class="pl">' + esc(w.pl) + '</div>' + (w.ex ? '<div class="ex"><p lang="uk">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' : '') + '</div>';
+  }
+  function exUa2pl(w) {
+    var o = mc(w, pickOthers(w, function (x) { return x.pl; }, 3), function (x) { return esc(x.pl); });
+    return { kind: 'ua2pl', dir: 'r', w: w, title: 'Co to znaczy?', prompt: '<div class="big">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div>', say: w.ua, opts: o.opts, a: o.a, reveal: wordReveal(w) };
+  }
+  function exListen(w) {
+    var o = mc(w, pickOthers(w, function (x) { return x.pl; }, 3), function (x) { return esc(x.pl); });
+    return { kind: 'listen', dir: 'r', w: w, title: 'Posłuchaj – co to znaczy?', prompt: listenBtn(w.ua), say: w.ua, listen: true, opts: o.opts, a: o.a, reveal: wordReveal(w) };
+  }
+  function exSpell(w) {
+    var len = strip(w.ua).length;
+    var o = mc(w, pickOthers(w, function (x) { return strip(x.ua); }, 3, function (x) { return Math.abs(strip(x.ua).length - len) <= 3; }), function (x) { return '<span lang="uk" class="ua">' + esc(strip(x.ua)) + '</span>'; });
+    return { kind: 'spell', dir: 'r', w: w, title: 'Które słowo słyszysz?', prompt: listenBtn(w.ua), say: w.ua, listen: true, opts: o.opts, a: o.a, reveal: wordReveal(w) };
+  }
+  function exPl2ua(w) {
+    var o = mc(w, pickOthers(w, function (x) { return strip(x.ua); }, 3), function (x) { return '<span lang="uk" class="ua">' + st(x.ua) + '</span>'; });
+    return { kind: 'pl2ua', dir: 'p', w: w, title: 'Jak to powiedzieć po ukraińsku?', prompt: '<div class="big pl">' + esc(w.pl) + '</div><div class="meta">' + esc(POS[w.pos] || '') + '</div>', opts: o.opts, a: o.a, sayAfter: w.ua, reveal: wordReveal(w) };
+  }
+  function exCloze(w) {
+    var cz = w._cz; if (!cz) return null;
+    var others = pickOthers(w, function (x) { return x._cz ? strip(x._cz.t).toLowerCase() : ''; }, 3, function (x) { return !!x._cz; });
+    if (others.length < 3) return null;
+    var all = shuffle([w].concat(others));
+    return { kind: 'cloze', dir: 'p', w: w, title: 'Uzupełnij zdanie', prompt: '<p class="cloze" lang="uk">' + st(cz.pre) + '<span class="gap">…</span>' + st(cz.post) + '</p><p class="muted">' + esc(w.exPl) + '</p>', opts: all.map(function (x) { return '<span lang="uk" class="ua">' + st(x._cz.t) + '</span>'; }), a: all.indexOf(w), sayAfter: w.ex, reveal: wordReveal(w) };
+  }
+  function exType(w) { return { kind: 'type', dir: 'p', w: w, title: 'Napisz po ukraińsku', reveal: wordReveal(w) }; }
+  function listenBtn(text) { return '<div class="listenbox"><button type="button" class="bigplay" data-say="' + esc(text) + '" aria-label="Odtwórz">' + ic('vol') + '</button><button type="button" class="say slow" data-say="' + esc(text) + '" data-rate="0.65" aria-label="Wolniej">' + ic('slow') + '<small>wolniej</small></button></div>'; }
+  function chooseEx(e) {
+    var w = e.w, c = SRS.card(w, e.dir), n = c ? c.n : 0, x;
+    if (e.dir === 'r') {
+      if (e.isNew || n === 0) return exUa2pl(w);
+      if (n === 1) return exListen(w);
+      return U.pick([exUa2pl, exListen, exSpell])(w);
+    }
+    if (e.followUp) return exCloze(w) || exPl2ua(w);
+    if (n === 0) return exPl2ua(w);
+    if (n === 1) return exCloze(w) || exPl2ua(w);
+    x = U.pick(w._cz ? [exCloze, exType, exPl2ua, exCloze] : [exType, exPl2ua])(w);
+    return x || exPl2ua(w);
+  }
+
+  /* ---------- Kolejka treningu ---------- */
+  function buildQueue(scope) {
+    var t = U.today(), inScope = scope === 'all' ? function () { return true; } : function (w) { return w.topic === scope; };
+    var due = [], fresh = [];
+    UA.WORDS.forEach(function (w) {
+      if (!inScope(w)) return;
+      ['r', 'p'].forEach(function (d) { var c = SRS.card(w, d); if (c && c.d <= t) due.push({ w: w, dir: d }); });
+    });
+    due = shuffle(due).slice(0, 50);
+    var limR = scope === 'all' ? SRS.newLeft('r') : 12, limP = scope === 'all' ? SRS.newLeft('p') : 12;
+    var order = scope === 'all' ? UA.TOPICS.filter(unlocked) : [unitById(scope)];
+    order.forEach(function (u) { unitWords(u.id).forEach(function (w) { if (!SRS.card(w, 'r') && fresh.length < limR) fresh.push({ w: w, dir: 'r', isNew: true }); }); });
+    var freshP = UA.WORDS.filter(function (w) { return inScope(w) && seen(w) && !SRS.card(w, 'p'); }).slice(0, limP).map(function (w) { return { w: w, dir: 'p', firstP: true }; });
+    var q = [], i = 0, j = 0, k = 0;
+    while (i < due.length || j < fresh.length || k < freshP.length) {
+      if (i < due.length) q.push(due[i++]); if (i < due.length) q.push(due[i++]);
+      if (j < fresh.length) q.push(fresh[j++]);
+      if (k < freshP.length) q.push(freshP[k++]);
+    }
+    return q;
+  }
+
+  /* ============================================================
+     WSPÓLNY WIDOK PYTANIA (ABCD) + combo
+     ============================================================ */
+  function askMC(stage, q, done) {
+    stage.innerHTML = '<div class="card fc qcard"><p class="qtitle">' + esc(q.title) + '</p>' + q.prompt + '</div><div class="opts' + (q.opts.length === 2 ? ' two' : '') + '">' + q.opts.map(function (o, i) { return '<button class="btn opt" data-i="' + i + '"><kbd>' + (i + 1) + '</kbd><span>' + o + '</span></button>'; }).join('') + '</div><div id="fb"></div>';
+    if (q.say && (q.listen || S.settings.autoplay)) setTimeout(function () { SP.speak(q.say); }, 250);
+    var answered = false;
+    function pick(i, b) {
+      if (answered) return; answered = true;
+      var ok = i === q.a;
+      $$('.opt', stage).forEach(function (x) { x.disabled = true; if (+x.getAttribute('data-i') === q.a) x.classList.add('right'); });
+      if (!ok) b.classList.add('wrong'); else b.classList.add('pop');
+      G.sfx(ok ? 'ok' : 'bad');
+      if (q.sayAfter) SP.speak(q.sayAfter);
+      $('#fb', stage).innerHTML = '<div class="verdict ' + (ok ? 'ok' : 'bad') + '"><b>' + (ok ? G.praise() : 'Niezupełnie.') + '</b></div>' + (q.reveal || '') + (q.extra || '') + '<button class="btn primary block" id="nx">Dalej <kbd>Enter</kbd></button>';
+      $('#nx', stage).onclick = function () { done(ok, b); };
+      $('#nx', stage).focus({ preventScroll: true });
+      if (q.onAnswer) q.onAnswer(ok, b);
+    }
+    $$('.opt', stage).forEach(function (b) { b.onclick = function () { pick(+b.getAttribute('data-i'), b); }; });
+    return function key(e) { var n = +e.key; if (n >= 1 && n <= q.opts.length) { var b = $$('.opt', stage)[n - 1]; if (b && !b.disabled) b.click(); } if (e.key === 'Enter') { var nx = $('#nx', stage); if (nx) { e.preventDefault(); nx.click(); } } };
+  }
+  function askType(stage, q, done) {
+    var w = q.w, pair = w.ua.indexOf('/') > 0;
+    stage.innerHTML = '<div class="card fc qcard"><p class="qtitle">' + esc(q.title) + '</p><div class="big pl">' + esc(w.pl) + '</div><div class="meta">' + esc(POS[w.pos] || '') + (pair ? ' – wpisz parę: niedokonany / dokonany' : '') + '</div>' +
+      '<div class="ansrow"><input id="ans" class="answer" placeholder="po ukraińsku…"><button class="btn primary" id="chk">Sprawdź</button></div><div id="kbh"></div></div><div id="fb"></div>';
+    var inp = $('#ans', stage), finished = false;
+    $('#kbh', stage).appendChild(UA.KB(inp, check));
+    if (!('ontouchstart' in window) || S.settings.sysKb) inp.focus();
+    $('#chk', stage).onclick = check;
+    function check() {
+      if (finished) { var nx = $('#nx', stage); if (nx) nx.click(); return; }
+      var a = norm(inp.value); if (!a) return;
+      var exp = norm(w.ua), ep = exp.split('/').map(function (s) { return s.trim(); }), ap = a.split(/\s*[\/,]\s*/).filter(Boolean);
+      var ok = a === exp || (ap.length === ep.length && ap.every(function (x, k) { return x === ep[k]; }));
+      var near = !ok && U.lev(a.replace(/\s*\/\s*/g, '/'), exp.replace(/\s*\/\s*/g, '/')) <= 1 && exp.length > 4;
+      var half = !ok && pair && ap.length === 1 && ap[0] === ep[0];
+      finished = true; inp.disabled = true; $('#kbh', stage).innerHTML = '';
+      G.sfx(ok || near ? 'ok' : 'bad'); SP.speak(w.ua);
+      var msg = ok ? '<b>' + G.praise() + '</b>' : near ? '<b>Prawie – literówka.</b> Zaliczam, ale popraw zapis.' : half ? '<b>Brakuje formy dokonanej.</b>' : '<b>Niezupełnie.</b> Wpisałeś: <span lang="uk">' + esc(inp.value) + '</span>';
+      $('#fb', stage).innerHTML = '<div class="verdict ' + (ok ? 'ok' : near || half ? 'typo' : 'bad') + '">' + msg + '</div>' + q.reveal + '<button class="btn primary block" id="nx">Dalej <kbd>Enter</kbd></button>';
+      $('#nx', stage).onclick = function () { done(ok || near, $('#chk', stage)); };
+    }
+    return function key(e) { if (e.key === 'Enter' && finished) { var nx = $('#nx', stage); if (nx) { e.preventDefault(); nx.click(); } } };
+  }
+
+  /* ============================================================
+     TRENING – nauka słów z automatycznym sprawdzaniem
+     ============================================================ */
+  V.trening = function (scope) {
+    scope = scope || 'all';
+    var u = scope === 'all' ? null : unitById(scope);
+    var queue = buildQueue(scope), pos = 0, done = 0, okc = 0, combo = 0, best = 0, retries = {}, keyH = null;
+    var back = u ? '#/etap/' + scope : '#/sciezka', title = u ? 'Trening: ' + u.name : 'Codzienny trening';
     if (!queue.length) {
-      main.innerHTML = head(title, '', '#/slowka') + '<section class="card empty"><h2>Na dziś wszystko!</h2><p>' +
-        (dir === 'p' && !SRS.mastery('r').learning ? 'Produkcja odblokowuje się dla słów, które już poznałeś w rozpoznawaniu.' : 'Brak powtórek i wyczerpany limit nowych słów. Wróć jutro albo zwiększ limit w ustawieniach.') +
-        '</p><div class="row"><a class="btn primary" href="#/start">Start</a><a class="btn" href="#/dialogi">Poćwicz dialogi</a></div></section>';
+      main.innerHTML = head(title, '', back) + '<section class="card empty"><h2>Na dziś wszystko!</h2><p>Brak powtórek i nowych słów w tym zakresie. Wróć jutro, zwiększ limit nowych słów w ustawieniach albo poćwicz słuchanie.</p><div class="row center"><a class="btn primary" href="#/sluchanie">Słuchanie</a><a class="btn" href="#/sciezka">Ścieżka</a></div></section>';
       return;
     }
-    function shell() {
-      main.innerHTML = head(title, '', '#/slowka') + '<div class="sessbar">' + bar(pos, queue.length) + '<span>' + Math.min(pos + 1, queue.length) + '/' + queue.length + '</span></div><div id="stage"></div>';
-    }
-    shell();
-    var keyH = null;
-    function next() {
-      if (pos >= queue.length) return finish();
-      var w = queue[pos];
-      $('.sessbar').innerHTML = bar(pos, queue.length) + '<span>' + (pos + 1) + '/' + queue.length + '</span>';
-      (dir === 'r' ? showRec : showProd)(w, !SRS.card(w, dir));
-    }
-    function after(w, q, isNew) {
-      if (isNew) SRS.countNew(dir);
-      SRS.grade(w, dir, q);
-      done++; if (q >= 3) ok++;
-      if (q < 3) { var k = SRS.wid(w); retries[k] = (retries[k] || 0) + 1; if (retries[k] <= 2) queue.splice(Math.min(queue.length, pos + 4), 0, w); }
-      G.addXP(q >= 3 ? (dir === 'p' ? 8 : 5) : 1);
-      if (dir === 'p' && q >= 3) { S.stats.prodOk++; G.save(); }
-      pos++; next();
-    }
-    function backHTML(w) {
-      var s = SIM[w.sim];
-      return '<div class="back"><div class="pl">' + esc(w.pl) + '</div>' +
-        (w.forms ? '<div class="forms" lang="uk">' + st(w.forms) + '</div>' : '') +
-        '<div class="tags"><span class="tag ' + s[1] + '">' + s[0] + '</span><span class="tag">' + esc(topicName(w.topic)) + '</span></div>' +
-        (w.ex ? '<div class="ex"><p lang="uk">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' : '') +
-        (w.sim === 'f' ? '<a class="small" href="#/przyjaciele">Uwaga: fałszywy przyjaciel – zobacz moduł</a>' : '') + '</div>';
-    }
-    function gradeBtns(w, set) {
-      return '<div class="grades">' + set.map(function (g) {
-        return '<button class="btn g' + g[0] + '" data-q="' + g[0] + '"><b>' + g[1] + '</b><small>' + (g[0] < 3 ? 'jeszcze raz' : days(SRS.preview(w, dir, g[0]))) + '</small><kbd>' + g[2] + '</kbd></button>';
-      }).join('') + '</div>';
-    }
-    function bindGrades(w, isNew) {
-      $$('.grades [data-q]').forEach(function (b) { b.onclick = function () { after(w, +b.getAttribute('data-q'), isNew); }; });
-    }
-    function showRec(w, isNew) {
-      var stg = $('#stage');
-      stg.innerHTML = '<div class="card fc">' + (isNew ? '<span class="newtag">nowe</span>' : '') + '<div class="meta">' + esc(POS[w.pos] || '') + '</div>' +
-        '<div class="big">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div><div id="bk"></div></div>' +
-        '<div class="actions" id="act"><button class="btn primary block" id="show">Pokaż znaczenie <kbd>spacja</kbd></button></div>';
-      if (S.settings.autoplay) SP.speak(w.ua);
-      function reveal() {
-        $('#bk').innerHTML = backHTML(w);
-        $('#act').innerHTML = gradeBtns(w, [[1, 'Nie wiem', '1'], [3, 'Trudne', '2'], [4, 'Dobrze', '3'], [5, 'Łatwe', '4']]);
-        bindGrades(w, isNew);
-        keyH = function (e) { var m = { '1': 1, '2': 3, '3': 4, '4': 5 }[e.key]; if (m) after(w, m, isNew); };
-      }
-      $('#show').onclick = reveal;
-      keyH = function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); reveal(); } };
-    }
-    function showProd(w, isNew) {
-      var stg = $('#stage'), pair = w.ua.indexOf('/') > 0;
-      var hint = POS[w.pos] + (pair ? ' – wpisz parę: niedokonany / dokonany' : '');
-      stg.innerHTML = '<div class="card fc">' + (isNew ? '<span class="newtag">nowe</span>' : '') + '<div class="meta">' + esc(hint) + '</div>' +
-        '<div class="big pl">' + esc(w.pl) + '</div>' +
-        '<div class="ansrow"><input id="ans" class="answer" placeholder="po ukraińsku…"><button class="btn primary" id="chk">Sprawdź</button></div>' +
-        '<div id="kbh"></div><div id="res"></div></div><div class="actions" id="act"><button class="btn ghost block" id="dunno">Nie wiem – pokaż</button></div>';
-      var inp = $('#ans');
-      $('#kbh').appendChild(UA.KB(inp, check));
-      if (!('ontouchstart' in window) || S.settings.sysKb) inp.focus();
-      $('#chk').onclick = check; $('#dunno').onclick = function () { result('bad'); };
-      keyH = null;
-      function check() {
-        var a = norm(inp.value); if (!a) return;
-        var exp = norm(w.ua);
-        var expParts = exp.split('/').map(function (s) { return s.trim(); });
-        var aParts = a.split(/\s*[\/,]\s*/).map(function (s) { return s.trim(); }).filter(Boolean);
-        if (a === exp || (aParts.length === expParts.length && aParts.every(function (x, k) { return x === expParts[k]; }))) return result('ok');
-        if (pair && aParts.length === 1 && aParts[0] === expParts[0]) return result('half');
-        var d = U.lev(a.replace(/\s*\/\s*/g, '/'), exp.replace(/\s*\/\s*/g, '/'));
-        if (d <= 1 && exp.length > 4) return result('typo', inp.value);
-        result('bad', inp.value);
-      }
-      function result(kind, given) {
-        inp.disabled = true; $('#kbh').innerHTML = ''; $('#chk').remove();
-        var msg = { ok: '<b class="okc">' + G.praise() + '</b>', half: '<b class="mid">Brakuje formy dokonanej.</b> Ucz się par, nie pojedynczych form.', typo: '<b class="mid">Prawie – literówka?</b> Wpisałeś: <span lang="uk">' + esc(given) + '</span>', bad: given ? '<b class="badc">Niezupełnie.</b> Wpisałeś: <span lang="uk">' + esc(given) + '</span>' : '<b class="badc">Poprawna odpowiedź:</b>' }[kind];
-        $('#res').innerHTML = '<div class="verdict ' + kind + '">' + msg + '</div><div class="big">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div>' + backHTML(w).replace('<div class="pl">' + esc(w.pl) + '</div>', '');
-        SP.speak(w.ua);
-        G.sfx(kind === 'ok' ? 'ok' : 'bad');
-        var set = kind === 'ok' ? [[3, 'Trudne', '1'], [4, 'Dobrze', '2'], [5, 'Łatwe', '3']] : kind === 'bad' ? [[1, 'Dalej', '1']] : [[1, 'Nie zaliczaj', '1'], [3, 'Zalicz jako trudne', '2']];
-        $('#act').innerHTML = gradeBtns(w, set);
-        bindGrades(w, isNew);
-        keyH = function (e) { var b = $$('.grades [data-q]')[+e.key - 1]; if (b) b.click(); else if (e.key === 'Enter') $$('.grades [data-q]').pop().click(); };
-      }
-    }
-    function finish() {
-      document.removeEventListener('keydown', onKey);
-      var pct = done ? Math.round(100 * ok / done) : 0;
-      main.innerHTML = head(title, '', '#/slowka') + '<section class="card empty"><h2 lang="uk">' + st(pct >= 80 ? 'Чудо́во!' : 'До́бре!') + '</h2><p>Sesja zakończona: ' + done + ' odpowiedzi, ' + pct + '% zaliczonych.</p>' +
-        '<div class="row"><a class="btn primary" href="#/start">Start</a>' + (dir === 'r' ? '<a class="btn" href="#/nauka/p">Teraz produkcja</a>' : '<a class="btn" href="#/dyktando">Dyktando</a>') + '</div></section>';
-      if (pct >= 80 && done >= 5) G.confetti();
-    }
+    main.innerHTML = head(title, '', back) + '<div class="sessbar"></div><div id="stage"></div>';
     function onKey(e) { if (e.target.tagName === 'INPUT' && e.key !== 'Enter') return; if (keyH) keyH(e); }
     document.addEventListener('keydown', onKey);
     cleanup = function () { document.removeEventListener('keydown', onKey); };
+    function bar2() { $('.sessbar').innerHTML = bar(pos, queue.length) + '<span>' + Math.min(pos + 1, queue.length) + '/' + queue.length + '</span>' + (combo >= 3 ? '<span class="combo">' + ic('flame') + combo + '</span>' : ''); }
+    function next() {
+      if (pos >= queue.length) return finish();
+      bar2();
+      var e = queue[pos];
+      if (e.isNew && !e.shown) return intro(e);
+      var q = chooseEx(e);
+      keyH = (q.kind === 'type' ? askType : askMC)($('#stage'), q, function (ok, b) { result(e, ok, b); });
+    }
+    function intro(e) {
+      e.shown = true; var w = e.w;
+      $('#stage').innerHTML = '<div class="card fc introcard"><span class="newtag">nowe słowo</span><div class="meta">' + esc(POS[w.pos] || '') + ' · ' + lvOf(w) + '</div><div class="big">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div><div class="pl bigpl">' + esc(w.pl) + '</div>' +
+        (w.forms ? '<div class="forms" lang="uk">' + st(w.forms) + '</div>' : '') + '<div class="tags"><span class="tag ' + SIM[w.sim][1] + '">' + SIM[w.sim][0] + '</span></div>' +
+        (w.ex ? '<div class="ex"><p lang="uk">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' : '') + '</div><div class="actions"><button class="btn primary block" id="gotit">Zapamiętane – sprawdź mnie <kbd>Enter</kbd></button></div>';
+      if (S.settings.autoplay) SP.speak(w.ua);
+      $('#gotit').onclick = next;
+      keyH = function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); next(); } };
+    }
+    function result(e, ok, b) {
+      var isNewCard = !SRS.card(e.w, e.dir);
+      if (isNewCard) SRS.countNew(e.dir);
+      SRS.grade(e.w, e.dir, ok ? 4 : 1);
+      done++;
+      if (ok) {
+        okc++; combo++; best = Math.max(best, combo);
+        var mult = 1 + Math.min(2, Math.floor(combo / 4)), r = b ? b.getBoundingClientRect() : null;
+        G.addXP((e.dir === 'p' ? 8 : 5) * mult);
+        if (r) floatXP('+' + (e.dir === 'p' ? 8 : 5) * mult, r.left + r.width / 2, r.top);
+        if (e.dir === 'p') { S.stats.prodOk++; G.save(); }
+        // nowe słowo: drugie sprawdzenie w tej samej sesji, ale w innej formie (zdanie z luką / PL → UA)
+        if (e.isNew && !SRS.card(e.w, 'p')) queue.splice(Math.min(queue.length, pos + 4), 0, { w: e.w, dir: 'p', followUp: true });
+      } else {
+        combo = 0;
+        var k = SRS.wid(e.w) + e.dir; retries[k] = (retries[k] || 0) + 1;
+        if (retries[k] <= 2) queue.splice(Math.min(queue.length, pos + 3), 0, { w: e.w, dir: e.dir });
+      }
+      pos++; next();
+    }
+    function finish() {
+      keyH = null; document.removeEventListener('keydown', onKey);
+      var pct = done ? Math.round(100 * okc / done) : 0;
+      $('.sessbar').innerHTML = '';
+      $('#stage').innerHTML = '<section class="card empty"><h2 lang="uk">' + st(pct >= 80 ? 'Чудо́во!' : 'До́бре!') + '</h2><p>' + done + ' odpowiedzi, ' + pct + '% poprawnych · najdłuższa seria: ' + best + '.</p><p class="muted">Kolejne powtórki aplikacja zaplanowała sama – na podstawie tego, jak Ci poszło.</p><div class="row center"><a class="btn primary" href="#/sciezka">Ścieżka</a><a class="btn" href="#/sluchanie">Słuchanie</a></div></section>';
+      if (pct >= 80 && done >= 6) G.confetti();
+      G.checkBadges();
+    }
     next();
+  };
+  function floatXP(text, x, y) {
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var el = document.createElement('div'); el.className = 'xpfloat'; el.textContent = text; el.style.left = x + 'px'; el.style.top = y + 'px';
+    document.body.appendChild(el); setTimeout(function () { el.remove(); }, 1100);
+  }
+
+  /* ============================================================
+     RUNDA PYTAŃ (testy lekcji, słuchanie)
+     ============================================================ */
+  function runMC(o) {
+    var items = o.items.filter(Boolean), k = 0, good = 0, combo = 0, keyH = null;
+    main.innerHTML = head(esc(o.title), o.sub || '', o.back) + '<div class="sessbar"></div><div id="stage"></div>';
+    function onKey(e) { if (e.target.tagName === 'INPUT') return; if (keyH) keyH(e); }
+    document.addEventListener('keydown', onKey);
+    cleanup = function () { document.removeEventListener('keydown', onKey); };
+    function show() {
+      if (k >= items.length) return end();
+      $('.sessbar').innerHTML = bar(k, items.length) + '<span>' + (k + 1) + '/' + items.length + '</span>' + (combo >= 3 ? '<span class="combo">' + ic('flame') + combo + '</span>' : '');
+      var q = items[k];
+      keyH = askMC($('#stage'), q, function (ok, b) {
+        if (ok) { good++; combo++; var r = b.getBoundingClientRect(); G.addXP(4, r.left, r.top); floatXP('+4', r.left + r.width / 2, r.top); if (o.counter) { S.stats[o.counter] = (S.stats[o.counter] || 0) + 1; G.save(); } }
+        else combo = 0;
+        k++; show();
+      });
+    }
+    function end() {
+      keyH = null; document.removeEventListener('keydown', onKey);
+      $('.sessbar').innerHTML = '';
+      var extra = o.onEnd ? o.onEnd(good, items.length) || '' : '';
+      $('#stage').innerHTML = '<section class="card empty"><h2>' + good + '/' + items.length + '</h2>' + extra + '<div class="row center"><a class="btn primary" href="' + o.back + '">Wróć</a>' + (o.again ? '<button class="btn" id="again">Jeszcze raz</button>' : '') + '</div></section>';
+      if (good === items.length && items.length >= 8) G.confetti();
+      if (o.again) $('#again').onclick = o.again;
+      G.checkBadges();
+    }
+    show();
+  }
+
+  /* ============================================================
+     SŁUCHANIE
+     ============================================================ */
+  function listenPool(lv) {
+    if (lv === 'moje') { var m = UA.WORDS.filter(seen); return m.length >= 12 ? m : levelWords('A1'); }
+    return levelWords(lv);
+  }
+  function defaultLv() { var lv = 'A1'; LEVELS.forEach(function (l) { if (levelUnlocked(l) && levelWords(l).some(seen)) lv = l; }); return lv; }
+  V.sluchanie = function (mode, lv) {
+    lv = lv || defaultLv();
+    if (mode) return listenRun(mode, lv);
+    var vs = SP.voiceStatus();
+    var h = head('Słuchanie', 'Aplikacja czyta na głos słowa, zdania i teksty – Ty sprawdzasz, czy zrozumiałeś. Przycisk „wolniej” odtwarza nagranie w tempie 0,65×.');
+    if (!vs.ok) h += voiceHelp(vs);
+    h += '<div class="chips" role="group" aria-label="Poziom">' + LEVELS.concat(['moje']).map(function (l) { return '<a class="chip ' + (l === lv ? 'on' : '') + '" href="#/sluchanie//' + l + '">' + (l === 'moje' ? 'Moje słowa' : l) + '</a>'; }).join('') + '</div>';
+    h += '<section class="tiles">' + [
+      ['slowa', 'headphones', 'Usłysz i zrozum', 'słowo → tłumaczenie'], ['pisownia', 'pen', 'Pisownia ze słuchu', 'które słowo słyszysz?'],
+      ['zdania', 'chat', 'Zdania', 'co znaczy usłyszane zdanie?'], ['prawda', 'check', 'Prawda czy fałsz?', 'czy tłumaczenie pasuje?']
+    ].map(function (t) { return '<a class="tile" href="#/sluchanie/' + t[0] + '/' + lv + '">' + ic(t[1]) + '<b>' + t[2] + '</b><small>' + t[3] + ' · ' + (lv === 'moje' ? 'moje słowa' : lv) + '</small></a>'; }).join('') + '</section>';
+    h += '<h2 class="sec">Czytanki ze słuchu</h2><section class="dlist">' + (UA.TEXTS || []).map(function (t) {
+      var okL = levelUnlocked(t.level), sc = S.stats.texts[t.id];
+      return '<a class="card dl" href="#/czytanka/' + t.id + '"><span class="lvtag lv-' + t.level + '">' + t.level + '</span><div><b>' + esc(t.t) + '</b><small lang="uk">' + st(t.ua) + (okL ? '' : ' · poziom jeszcze zablokowany – możesz spróbować') + '</small></div>' + (sc != null ? '<span class="tag sim-t">' + sc + '/3</span>' : '') + '</a>';
+    }).join('') + '</section>';
+    h += '<h2 class="sec">Więcej ze słuchu</h2><section class="row"><a class="btn" href="#/dyktando">' + ic('pen') + 'Dyktando</a><a class="btn" href="#/wymowa/pary/yi">' + ic('ear') + 'Pary и / і</a><a class="btn" href="#/dialogi">' + ic('chat') + 'Dialogi</a></section>';
+    main.innerHTML = h;
+  };
+  function listenRun(mode, lv) {
+    var pool = listenPool(lv), items = [], back = '#/sluchanie//' + lv;
+    var withEx = pool.filter(function (w) { return w.ex; });
+    if (mode === 'slowa') items = shuffle(pool).slice(0, 10).map(exListen);
+    if (mode === 'pisownia') items = shuffle(pool).slice(0, 10).map(exSpell);
+    if (mode === 'zdania') items = shuffle(withEx).slice(0, 8).map(function (w) {
+      var others = pickOthers(w, function (x) { return x.exPl; }, 3, function (x) { return !!x.ex; }), all = shuffle([w].concat(others));
+      return { title: 'Co znaczy usłyszane zdanie?', prompt: listenBtn(w.ex), say: w.ex, listen: true, opts: all.map(function (x) { return esc(x.exPl); }), a: all.indexOf(w), reveal: '<div class="ex"><p lang="uk">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' };
+    });
+    if (mode === 'prawda') items = shuffle(withEx).slice(0, 10).map(function (w) {
+      var truth = Math.random() < 0.5, shown = truth ? w : pickOthers(w, function (x) { return x.exPl; }, 1, function (x) { return !!x.ex; })[0];
+      if (!shown) { shown = w; truth = true; }
+      return { title: 'Czy tłumaczenie pasuje do nagrania?', prompt: listenBtn(w.ex) + '<p class="trq">„' + esc(shown.exPl) + '”</p>', say: w.ex, listen: true, opts: ['Tak, pasuje', 'Nie, nie pasuje'], a: truth ? 0 : 1, reveal: '<div class="ex"><p lang="uk">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' };
+    });
+    var names = { slowa: 'Usłysz i zrozum', pisownia: 'Pisownia ze słuchu', zdania: 'Zdania ze słuchu', prawda: 'Prawda czy fałsz?' };
+    runMC({ title: names[mode] + ' · ' + (lv === 'moje' ? 'moje słowa' : lv), back: back, items: items, counter: 'listen', again: function () { listenRun(mode, lv); } });
+  }
+  V.czytanka = function (id) {
+    var t = (UA.TEXTS || []).filter(function (x) { return x.id === id; })[0]; if (!t) return location.replace('#/sluchanie');
+    var showT = false, showP = false, rate = S.settings.rate;
+    var h = head('<span class="lvtag lv-' + t.level + '">' + t.level + '</span> ' + esc(t.t), '<span lang="uk">' + st(t.ua) + '</span> · najpierw posłuchaj, potem odpowiedz na pytania. Tekst możesz odsłonić.', '#/sluchanie');
+    h += '<section class="card"><div class="row"><button class="btn primary" id="play">' + ic('play') + 'Odtwórz tekst</button><button class="btn" id="slow">' + ic('slow') + 'Wolniej</button><button class="btn" id="tt">' + ic('eye') + 'Pokaż tekst</button><button class="btn ghost" id="tp">Tłumaczenie</button></div><div id="txt"></div></section>';
+    h += '<h2 class="sec">Pytania</h2>' + t.qs.map(function (q, i) { return '<div class="card qz" data-q="' + i + '"><p><b>' + (i + 1) + '.</b> ' + esc(q[0]) + '</p><div class="opts">' + q[1].map(function (o, k) { return '<button class="btn opt" data-k="' + k + '"><span>' + esc(o) + '</span></button>'; }).join('') + '</div></div>'; }).join('') + '<div id="sum"></div>';
+    main.innerHTML = h;
+    function drawTxt() { $('#txt').innerHTML = (showT ? '<p class="readtext" lang="uk">' + st(t.text) + '</p>' : '') + (showP ? '<p class="muted">' + esc(t.pl) + '</p>' : ''); }
+    $('#play').onclick = function () { SP.speak(t.text, { rate: rate }); };
+    $('#slow').onclick = function () { SP.speak(t.text, { rate: 0.7 }); };
+    $('#tt').onclick = function () { showT = !showT; drawTxt(); this.innerHTML = ic('eye') + (showT ? 'Ukryj tekst' : 'Pokaż tekst'); };
+    $('#tp').onclick = function () { showP = !showP; drawTxt(); };
+    var answered = 0, good = 0;
+    $$('.qz').forEach(function (box) {
+      var q = t.qs[+box.getAttribute('data-q')];
+      $$('.opt', box).forEach(function (b) {
+        b.onclick = function () {
+          var k = +b.getAttribute('data-k');
+          $$('.opt', box).forEach(function (x) { x.disabled = true; if (+x.getAttribute('data-k') === q[2]) x.classList.add('right'); });
+          if (k === q[2]) { good++; S.stats.listen++; G.addXP(6); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          answered++;
+          if (answered === t.qs.length) {
+            S.stats.texts[t.id] = Math.max(S.stats.texts[t.id] || 0, good); G.save(); G.checkBadges();
+            if (good === t.qs.length) G.confetti();
+            $('#sum').innerHTML = '<section class="card empty"><h2>' + good + '/' + t.qs.length + '</h2><p>' + (good === t.qs.length ? 'Wszystko zrozumiane!' : 'Odsłoń tekst i tłumaczenie, posłuchaj jeszcze raz.') + '</p></section>';
+          }
+        };
+      });
+    });
   };
 
   /* ============================================================
@@ -1648,8 +2521,8 @@ var UA = window.UA || (window.UA = {});
   V.test = function (topic) {
     topic = topic || UA.TOPICS[0].id;
     var ws = UA.WORDS.filter(function (w) { return w.topic === topic && (w.sim === 't' || w.sim === 'p') && !SRS.card(w, 'r'); });
-    var h = head('Test wejściowy', 'Słowa przezroczyste i podobne nie muszą być wbijane pojedynczo. Dotknij słowa, które od razu rozumiesz – zobaczysz tłumaczenie, żeby się sprawdzić. Zaznaczone trafią do powtórek z długim odstępem (rozpoznawanie). Produkcję nadal przećwiczysz.', '#/slowka');
-    h += '<div class="chips">' + UA.TOPICS.map(function (t) { return '<a class="chip ' + (t.id === topic ? 'on' : '') + '" href="#/test/' + t.id + '">' + esc(t.name) + '</a>'; }).join('') + '</div>';
+    var h = head('Test wejściowy', 'Słowa przezroczyste i podobne nie muszą być wbijane pojedynczo. Dotknij słowa, które od razu rozumiesz – zobaczysz tłumaczenie, żeby się sprawdzić. Zaznaczone trafią do powtórek z długim odstępem (rozpoznawanie). Produkcję nadal przećwiczysz.', '#/sciezka');
+    h += '<div class="chips">' + UA.TOPICS.map(function (t) { return '<a class="chip ' + (t.id === topic ? 'on' : '') + '" href="#/test/' + t.id + '">' + t.level + ' · ' + esc(t.name) + '</a>'; }).join('') + '</div>';
     if (!ws.length) h += '<section class="card empty"><p>W tym temacie nie ma już słów do zaliczenia testem.</p></section>';
     else h += '<section class="tgrid">' + ws.map(function (w, i) { return '<button class="tw" data-i="' + i + '"><span class="ua" lang="uk">' + st(w.ua) + '</span><small>' + esc(w.pl) + '</small></button>'; }).join('') + '</section>' +
       '<div class="actions sticky"><button class="btn primary block" id="pass" disabled>Zalicz zaznaczone (0)</button></div>';
@@ -1674,8 +2547,8 @@ var UA = window.UA || (window.UA = {});
      SŁOWNIK
      ============================================================ */
   V.slownik = function (topic) {
-    var h = head('Słownik', UA.WORDS.length + ' słów A1. Szukaj po ukraińsku (bez akcentów) lub po polsku.');
-    h += '<div class="filters"><input id="q" type="search" placeholder="Szukaj…" aria-label="Szukaj"><select id="ft" aria-label="Temat"><option value="">Wszystkie tematy</option>' + UA.TOPICS.map(function (t) { return '<option value="' + t.id + '"' + (t.id === topic ? ' selected' : '') + '>' + esc(t.name) + '</option>'; }).join('') + '</select>' +
+    var h = head('Słownik', UA.WORDS.length + ' słów od A1 do C2. Szukaj po ukraińsku (bez akcentów) lub po polsku.');
+    h += '<div class="filters"><input id="q" type="search" placeholder="Szukaj…" aria-label="Szukaj"><select id="ft" aria-label="Temat"><option value="">Wszystkie tematy</option>' + UA.TOPICS.map(function (t) { return '<option value="' + t.id + '"' + (t.id === topic ? ' selected' : '') + '>' + t.level + ' · ' + esc(t.name) + '</option>'; }).join('') + '</select>' +
       '<select id="fs" aria-label="Podobieństwo"><option value="">Każde podobieństwo</option>' + Object.keys(SIM).map(function (k) { return '<option value="' + k + '">' + SIM[k][0] + '</option>'; }).join('') + '</select></div><div id="list" class="wlist"></div>';
     main.innerHTML = h;
     function draw() {
@@ -2063,7 +2936,7 @@ var UA = window.UA || (window.UA = {});
     var s = S.settings, vs = SP.voiceStatus();
     var h = head('Ustawienia');
     h += '<section class="card form">' +
-      '<label>Nowe słowa dziennie (w każdym kierunku) <input type="number" id="npd" min="0" max="50" value="' + s.newPerDay + '"></label>' +
+      '<label>Nowe słowa dziennie <input type="number" id="npd" min="0" max="50" value="' + s.newPerDay + '"></label>' +
       '<label>Cel dzienny (XP) <input type="number" id="goal" min="10" max="500" step="10" value="' + s.goal + '"></label>' +
       '<label class="sw"><input type="checkbox" id="str"' + (s.stress ? ' checked' : '') + '> Zaznaczaj akcent</label>' +
       '<label class="sw"><input type="checkbox" id="trs"' + (s.translit ? ' checked' : '') + '> Transliteracja (rusztowanie na początek)</label>' +
@@ -2071,7 +2944,7 @@ var UA = window.UA || (window.UA = {});
       '<label class="sw"><input type="checkbox" id="kb"' + (s.sysKb ? ' checked' : '') + '> Używaj też klawiatury systemowej telefonu</label>' +
       '<label class="sw"><input type="checkbox" id="snd"' + (s.sound ? ' checked' : '') + '> Dźwięki</label>' +
       '<label>Tempo mowy <select id="rate"><option value="0.75"' + (s.rate < 1 ? ' selected' : '') + '>0,75×</option><option value="1"' + (s.rate >= 1 ? ' selected' : '') + '>1×</option></select></label>' +
-      '<label>Motyw <select id="th"><option value="">systemowy</option><option value="light"' + (s.theme === 'light' ? ' selected' : '') + '>jasny</option><option value="dark"' + (s.theme === 'dark' ? ' selected' : '') + '>ciemny</option></select></label></section>';
+      '<label>Motyw <select id="th"><option value="">czarno-fioletowy</option><option value="light"' + (s.theme === 'light' ? ' selected' : '') + '>jasny fioletowy</option></select></label></section>';
     h += '<section class="card"><h2>' + ic('vol') + ' Głos</h2><p>' + (vs.ok ? 'Używany głos: <b>' + esc(vs.name) + '</b>' : esc(vs.msg)) + '</p><button class="btn" data-say="Приві́т! Це украї́нська мо́ва.">' + ic('play') + ' Test głosu</button></section>';
     if (!vs.ok) h += voiceHelp(vs);
     h += '<section class="card"><h2>Postęp</h2><p class="muted">Postęp jest zapisany tylko w tej przeglądarce. Zrób kopię, żeby przenieść go na inne urządzenie.</p><div class="row"><button class="btn" id="exp">Eksportuj (plik)</button><label class="btn">Importuj<input type="file" id="imp" accept=".json,application/json" hidden></label><button class="btn danger" id="rst">Wyzeruj wszystko</button></div></section>';
@@ -2098,7 +2971,7 @@ var UA = window.UA || (window.UA = {});
     $('#rst').onclick = function () { if (confirm('Na pewno usunąć cały postęp? Tego nie da się cofnąć.')) { localStorage.removeItem(G.KEY); location.reload(); } };
   };
 
-  function applyTheme() { if (S.settings.theme) document.documentElement.setAttribute('data-theme', S.settings.theme); else document.documentElement.removeAttribute('data-theme'); }
+  function applyTheme() { document.documentElement.setAttribute('data-theme', S.settings.theme === 'light' ? 'light' : 'dark'); var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', S.settings.theme === 'light' ? '#f6f4fb' : '#0b0a12'); }
   applyTheme();
   route();
 })();

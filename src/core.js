@@ -302,3 +302,32 @@ var UA = window.UA || (window.UA = {});
   UA.SP = { speak: speak, voiceStatus: voiceStatus, canRecord: canRecord, startRec: startRec, stopRec: stopRec, playUrl: playUrl, canRecognize: canRecognize, recognize: recognize };
   UA.KB = keyboard;
 })();
+
+/* ---------- Przygotowanie przykładów do ćwiczeń z luką ----------
+   W words2.js słowo w przykładzie jest ujęte w {…}; dla słów A1 szukamy go automatycznie. */
+(function () {
+  var ACC = '\u0301';
+  function low(s) { return s.split(ACC).join('').toLowerCase().replace(/[’ʼ']/g, "'"); }
+  function stripMap(s) { var out = '', map = []; for (var i = 0; i < s.length; i++) { if (s[i] === ACC) continue; map.push(i); out += s[i]; } return { s: low(out), map: map }; }
+  function cut(w, a, b) { w._cz = { pre: w.ex.slice(0, a), t: w.ex.slice(a, b), post: w.ex.slice(b) }; }
+  UA.WORDS.forEach(function (w) {
+    if (!w.ex) return;
+    var m = w.ex.match(/\{([^}]+)\}/);
+    if (m) { var i = w.ex.indexOf(m[0]); w.ex = w.ex.replace(/[{}]/g, ''); cut(w, i, i + m[1].length); return; }
+    var sm = stripMap(w.ex), heads = w.ua.split('/').map(function (x) { return low(x).replace(/[?…!.]/g, '').trim(); });
+    for (var h = 0; h < heads.length; h++) {
+      var hd = heads[h];
+      if (hd.indexOf(' ') > 0) {
+        var at = sm.s.indexOf(hd);
+        if (at >= 0) { var a = sm.map[at], b = sm.map[at + hd.length - 1] + 1; if (w.ex[b] === ACC) b++; return cut(w, a, b); }
+        continue;
+      }
+      var re = /[^\s,.!?;:«»"–—()]+/g, t;
+      var stem = hd.length <= 3 ? null : hd.slice(0, Math.max(3, Math.ceil(hd.length * 0.6)));
+      while ((t = re.exec(w.ex))) {
+        var lt = low(t[0]);
+        if (lt === hd || (stem && lt.indexOf(stem) === 0)) return cut(w, t.index, t.index + t[0].length);
+      }
+    }
+  });
+})();
