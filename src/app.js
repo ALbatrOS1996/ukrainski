@@ -147,7 +147,7 @@
     var L = G.level(), vs = SP.voiceStatus(), cu = currentUnit(), q = buildQueue('all');
     var dueN = q.filter(function (e) { return !e.isNew; }).length, newN = q.length - dueN;
     var r = SRS.mastery('r'), p = SRS.mastery('p');
-    var h = '<section class="hero"><div><p class="kicker">Ukraiński dla Polaka · poziom ' + cu.level + '</p><h1 lang="uk">' + st(hello) + '</h1><p class="lead">' +
+    var h = '<section class="hero"><div><p class="kicker">Ukraiński · poziom ' + cu.level + '</p><h1 lang="uk">' + st(hello) + '</h1><p class="lead">' +
       (q.length ? 'Na dziś: <b>' + dueN + '</b> powtórek i <b>' + newN + '</b> nowych słów. Aplikacja sama sprawdzi, co już umiesz.' : 'Wszystko na dziś zrobione. Чудо́во! Posłuchaj czytanki albo przećwicz dialog.') + '</p>' +
       '<div class="row"><a class="btn primary" href="#/trening/all">' + ic('play') + (q.length ? 'Ucz się (' + q.length + ')' : 'Trening') + '</a><a class="btn" href="#/sluchanie">' + ic('headphones') + 'Słuchanie</a></div></div>' +
       '<div class="lvcard"><span class="lvbadge">' + ic('star') + '</span><div><b lang="uk">' + st(L.name) + '</b><small>' + esc(L.pl) + ' · ' + S.xp + ' XP</small>' + bar(S.xp - L.from, L.to - L.from) + '<small>' + (L.next ? 'do awansu: ' + (L.to - S.xp) + ' XP' : 'najwyższy stopień') + '</small></div></div></section>';
@@ -390,8 +390,8 @@
       if (ok) {
         okc++; combo++; best = Math.max(best, combo);
         var mult = 1 + Math.min(2, Math.floor(combo / 4)), r = b ? b.getBoundingClientRect() : null;
-        G.addXP((e.dir === 'p' ? 8 : 5) * mult);
-        if (r) floatXP('+' + (e.dir === 'p' ? 8 : 5) * mult, r.left + r.width / 2, r.top);
+        G.addXP(1);
+        if (r) floatXP('+1', r.left + r.width / 2, r.top);
         if (e.dir === 'p') { S.stats.prodOk++; G.save(); }
         // nowe słowo: drugie sprawdzenie w tej samej sesji, ale w innej formie (zdanie z luką / PL → UA)
         if (e.isNew && !SRS.card(e.w, 'p')) queue.splice(Math.min(queue.length, pos + 4), 0, { w: e.w, dir: 'p', followUp: true });
@@ -432,7 +432,7 @@
       $('.sessbar').innerHTML = bar(k, items.length) + '<span>' + (k + 1) + '/' + items.length + '</span>' + (combo >= 3 ? '<span class="combo">' + ic('flame') + combo + '</span>' : '');
       var q = items[k];
       keyH = askMC($('#stage'), q, function (ok, b) {
-        if (ok) { good++; combo++; var r = b.getBoundingClientRect(); G.addXP(4, r.left, r.top); floatXP('+4', r.left + r.width / 2, r.top); if (o.counter) { S.stats[o.counter] = (S.stats[o.counter] || 0) + 1; G.save(); } }
+        if (ok) { good++; combo++; var r = b.getBoundingClientRect(); G.addXP(1, r.left, r.top); floatXP('+1', r.left + r.width / 2, r.top); if (o.counter) { S.stats[o.counter] = (S.stats[o.counter] || 0) + 1; G.save(); } }
         else combo = 0;
         k++; show();
       });
@@ -511,7 +511,7 @@
         b.onclick = function () {
           var k = +b.getAttribute('data-k');
           $$('.opt', box).forEach(function (x) { x.disabled = true; if (+x.getAttribute('data-k') === q[2]) x.classList.add('right'); });
-          if (k === q[2]) { good++; S.stats.listen++; G.addXP(6); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (k === q[2]) { good++; S.stats.listen++; G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           answered++;
           if (answered === t.qs.length) {
             S.stats.texts[t.id] = Math.max(S.stats.texts[t.id] || 0, good); G.save(); G.checkBadges();
@@ -604,7 +604,7 @@
         b.onclick = function () {
           var o = opts[+b.getAttribute('data-i')];
           $$('.opt').forEach(function (x) { x.disabled = true; if (opts[+x.getAttribute('data-i')][1]) x.classList.add('right'); });
-          if (o[1]) { good++; S.stats.ff++; G.save(); G.addXP(4); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (o[1]) { good++; S.stats.ff++; G.save(); G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           $('#fb').innerHTML = '<div class="card note"><p><b lang="uk">' + st(f[0]) + '</b> = ' + esc(f[1]) + '. ' + (f[3] && f[3] !== '–' ? 'Polskie „' + esc(f[2]) + '” to po ukraińsku <b lang="uk">' + st(f[3]) + '</b>.' : '') + '</p><p lang="uk">' + st(f[4]) + '</p><p class="muted small">' + esc(f[5]) + '</p><button class="btn primary block" id="nx">Dalej</button></div>';
           $('#nx').onclick = function () { k++; q(); };
         };
@@ -656,7 +656,7 @@
         b.onclick = function () {
           var s = +b.getAttribute('data-s');
           $$('.opt').forEach(function (x) { x.disabled = true; if (+x.getAttribute('data-s') === side) x.classList.add('right'); });
-          if (s === side) { good++; S.stats.pairs++; G.save(); G.addXP(2); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (s === side) { good++; S.stats.pairs++; G.save(); G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           $('#fb').innerHTML = '<div class="row center">' + say(it[0]) + '<span lang="uk">' + st(it[0]) + '</span><span class="muted">vs</span><span lang="uk">' + st(it[2]) + '</span>' + say(it[2]) + '</div><button class="btn primary block" id="nx">Dalej</button>';
           $('#nx').onclick = function () { k++; q(); };
         };
@@ -677,7 +677,7 @@
         b.onclick = function () {
           var l = b.getAttribute('data-l');
           $$('.opt').forEach(function (x) { x.disabled = true; if (x.getAttribute('data-l') === right) x.classList.add('right'); });
-          if (l === right) { good++; S.stats.gg++; G.save(); G.addXP(2); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (l === right) { good++; S.stats.gg++; G.save(); G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           $('.big.ua').innerHTML = st(word); SP.speak(word);
           $('#fb').innerHTML = '<button class="btn primary block" id="nx">Dalej</button>'; $('#nx').onclick = function () { k++; q(); };
         };
@@ -704,7 +704,7 @@
         b.onclick = function () {
           var i = +b.getAttribute('data-i');
           $$('.lt.v').forEach(function (x) { x.disabled = true; if (+x.getAttribute('data-i') === idx) x.classList.add('right'); });
-          if (i === idx) { good++; S.stats.stress++; G.save(); G.addXP(2); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (i === idx) { good++; S.stats.stress++; G.save(); G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           SP.speak(word);
           $('#fb').innerHTML = '<div class="row center"><span class="ua bigish" lang="uk">' + U.st(word) + '</span>' + say(word) + '</div><button class="btn primary block" id="nx">Dalej</button>';
           $('#nx').onclick = function () { k++; q(); };
@@ -775,7 +775,7 @@
                 var exp = norm(line).split(' '), best = 0, bestAlt = alts[0];
                 alts.forEach(function (al) { var got = norm(al).split(' '), hit = exp.filter(function (w) { return got.indexOf(w) >= 0; }).length / exp.length; if (hit > best) { best = hit; bestAlt = al; } });
                 box.innerHTML = 'Rozpoznano: <span lang="uk">„' + esc(bestAlt) + '”</span> – ' + (best >= 1 ? '<b class="okc">wszystkie słowa</b>' : '<b class="mid">' + Math.round(best * 100) + '% słów</b>');
-                if (best >= .8) G.addXP(2);
+                if (best >= .8) G.addXP(1);
               });
             } catch (e) { box.innerHTML = '<span class="badc">Rozpoznawanie niedostępne.</span>'; }
           }
@@ -799,7 +799,7 @@
       })(i);
     }
     function roleplay(r) { showText = false; render(); playSeq(0, r); }
-    function markDone() { if (!S.dialogs[d.id]) { S.dialogs[d.id] = U.today(); G.save(); G.addXP(15); G.checkBadges(); } else G.addXP(3); }
+    function markDone() { if (!S.dialogs[d.id]) { S.dialogs[d.id] = U.today(); G.save(); G.addXP(1); G.checkBadges(); } }
     cleanup = function () { stopFlag = true; if (recIdx >= 0) SP.stopRec(); };
     render();
   };
@@ -836,7 +836,7 @@
       $('#res').innerHTML = '<div class="verdict ' + (score >= .9 ? 'ok' : score >= .6 ? 'typo' : 'bad') + '"><b>' + Math.round(score * 100) + '%</b> ' + (score >= .9 ? G.praise() : 'Porównaj z wzorem:') + '</div>' +
         '<p class="dict" lang="uk">' + sw.map(function (w, k) { return '<span class="' + (hit[k] ? 'okw' : 'badw') + '">' + st(w) + '</span>'; }).join(' ') + ' ' + say(item[0]) + '</p><p class="muted">' + esc(item[1]) + '</p>';
       inp.disabled = true; $('#kbh').style.display = 'none';
-      G.addXP(Math.round(score * 8)); G.sfx(score >= .9 ? 'ok' : 'bad');
+      G.addXP(score >= .9 ? 1 : 0); G.sfx(score >= .9 ? 'ok' : 'bad');
       if (score >= .9) { S.stats.dict++; G.save(); G.checkBadges(); }
       $('#chk').textContent = 'Następne'; $('#chk').onclick = newItem;
       void words;
@@ -870,7 +870,7 @@
         b.onclick = function () {
           var k = +b.getAttribute('data-k');
           $$('.opt', box).forEach(function (x) { x.disabled = true; if (+x.getAttribute('data-k') === q[2]) x.classList.add('right'); });
-          if (k === q[2]) { good++; G.addXP(3); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (k === q[2]) { good++; G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           SP.speak(q[1][q[2]]);
           answered++;
           if (answered === g.quiz.length) {
@@ -923,7 +923,7 @@
       $$('.opt').forEach(function (b) {
         b.onclick = function () {
           $$('.opt').forEach(function (x) { x.disabled = true; if (x.getAttribute('data-o') === right) x.classList.add('right'); });
-          if (b.getAttribute('data-o') === right) { good++; G.addXP(2); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
+          if (b.getAttribute('data-o') === right) { good++; G.addXP(1); G.sfx('ok'); } else { b.classList.add('wrong'); G.sfx('bad'); }
           SP.speak(w.ua);
           $('#fb').innerHTML = '<p class="center">' + esc(w.pl) + '</p><button class="btn primary block" id="nx">Dalej</button>'; $('#nx').onclick = function () { k++; q(); };
         };
@@ -960,7 +960,7 @@
     main.innerHTML = h;
     function upd(k, v) { s[k] = v; G.save(); }
     $('#npd').onchange = function () { upd('newPerDay', Math.max(0, Math.min(50, +this.value || 0))); };
-    $('#goal').onchange = function () { upd('goal', Math.max(10, +this.value || 50)); renderStatus(); };
+    $('#goal').onchange = function () { upd('goal', Math.max(10, +this.value || 30)); renderStatus(); };
     $('#str').onchange = function () { upd('stress', this.checked); };
     $('#trs').onchange = function () { upd('translit', this.checked); };
     $('#ap').onchange = function () { upd('autoplay', this.checked); };

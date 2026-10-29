@@ -56,13 +56,14 @@ var UA = window.UA || (window.UA = {});
   var KEY = 'ukrainski_dla_polaka_v1';
   var S = {
     srs: {}, newDay: { d: 0, r: 0, p: 0 },
-    settings: { newPerDay: 10, translit: true, stress: true, rate: 1, autoplay: true, theme: '', sound: true, sysKb: false, goal: 50 },
+    settings: { newPerDay: 10, translit: true, stress: true, rate: 1, autoplay: true, theme: '', sound: true, sysKb: false, goal: 30 },
     days: [], xp: 0, xpLog: {}, badges: {}, goalDays: [],
     stats: { ff: 0, pairs: 0, stress: 0, dict: 0, gg: 0, abc: {}, prodOk: 0 }, grammar: {}, dialogs: {}, seenIntro: false
   };
   try {
     var raw = localStorage.getItem(KEY);
     if (raw) { var o = JSON.parse(raw); Object.keys(o).forEach(function (k) { if (k === 'settings' || k === 'stats') Object.keys(o[k]).forEach(function (s) { S[k][s] = o[k][s]; }); else S[k] = o[k]; }); }
+    if (!S.xp1) { if (S.settings.goal === 50) S.settings.goal = 30; S.xp1 = 1; } // od 2026-10: 1 dobra odpowiedź = 1 XP
   } catch (e) { }
   function save() {
     var t = today(); if (S.days.indexOf(t) < 0) { S.days.push(t); S.days = S.days.slice(-500); }

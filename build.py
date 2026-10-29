@@ -31,7 +31,7 @@ open(os.path.join(docs, 'index.html'), 'w', encoding='utf-8').write(html)
 ver = hashlib.sha1(html.encode('utf-8')).hexdigest()[:10]
 open(os.path.join(docs, 'sw.js'), 'w', encoding='utf-8').write(r('sw.js').replace('__VERSION__', ver))
 manifest = {
-    'name': 'Ukraiński dla Polaka', 'short_name': 'Ukraiński', 'lang': 'pl',
+    'name': 'Ukraiński', 'short_name': 'Ukraiński', 'lang': 'pl',
     'description': 'Nauka języka ukraińskiego dla osób polskojęzycznych.',
     'start_url': './', 'scope': './', 'display': 'standalone', 'orientation': 'portrait',
     'background_color': '#0b0a12', 'theme_color': '#0b0a12',
