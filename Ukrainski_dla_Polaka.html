@@ -2273,6 +2273,7 @@ var UA = window.UA || (window.UA = {});
   }
 
   /* ---------- Kolejka treningu ---------- */
+  var MAXREV = 50;
   function buildQueue(scope) {
     var t = U.today(), inScope = scope === 'all' ? function () { return true; } : function (w) { return w.topic === scope; };
     var due = [], fresh = [];
@@ -2280,11 +2281,11 @@ var UA = window.UA || (window.UA = {});
       if (!inScope(w)) return;
       ['r', 'p'].forEach(function (d) { var c = SRS.card(w, d); if (c && c.d <= t) due.push({ w: w, dir: d }); });
     });
-    due = shuffle(due).slice(0, 50);
+    due = shuffle(due).slice(0, MAXREV); // maks. 50 powtórek na raz (razem z pierwszymi próbami pisania)
     var limR = scope === 'all' ? SRS.newLeft('r') : 12, limP = scope === 'all' ? SRS.newLeft('p') : 12;
     var order = scope === 'all' ? UA.TOPICS.filter(unlocked) : [unitById(scope)];
     order.forEach(function (u) { unitWords(u.id).forEach(function (w) { if (!SRS.card(w, 'r') && fresh.length < limR) fresh.push({ w: w, dir: 'r', isNew: true }); }); });
-    var freshP = UA.WORDS.filter(function (w) { return inScope(w) && seen(w) && !SRS.card(w, 'p'); }).slice(0, limP).map(function (w) { return { w: w, dir: 'p', firstP: true }; });
+    var freshP = UA.WORDS.filter(function (w) { return inScope(w) && seen(w) && !SRS.card(w, 'p'); }).slice(0, Math.min(limP, MAXREV - due.length)).map(function (w) { return { w: w, dir: 'p', firstP: true }; });
     var q = [], i = 0, j = 0, k = 0;
     while (i < due.length || j < fresh.length || k < freshP.length) {
       if (i < due.length) q.push(due[i++]); if (i < due.length) q.push(due[i++]);
